@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChemBio AI Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__content">
+      <p class="eyebrow">ChemBio AI Insights</p>
+      <h1>Exploring how AI reshapes life sciences and beyond</h1>
+      <p class="lead">From drug discovery to smart farms, stay on top of the latest breakthroughs and practical tips for using AI responsibly.</p>
+      <form class="newsletter" id="newsletterForm">
+        <label class="sr-only" for="newsletterEmail">Subscribe for updates</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="form-feedback" id="newsletterFeedback" aria-live="polite"></p>
+    </div>
+    <div class="hero__media" aria-hidden="true">
+      <div class="orb orb--pink"></div>
+      <div class="orb orb--blue"></div>
+      <div class="orb orb--green"></div>
+      <img src="assets/images/lab-network.svg" alt="Stylized AI network" />
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <div>
+        <h2>Search the site</h2>
+        <p>Quickly scan through every insight using the search bar.</p>
+      </div>
+      <label class="search" for="siteSearch">
+        <span class="sr-only">Search content</span>
+        <input type="search" id="siteSearch" placeholder="Search use cases, tips, or sectors" />
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1014 15.5l.27.28v.79L20 21.5 21.5 20l-5.5-6zM10 15a5 5 0 110-10 5 5 0 010 10z"/></svg>
+      </label>
+    </section>
+
+    <section class="grid" id="useCases">
+      <article class="card" data-tags="pharma drug discovery ai molecules automation">
+        <div class="card__icon">💊</div>
+        <h3>AI in Pharmaceuticals</h3>
+        <p>Generative molecular design, predictive toxicology, and automated trial matching accelerate the path from target discovery to clinical validation.</p>
+        <ul>
+          <li>Autonomous screening robots pair with vision models to evaluate assays in minutes.</li>
+          <li>Digital twins simulate patient cohorts to reduce the size and cost of trials.</li>
+          <li>Knowledge graphs connect literature, omics data, and EHR evidence in one view.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="agriculture agtech farming crops sustainability sensors">
+        <div class="card__icon">🌾</div>
+        <h3>AI in AgTech</h3>
+        <p>Hyper-local weather predictions, vision-based crop monitoring, and intelligent irrigation make farms resilient and sustainable.</p>
+        <ul>
+          <li>Edge AI drones identify nutrient stress and pests before yield drops.</li>
+          <li>Reinforcement learning keeps greenhouse climates stable while saving energy.</li>
+          <li>Market models help co-ops optimize harvest logistics and pricing.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="laboratory automation robotics quality control computer vision">
+        <div class="card__icon">🧪</div>
+        <h3>AI in Laboratories</h3>
+        <p>Computer-vision powered notebooks, robotic pipetting, and anomaly detection redefine lab safety and reproducibility.</p>
+        <ul>
+          <li>Large language models draft experiment plans from plain-language hypotheses.</li>
+          <li>Real-time monitoring flags plate contamination before reagents are wasted.</li>
+          <li>Predictive maintenance keeps centrifuges, incubators, and freezers healthy.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="tips tools productivity prompting guides">
+        <div class="card__icon">🛠️</div>
+        <h3>AI Tool Tips &amp; Updates</h3>
+        <p>Stay productive with curated guidance for prompts, compliance, and the newest APIs.</p>
+        <ul>
+          <li>Adopt a prompt template library so teams reuse proven workflows.</li>
+          <li>Sandbox automation: run batch experiments safely with audit logs.</li>
+          <li>Monitor model cards to understand changes that impact regulated workloads.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="cta" id="subscribe">
+      <div>
+        <h2>Subscribe for early insights</h2>
+        <p>Monthly digests, curated datasets, and invite-only AMAs with scientists working at the frontiers of AI.</p>
+      </div>
+      <form class="cta__form" id="ctaForm">
+        <label class="sr-only" for="ctaEmail">Email address</label>
+        <input type="email" id="ctaEmail" placeholder="Email" required />
+        <button type="submit">Join the list</button>
+        <p class="form-feedback" id="ctaFeedback" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact__info">
+        <h2>Contact me</h2>
+        <p>Have a collaboration idea or need a custom AI workshop? Drop a message and I’ll get back within 48 hours.</p>
+        <ul>
+          <li><strong>Email:</strong> hello@chembio.ai</li>
+          <li><strong>Location:</strong> Remote-first across Europe &amp; North America</li>
+          <li><strong>Office hours:</strong> Tue–Thu, 9am–3pm CET</li>
+        </ul>
+      </div>
+      <form class="contact__form" id="contactForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+
+        <button type="submit">Send message</button>
+        <p class="form-feedback" id="contactFeedback" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> ChemBio AI Insights · Crafted for GitHub Pages deployment.</p>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
