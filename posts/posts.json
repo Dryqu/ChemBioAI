@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "ai-for-hplc-method-development",
+    "title": "AI for HPLC Method Development",
+    "date": "2025-11-19",
+    "sector": "Science Labs",
+    "summary": "How AI can help analytical chemists optimize HPLC methods faster and reduce trial-and-error.",
+    "tags": ["HPLC", "method development", "lab AI"]
+  },
+  {
+    "slug": "ai-in-agtech-residue-analysis",
+    "title": "Using AI in AgTech for Residue Analysis",
+    "date": "2025-11-10",
+    "sector": "AgTech",
+    "summary": "Practical ways AI supports pesticide residue studies, field trials, and regulatory submissions.",
+    "tags": ["AgTech", "residue", "regulatory"]
+  },
+  {
+    "slug": "global-ai-trends-2025",
+    "title": "Global AI Trends for Regulated Science Teams",
+    "date": "2025-10-28",
+    "sector": "Global AI Trends",
+    "summary": "Signals on model releases, standards, and policies that shape how lab and field teams deploy AI.",
+    "tags": ["policy", "benchmarks", "compliance"]
+  }
+]

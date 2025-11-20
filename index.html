@@ -13,8 +13,8 @@
   <header class="hero" id="top">
     <div class="hero__content">
       <p class="eyebrow">ChemBio AI Insights</p>
-      <h1>Exploring how AI reshapes life sciences and beyond</h1>
-      <p class="lead">From drug discovery to smart farms, stay on top of the latest breakthroughs and practical tips for using AI responsibly.</p>
+      <h1>AI for a healthier world</h1>
+      <p class="lead">Fueling discoveries in pharmaceuticals, agtech, and science labs with practical tools, stories, and global AI trendlines.</p>
       <form class="newsletter" id="newsletterForm">
         <label class="sr-only" for="newsletterEmail">Subscribe for updates</label>
         <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required />
@@ -44,55 +44,87 @@
     </section>
 
     <section class="grid" id="useCases">
-      <article class="card" data-tags="pharma drug discovery ai molecules automation">
+      <article class="card" data-tags="pharma drug discovery development chemistry biology">
         <div class="card__icon">💊</div>
-        <h3>AI in Pharmaceuticals</h3>
-        <p>Generative molecular design, predictive toxicology, and automated trial matching accelerate the path from target discovery to clinical validation.</p>
+        <h3>Pharma</h3>
+        <p>AI accelerates lead finding, de-risks synthesis, and keeps lab notebooks searchable. Bench teams pair models with rigorous controls to move candidates toward IND-ready evidence faster.</p>
         <ul>
-          <li>Autonomous screening robots pair with vision models to evaluate assays in minutes.</li>
-          <li>Digital twins simulate patient cohorts to reduce the size and cost of trials.</li>
-          <li>Knowledge graphs connect literature, omics data, and EHR evidence in one view.</li>
+          <li>Multimodal models connect omics, assay, and literature data to prioritize targets.</li>
+          <li>Generative design proposes analog series with predicted ADME and tox profiles.</li>
+          <li>Simulation helps craft dose–response studies before expensive wet-lab cycles.</li>
         </ul>
       </article>
 
-      <article class="card" data-tags="agriculture agtech farming crops sustainability sensors">
+      <article class="card" data-tags="agtech agriculture crops crop-protection residue biology chemistry">
         <div class="card__icon">🌾</div>
-        <h3>AI in AgTech</h3>
-        <p>Hyper-local weather predictions, vision-based crop monitoring, and intelligent irrigation make farms resilient and sustainable.</p>
+        <h3>AgTech</h3>
+        <p>Field chemists and agronomists use AI to guide crop protection chemistry, residue analysis, and yield optimization while respecting regulatory guardrails.</p>
         <ul>
-          <li>Edge AI drones identify nutrient stress and pests before yield drops.</li>
-          <li>Reinforcement learning keeps greenhouse climates stable while saving energy.</li>
-          <li>Market models help co-ops optimize harvest logistics and pricing.</li>
+          <li>Vision models flag pest pressure early so trials can adjust treatments in time.</li>
+          <li>Weather-aware simulations stress-test formulations before wide deployment.</li>
+          <li>Analytics pipelines speed residue dossiers for regulators and growers alike.</li>
         </ul>
       </article>
 
-      <article class="card" data-tags="laboratory automation robotics quality control computer vision">
+      <article class="card" data-tags="science labs experimentation automation robotics workflows">
         <div class="card__icon">🧪</div>
-        <h3>AI in Laboratories</h3>
-        <p>Computer-vision powered notebooks, robotic pipetting, and anomaly detection redefine lab safety and reproducibility.</p>
+        <h3>Science Labs</h3>
+        <p>From sample prep to analysis, AI keeps experiments reproducible and documented. Scientists pair robotics with models to shrink cycle time and reduce consumable waste.</p>
         <ul>
-          <li>Large language models draft experiment plans from plain-language hypotheses.</li>
-          <li>Real-time monitoring flags plate contamination before reagents are wasted.</li>
-          <li>Predictive maintenance keeps centrifuges, incubators, and freezers healthy.</li>
+          <li>Adaptive methods tune chromatography runs as signal quality shifts.</li>
+          <li>Vision QA checks pipetting, labeling, and plate layouts before incubation.</li>
+          <li>LLM copilots summarize runs and surface anomalies for rapid follow-up.</li>
         </ul>
       </article>
 
-      <article class="card" data-tags="tips tools productivity prompting guides">
+      <article class="card" data-tags="tools tips productivity prompting guides playbooks">
         <div class="card__icon">🛠️</div>
-        <h3>AI Tool Tips &amp; Updates</h3>
-        <p>Stay productive with curated guidance for prompts, compliance, and the newest APIs.</p>
+        <h3>Tools &amp; Tips</h3>
+        <p>Reference packs for prompt patterns, validation checklists, and lightweight MLOps. Built for scientists who need reproducibility and audit trails.</p>
         <ul>
-          <li>Adopt a prompt template library so teams reuse proven workflows.</li>
-          <li>Sandbox automation: run batch experiments safely with audit logs.</li>
-          <li>Monitor model cards to understand changes that impact regulated workloads.</li>
+          <li>Starter prompts for ELN drafting, assay summaries, and QC exceptions.</li>
+          <li>Privacy-first workflows for sharing data with hosted models.</li>
+          <li>Evaluation templates to benchmark models on lab-specific tasks.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="global ai trends news policy regulation markets">
+        <div class="card__icon">🌐</div>
+        <h3>Global AI Trends</h3>
+        <p>Track model releases, regulatory shifts, and industry moves that shape how scientists deploy AI. Focused on what matters for pharma, agtech, and lab teams.</p>
+        <ul>
+          <li>Policy updates that affect data residency, safety cases, and compliance.</li>
+          <li>Benchmarks that reveal when to retrain, fine-tune, or switch providers.</li>
+          <li>Market signals that inform tool selection for regulated environments.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="contribute community share submissions resources">
+        <div class="card__icon">🤝</div>
+        <h3>Contribute</h3>
+        <p>Share articles, case studies, or field notes with ChemBio AI. We welcome clear, experiment-driven stories that help peers learn faster.</p>
+        <ul>
+          <li>Submit write-ups on assay automation, trial design, or ag field work.</li>
+          <li>Recommend datasets or tools other scientists should try.</li>
+          <li>Nominate topics for tutorials or office hours.</li>
         </ul>
       </article>
     </section>
 
+    <section class="articles" id="articles">
+      <div class="articles__header">
+        <h2>Latest Articles</h2>
+        <p>Fresh posts on ChemBio AI workflows, lessons learned, and cross-industry signals.</p>
+      </div>
+      <div class="articles__grid" id="articlesList" aria-live="polite">
+        <p class="muted">Loading articles…</p>
+      </div>
+    </section>
+
     <section class="cta" id="subscribe">
       <div>
-        <h2>Subscribe for early insights</h2>
-        <p>Monthly digests, curated datasets, and invite-only AMAs with scientists working at the frontiers of AI.</p>
+        <h2>Stay in the loop</h2>
+        <p>Get occasional updates when new ChemBio AI articles are published. No spam, no noise.</p>
       </div>
       <form class="cta__form" id="ctaForm">
         <label class="sr-only" for="ctaEmail">Email address</label>
@@ -104,12 +136,10 @@
 
     <section class="contact" id="contact">
       <div class="contact__info">
-        <h2>Contact me</h2>
-        <p>Have a collaboration idea or need a custom AI workshop? Drop a message and I’ll get back within 48 hours.</p>
+        <h2>Contact</h2>
+        <p>Have a collaboration idea, a question, or feedback? Feel free to reach out.</p>
         <ul>
-          <li><strong>Email:</strong> hello@chembio.ai</li>
-          <li><strong>Location:</strong> Remote-first across Europe &amp; North America</li>
-          <li><strong>Office hours:</strong> Tue–Thu, 9am–3pm CET</li>
+          <li><strong>Email:</strong> quinvesteam@gmail.com</li>
         </ul>
       </div>
       <form class="contact__form" id="contactForm">

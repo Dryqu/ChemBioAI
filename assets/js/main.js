@@ -1,7 +1,10 @@
 const yearEl = document.getElementById('year');
-yearEl.textContent = new Date().getFullYear();
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
-const sections = Array.from(document.querySelectorAll('.card'));
+const cardsSelector = '.card, .article-card';
+let sections = Array.from(document.querySelectorAll(cardsSelector));
 const searchInput = document.getElementById('siteSearch');
 
 const highlight = (text, term) => {
@@ -12,7 +15,7 @@ const highlight = (text, term) => {
 
 const resetHighlights = () => {
   sections.forEach(section => {
-    const paragraphs = section.querySelectorAll('p, li, h3');
+    const paragraphs = section.querySelectorAll('p, li, h3, h4');
     paragraphs.forEach(node => {
       node.innerHTML = node.textContent;
     });
@@ -33,7 +36,7 @@ const filterSections = value => {
     card.classList.toggle('card--hidden', !match);
 
     if (match) {
-      const nodes = card.querySelectorAll('p, li, h3');
+      const nodes = card.querySelectorAll('p, li, h3, h4');
       nodes.forEach(node => {
         node.innerHTML = highlight(node.textContent, term);
       });
@@ -41,11 +44,15 @@ const filterSections = value => {
   });
 };
 
-searchInput.addEventListener('input', event => filterSections(event.target.value));
+if (searchInput) {
+  searchInput.addEventListener('input', event => filterSections(event.target.value));
+}
 
 const fakeSubmit = (formId, feedbackId, successText) => {
   const form = document.getElementById(formId);
   const feedback = document.getElementById(feedbackId);
+  if (!form || !feedback) return;
+
   form.addEventListener('submit', event => {
     event.preventDefault();
     const formData = new FormData(form);
@@ -62,15 +69,48 @@ const fakeSubmit = (formId, feedbackId, successText) => {
   });
 };
 
-fakeSubmit('newsletterForm', 'newsletterFeedback', 'Thanks {email}! Check your inbox for a confirmation email.');
-fakeSubmit('ctaForm', 'ctaFeedback', 'Welcome aboard, {email}. Expect fresh insights soon.');
+fakeSubmit('newsletterForm', 'newsletterFeedback', 'Thanks! Please check your inbox to confirm your subscription.');
+fakeSubmit('ctaForm', 'ctaFeedback', 'Thanks! Please check your inbox to confirm your subscription.');
 
 const contactForm = document.getElementById('contactForm');
 const contactFeedback = document.getElementById('contactFeedback');
-contactForm.addEventListener('submit', event => {
-  event.preventDefault();
-  const formData = new FormData(contactForm);
-  const name = formData.get('name');
-  contactFeedback.textContent = `Thanks ${name}! I will respond shortly.`;
-  contactForm.reset();
-});
+if (contactForm && contactFeedback) {
+  contactForm.addEventListener('submit', event => {
+    event.preventDefault();
+    contactFeedback.textContent = 'Thanks! Your message was sent.';
+    contactForm.reset();
+  });
+}
+
+const articlesContainer = document.getElementById('articlesList');
+
+const formatDate = value => {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+};
+
+if (articlesContainer) {
+  fetch('posts/posts.json')
+    .then(response => response.json())
+    .then(data => {
+      const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      articlesContainer.innerHTML = '';
+      sorted.forEach(post => {
+        const card = document.createElement('article');
+        card.className = 'article-card';
+        card.dataset.tags = `${post.sector || ''} ${(post.tags || []).join(' ')}`.trim();
+        card.innerHTML = `
+          <p class="article-card__meta">${formatDate(post.date)} · ${post.sector}</p>
+          <h4>${post.title}</h4>
+          <p>${post.summary}</p>
+          <a href="posts/${post.slug}.html">Read article →</a>
+        `;
+        articlesContainer.appendChild(card);
+      });
+      sections = Array.from(document.querySelectorAll(cardsSelector));
+    })
+    .catch(() => {
+      articlesContainer.innerHTML = '<p class="muted">Articles are coming soon.</p>';
+    });
+}
