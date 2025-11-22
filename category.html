@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articles by Category | ChemBio AI Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body class="category-page">
+  <header class="category-hero" id="top">
+    <div class="hero__content">
+      <p class="eyebrow">ChemBio AI Insights</p>
+      <h1 id="categoryTitle">Articles by category</h1>
+      <p class="lead" id="categoryDescription">Browse every ChemBio AI article by focus area.</p>
+      <div class="category-links" id="categoryChips"></div>
+    </div>
+    <div class="hero__media" aria-hidden="true">
+      <div class="orb orb--pink"></div>
+      <div class="orb orb--blue"></div>
+      <div class="orb orb--green"></div>
+      <img src="assets/images/lab-network.svg" alt="Stylized AI network" />
+    </div>
+  </header>
+
+  <main>
+    <section class="articles category-view">
+      <div class="articles__header">
+        <h2 id="categoryHeading">Latest in this category</h2>
+        <p>See every article we have published in this focus area.</p>
+      </div>
+      <div class="featured" id="categoryFeatured" aria-live="polite"></div>
+      <div class="articles__grid" id="categoryArticles" aria-live="polite">
+        <p class="muted">Loading articles…</p>
+      </div>
+      <div class="articles__empty muted" id="categoryEmpty" hidden>
+        <p>No articles have been published in this category yet. Browse other topics above.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> ChemBio AI Insights · Crafted for GitHub Pages deployment.</p>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

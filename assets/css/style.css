@@ -295,6 +295,17 @@ main {
   font-size: 0.95rem;
 }
 
+.article-card__meta a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.35);
+}
+
+.article-card__meta a:hover {
+  color: var(--accent-3);
+  border-bottom-color: var(--accent-3);
+}
+
 .article-card a {
   color: var(--accent-3);
   text-decoration: none;
@@ -307,6 +318,60 @@ main {
 
 .muted {
   color: var(--muted);
+}
+
+.articles__browse {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.category-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.category-chip {
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(5, 6, 10, 0.6);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.category-chip:hover {
+  border-color: var(--accent-3);
+  transform: translateY(-2px);
+}
+
+.featured {
+  margin-top: 1.2rem;
+  padding: 1.6rem;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(111, 255, 210, 0.12), rgba(82, 75, 197, 0.12));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.featured h3 {
+  margin: 0.2rem 0 0.6rem;
+}
+
+.featured p {
+  margin: 0 0 0.4rem;
+}
+
+.featured a {
+  color: var(--accent-3);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.featured a:hover {
+  text-decoration: underline;
 }
 
 .article-layout {
@@ -392,6 +457,24 @@ main {
 .contact__form input,
 .contact__form textarea {
   border-radius: 14px;
+}
+
+.category-page .hero__content {
+  gap: 0.8rem;
+}
+
+.category-view {
+  margin-top: 2rem;
+}
+
+.articles__empty {
+  margin-top: 1.2rem;
+}
+
+.category-hero {
+  background: radial-gradient(circle at 20% 20%, rgba(111, 255, 210, 0.15), transparent 30%),
+    radial-gradient(circle at 80% 30%, rgba(82, 75, 197, 0.18), transparent 32%),
+    var(--bg);
 }
 
 footer {

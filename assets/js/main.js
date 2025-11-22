@@ -1,3 +1,5 @@
+const FORM_ENDPOINT = 'https://formsubmit.co/chembioaiinsights@gmail.com';
+
 const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
@@ -48,41 +50,59 @@ if (searchInput) {
   searchInput.addEventListener('input', event => filterSections(event.target.value));
 }
 
-const fakeSubmit = (formId, feedbackId, successText) => {
+const submitToFormEndpoint = (formId, feedbackId, successText) => {
   const form = document.getElementById(formId);
   const feedback = document.getElementById(feedbackId);
   if (!form || !feedback) return;
 
-  form.addEventListener('submit', event => {
+  form.addEventListener('submit', async event => {
     event.preventDefault();
     const formData = new FormData(form);
-    const email = formData.get('email') || form.querySelector('input[type="email"]').value;
-    if (!email) {
+    const emailField = form.querySelector('input[type="email"]');
+    const email = formData.get('email') || (emailField ? emailField.value : '');
+    if (emailField && !email) {
       feedback.textContent = 'Please enter a valid email address.';
       return;
     }
-    feedback.textContent = 'Saving your preferences...';
-    setTimeout(() => {
-      feedback.textContent = successText.replace('{email}', email);
+    feedback.textContent = 'Sending...';
+    try {
+      const response = await fetch(form.action || FORM_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        headers: { Accept: 'application/json' },
+      });
+      if (!response.ok) throw new Error('Network error');
+      feedback.textContent = successText.replace('{email}', email || '');
       form.reset();
-    }, 800);
+    } catch (error) {
+      feedback.textContent = 'Something went wrong. Please try again.';
+    }
   });
 };
 
-fakeSubmit('newsletterForm', 'newsletterFeedback', 'Thanks! Please check your inbox to confirm your subscription.');
-fakeSubmit('ctaForm', 'ctaFeedback', 'Thanks! Please check your inbox to confirm your subscription.');
-
-const contactForm = document.getElementById('contactForm');
-const contactFeedback = document.getElementById('contactFeedback');
-if (contactForm && contactFeedback) {
-  contactForm.addEventListener('submit', event => {
-    event.preventDefault();
-    contactFeedback.textContent = 'Thanks! Your message was sent.';
-    contactForm.reset();
-  });
-}
+submitToFormEndpoint('newsletterForm', 'newsletterFeedback', 'Thanks! Please check your inbox to confirm your subscription.');
+submitToFormEndpoint('ctaForm', 'ctaFeedback', 'Thanks! Please check your inbox to confirm your subscription.');
+submitToFormEndpoint('contactForm', 'contactFeedback', 'Thanks! Your message was sent.');
 
 const articlesContainer = document.getElementById('articlesList');
+const featuredContainer = document.getElementById('featuredArticle');
+const categoryLinks = document.getElementById('categoryLinks');
+const categoryPageContainer = document.getElementById('categoryArticles');
+const categoryFeatured = document.getElementById('categoryFeatured');
+const categoryEmpty = document.getElementById('categoryEmpty');
+const categoryChips = document.getElementById('categoryChips');
+const categoryTitle = document.getElementById('categoryTitle');
+const categoryHeading = document.getElementById('categoryHeading');
+const categoryDescription = document.getElementById('categoryDescription');
+
+const CATEGORY_DESCRIPTIONS = {
+  Pharma: 'AI that accelerates drug discovery, development, and translational science.',
+  AgTech: 'AI that strengthens crop protection chemistry and field biology.',
+  'Science Labs': 'Automation, analysis, and experiment design for lab scientists.',
+  'Tools & Tips': 'How-to guides, benchmarks, and playbooks for applied AI.',
+  'Global AI Trends': 'Signals on policy, releases, and standards that shape science.',
+  'Learning Resources': 'Courses, reading lists, and exercises to upskill science teams.',
+};
 
 const formatDate = value => {
   const date = new Date(value);
@@ -90,27 +110,121 @@ const formatDate = value => {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
 
-if (articlesContainer) {
+const renderArticleCard = (post, basePath = 'posts') => {
+  const card = document.createElement('article');
+  card.className = 'article-card';
+  card.dataset.tags = `${post.sector || ''} ${(post.tags || []).join(' ')}`.trim();
+  const categoryHref = `category.html?category=${encodeURIComponent(post.sector)}`;
+  card.innerHTML = `
+    <p class="article-card__meta"><a href="${categoryHref}">${post.sector}</a> · ${formatDate(post.date)}</p>
+    <h4>${post.title}</h4>
+    <p>${post.summary}</p>
+    <a href="${basePath}/${post.slug}.html">Read article →</a>
+  `;
+  return card;
+};
+
+const renderFeatured = (container, post, basePath = 'posts') => {
+  if (!container) return;
+  if (!post) {
+    container.innerHTML = '';
+    return;
+  }
+  const categoryHref = `category.html?category=${encodeURIComponent(post.sector)}`;
+  container.innerHTML = `
+    <p class="article-card__meta"><a href="${categoryHref}">${post.sector}</a> · ${formatDate(post.date)}</p>
+    <h3>${post.title}</h3>
+    <p>${post.summary}</p>
+    <a href="${basePath}/${post.slug}.html">Read the latest →</a>
+  `;
+};
+
+const renderCategoryChips = (container, categories) => {
+  if (!container) return;
+  container.innerHTML = '';
+  categories.forEach(category => {
+    const link = document.createElement('a');
+    link.className = 'category-chip';
+    link.href = `category.html?category=${encodeURIComponent(category)}`;
+    link.textContent = category;
+    container.appendChild(link);
+  });
+};
+
+const loadArticles = () => {
   fetch('posts/posts.json')
     .then(response => response.json())
     .then(data => {
       const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));
-      articlesContainer.innerHTML = '';
-      sorted.forEach(post => {
-        const card = document.createElement('article');
-        card.className = 'article-card';
-        card.dataset.tags = `${post.sector || ''} ${(post.tags || []).join(' ')}`.trim();
-        card.innerHTML = `
-          <p class="article-card__meta">${formatDate(post.date)} · ${post.sector}</p>
-          <h4>${post.title}</h4>
-          <p>${post.summary}</p>
-          <a href="posts/${post.slug}.html">Read article →</a>
-        `;
-        articlesContainer.appendChild(card);
-      });
-      sections = Array.from(document.querySelectorAll(cardsSelector));
+      const categories = Array.from(new Set(sorted.map(post => post.sector))).filter(Boolean);
+
+      if (!categories.length) {
+        if (articlesContainer) {
+          articlesContainer.innerHTML = '<p class="muted">Articles are coming soon.</p>';
+        }
+        if (featuredContainer) featuredContainer.innerHTML = '';
+        if (categoryPageContainer) {
+          categoryPageContainer.innerHTML = '<p class="muted">No articles found yet.</p>';
+        }
+        return;
+      }
+
+      if (categoryLinks) {
+        renderCategoryChips(categoryLinks, categories);
+      }
+
+      if (categoryChips) {
+        renderCategoryChips(categoryChips, categories);
+      }
+
+      if (articlesContainer) {
+        articlesContainer.innerHTML = '';
+        sorted.forEach((post, index) => {
+          if (index === 0 && featuredContainer) {
+            renderFeatured(featuredContainer, post);
+          }
+          const card = renderArticleCard(post);
+          articlesContainer.appendChild(card);
+        });
+        sections = Array.from(document.querySelectorAll(cardsSelector));
+      }
+
+      const params = new URLSearchParams(window.location.search);
+      const selectedCategory = decodeURIComponent(params.get('category') || '') || categories[0];
+
+      if (categoryPageContainer) {
+        if (selectedCategory) {
+          categoryTitle.textContent = `${selectedCategory} articles`;
+          categoryHeading.textContent = `Latest in ${selectedCategory}`;
+          categoryDescription.textContent = CATEGORY_DESCRIPTIONS[selectedCategory] || 'Browse recent articles in this focus area.';
+        }
+        const filtered = sorted.filter(post => post.sector === selectedCategory);
+        if (filtered.length === 0) {
+          categoryPageContainer.innerHTML = '';
+          if (categoryEmpty) categoryEmpty.hidden = false;
+          renderFeatured(categoryFeatured, null);
+          return;
+        }
+
+        if (categoryEmpty) categoryEmpty.hidden = true;
+        categoryPageContainer.innerHTML = '';
+        filtered.forEach((post, index) => {
+          if (index === 0 && categoryFeatured) {
+            renderFeatured(categoryFeatured, post, 'posts');
+          }
+          categoryPageContainer.appendChild(renderArticleCard(post));
+        });
+        sections = Array.from(document.querySelectorAll(cardsSelector));
+      }
     })
     .catch(() => {
-      articlesContainer.innerHTML = '<p class="muted">Articles are coming soon.</p>';
+      if (articlesContainer) {
+        articlesContainer.innerHTML = '<p class="muted">Articles are coming soon.</p>';
+      }
+      if (categoryPageContainer) {
+        categoryPageContainer.innerHTML = '<p class="muted">Unable to load articles right now.</p>';
+      }
     });
-}
+};
+
+loadArticles();

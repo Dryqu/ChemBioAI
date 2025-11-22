@@ -24,11 +24,19 @@
     "tags": ["policy", "benchmarks", "compliance"]
   },
   {
-    "slug": "learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng",
-    "title": "Learn AI the Easy Way: AI For Everyone by Andrew Ng",
-    "date": "2025-11-19",
-    "sector": "Tools & Tips",
-    "summary": "AI is changing the way we live and work faster than most people can keep up. We see headlines about ChatGPT, generative AI, and automation every day—but understanding what’s actually happening is not easy.",
-    "tags": ["education", "AI", "Andrew Ng"]
+    "slug": "learning-paths-for-lab-ai",
+    "title": "Learning Paths for Lab Teams Building AI Fluency",
+    "date": "2025-12-01",
+    "sector": "Learning Resources",
+    "summary": "Structured study tracks that help chemists and biologists master AI without skipping scientific rigor.",
+    "tags": ["learning", "labs", "training"]
+  },
+  {
+    "slug": "ai-for-clinical-candidate-selection",
+    "title": "AI for Clinical Candidate Selection",
+    "date": "2025-11-24",
+    "sector": "Pharma",
+    "summary": "How discovery teams pair modeling with assays to prioritize IND-ready molecules with clearer risk profiles.",
+    "tags": ["pharma", "clinical", "selection"]
   }
 ]
