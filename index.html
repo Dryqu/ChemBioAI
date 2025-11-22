@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChemBio AI Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero__content">
+      <p class="eyebrow">ChemBio AI Insights</p>
+      <h1>AI for a healthier world</h1>
+      <p class="lead">Fueling discoveries in pharmaceuticals, agtech, and science labs with practical tools, stories, and global AI trendlines.</p>
+      <form class="newsletter" id="newsletterForm" action="https://formsubmit.co/chembioaiinsights@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="ChemBioAI newsletter signup" />
+        <input type="hidden" name="form_context" value="Hero newsletter" />
+        <input type="hidden" name="_captcha" value="false" />
+        <label class="sr-only" for="newsletterEmail">Subscribe for updates</label>
+        <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="form-feedback" id="newsletterFeedback" aria-live="polite"></p>
+    </div>
+    <div class="hero__media" aria-hidden="true">
+      <div class="orb orb--pink"></div>
+      <div class="orb orb--blue"></div>
+      <div class="orb orb--green"></div>
+      <img src="assets/images/lab-network.svg" alt="Stylized AI network" />
+    </div>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <div>
+        <h2>Search the site</h2>
+        <p>Quickly scan through every insight using the search bar.</p>
+      </div>
+      <label class="search" for="siteSearch">
+        <span class="sr-only">Search content</span>
+        <input type="search" id="siteSearch" placeholder="Search use cases, tips, or sectors" />
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 14h-.79l-.28-.27A6.5 6.5 0 1014 15.5l.27.28v.79L20 21.5 21.5 20l-5.5-6zM10 15a5 5 0 110-10 5 5 0 010 10z"/></svg>
+      </label>
+    </section>
+
+    <section class="grid" id="useCases">
+      <article class="card" data-tags="pharma drug discovery development chemistry biology">
+        <div class="card__icon">💊</div>
+        <h3>Pharma</h3>
+        <p>AI accelerates lead finding, de-risks synthesis, and keeps lab notebooks searchable. Bench teams pair models with rigorous controls to move candidates toward IND-ready evidence faster.</p>
+        <ul>
+          <li>Multimodal models connect omics, assay, and literature data to prioritize targets.</li>
+          <li>Generative design proposes analog series with predicted ADME and tox profiles.</li>
+          <li>Simulation helps craft dose–response studies before expensive wet-lab cycles.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="agtech agriculture crops crop-protection residue biology chemistry">
+        <div class="card__icon">🌾</div>
+        <h3>AgTech</h3>
+        <p>Field chemists and agronomists use AI to guide crop protection chemistry, residue analysis, and yield optimization while respecting regulatory guardrails.</p>
+        <ul>
+          <li>Vision models flag pest pressure early so trials can adjust treatments in time.</li>
+          <li>Weather-aware simulations stress-test formulations before wide deployment.</li>
+          <li>Analytics pipelines speed residue dossiers for regulators and growers alike.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="science labs experimentation automation robotics workflows">
+        <div class="card__icon">🧪</div>
+        <h3>Science Labs</h3>
+        <p>From sample prep to analysis, AI keeps experiments reproducible and documented. Scientists pair robotics with models to shrink cycle time and reduce consumable waste.</p>
+        <ul>
+          <li>Adaptive methods tune chromatography runs as signal quality shifts.</li>
+          <li>Vision QA checks pipetting, labeling, and plate layouts before incubation.</li>
+          <li>LLM copilots summarize runs and surface anomalies for rapid follow-up.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="learning resources education training tutorials guides">
+        <div class="card__icon">📘</div>
+        <h3>Learning Resources</h3>
+        <p>Playbooks, primers, and study paths for scientists who want to build durable AI skills without losing scientific rigor.</p>
+        <ul>
+          <li>Foundational AI concepts framed for chemistry, biology, and agronomy contexts.</li>
+          <li>Hands-on tutorials that connect models to lab notebooks, ELNs, and data lakes.</li>
+          <li>Reading lists and labs that keep teams current on responsible AI practice.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="tools tips productivity prompting guides playbooks">
+        <div class="card__icon">🛠️</div>
+        <h3>Tools &amp; Tips</h3>
+        <p>Reference packs for prompt patterns, validation checklists, and lightweight MLOps. Built for scientists who need reproducibility and audit trails.</p>
+        <ul>
+          <li>Starter prompts for ELN drafting, assay summaries, and QC exceptions.</li>
+          <li>Privacy-first workflows for sharing data with hosted models.</li>
+          <li>Evaluation templates to benchmark models on lab-specific tasks.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="global ai trends news policy regulation markets">
+        <div class="card__icon">🌐</div>
+        <h3>Global AI Trends</h3>
+        <p>Track model releases, regulatory shifts, and industry moves that shape how scientists deploy AI. Focused on what matters for pharma, agtech, and lab teams.</p>
+        <ul>
+          <li>Policy updates that affect data residency, safety cases, and compliance.</li>
+          <li>Benchmarks that reveal when to retrain, fine-tune, or switch providers.</li>
+          <li>Market signals that inform tool selection for regulated environments.</li>
+        </ul>
+      </article>
+
+      <article class="card" data-tags="contribute community share submissions resources">
+        <div class="card__icon">🤝</div>
+        <h3>Contribute</h3>
+        <p>Share articles, case studies, or field notes with ChemBio AI. We welcome clear, experiment-driven stories that help peers learn faster.</p>
+        <ul>
+          <li>Submit write-ups on assay automation, trial design, or ag field work.</li>
+          <li>Recommend datasets or tools other scientists should try.</li>
+          <li>Nominate topics for tutorials or office hours.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="articles" id="articles">
+      <div class="articles__header">
+        <h2>Latest Articles</h2>
+        <p>Fresh posts on ChemBio AI workflows, lessons learned, and cross-industry signals.</p>
+      </div>
+      <div class="articles__browse">
+        <h3>Browse by category</h3>
+        <div class="category-links" id="categoryLinks">
+          <a class="category-chip" href="category.html?category=Pharma">Pharma</a>
+          <a class="category-chip" href="category.html?category=AgTech">AgTech</a>
+          <a class="category-chip" href="category.html?category=Science%20Labs">Science Labs</a>
+          <a class="category-chip" href="category.html?category=Tools%20%26%20Tips">Tools &amp; Tips</a>
+          <a class="category-chip" href="category.html?category=Global%20AI%20Trends">Global AI Trends</a>
+          <a class="category-chip" href="category.html?category=Learning%20Resources">Learning Resources</a>
+        </div>
+      </div>
+      <div class="featured" id="featuredArticle" aria-live="polite"></div>
+      <div class="articles__grid" id="articlesList" aria-live="polite">
+        <p class="muted">Loading articles…</p>
+      </div>
+    </section>
+
+    <section class="cta" id="subscribe">
+      <div>
+        <h2>Stay in the loop</h2>
+        <p>Get occasional updates when new ChemBio AI articles are published. No spam, no noise.</p>
+      </div>
+      <form class="cta__form" id="ctaForm" action="https://formsubmit.co/chembioaiinsights@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="ChemBioAI subscribe CTA" />
+        <input type="hidden" name="form_context" value="Inline subscribe" />
+        <input type="hidden" name="_captcha" value="false" />
+        <label class="sr-only" for="ctaEmail">Email address</label>
+        <input type="email" id="ctaEmail" name="email" placeholder="Email" required />
+        <button type="submit">Join the list</button>
+        <p class="form-feedback" id="ctaFeedback" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact__info">
+        <h2>Contact</h2>
+        <p>Have a collaboration idea, a question, or feedback? Feel free to reach out.</p>
+        <ul>
+          <li><strong>Email:</strong> chembioaiinsights@gmail.com</li>
+        </ul>
+      </div>
+      <form class="contact__form" id="contactForm" action="https://formsubmit.co/chembioaiinsights@gmail.com" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="ChemBioAI contact" />
+        <input type="hidden" name="form_context" value="Contact form" />
+        <input type="hidden" name="_captcha" value="false" />
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="How can I help?" required></textarea>
+
+        <button type="submit">Send message</button>
+        <p class="form-feedback" id="contactFeedback" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> ChemBio AI Insights · Crafted for GitHub Pages deployment.</p>
+    <a href="#top" class="back-to-top">Back to top ↑</a>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
