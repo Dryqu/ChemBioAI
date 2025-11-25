@@ -1,5 +1,37 @@
 [
   {
+    "slug": "lab-eln-automation-playbook",
+    "title": "A Lightweight ELN Automation Playbook",
+    "date": "2025-12-10",
+    "sector": "Tools & Tips",
+    "summary": "Practical steps to connect lab notebooks with AI helpers while keeping validation, privacy, and auditability front and center.",
+    "tags": ["ELN", "automation", "playbook"]
+  },
+  {
+    "slug": "chembio-community-contributions",
+    "title": "Contribute ChemBio AI Case Notes",
+    "date": "2025-12-07",
+    "sector": "Contribute",
+    "summary": "How to share case studies, field notes, and resources with ChemBio AI so peers can replicate results faster.",
+    "tags": ["community", "templates", "case studies"]
+  },
+  {
+    "slug": "learning-paths-for-lab-ai",
+    "title": "Learning Paths for Lab Teams Building AI Fluency",
+    "date": "2025-12-01",
+    "sector": "Learning Resources",
+    "summary": "Structured study tracks that help chemists and biologists master AI without skipping scientific rigor.",
+    "tags": ["learning", "labs", "training"]
+  },
+  {
+    "slug": "ai-for-clinical-candidate-selection",
+    "title": "AI for Clinical Candidate Selection",
+    "date": "2025-11-24",
+    "sector": "Pharma",
+    "summary": "How discovery teams pair modeling with assays to prioritize IND-ready molecules with clearer risk profiles.",
+    "tags": ["pharma", "clinical", "selection"]
+  },
+  {
     "slug": "ai-for-hplc-method-development",
     "title": "AI for HPLC Method Development",
     "date": "2025-11-19",
@@ -22,21 +54,5 @@
     "sector": "Global AI Trends",
     "summary": "Signals on model releases, standards, and policies that shape how lab and field teams deploy AI.",
     "tags": ["policy", "benchmarks", "compliance"]
-  },
-  {
-    "slug": "learning-paths-for-lab-ai",
-    "title": "Learning Paths for Lab Teams Building AI Fluency",
-    "date": "2025-12-01",
-    "sector": "Learning Resources",
-    "summary": "Structured study tracks that help chemists and biologists master AI without skipping scientific rigor.",
-    "tags": ["learning", "labs", "training"]
-  },
-  {
-    "slug": "ai-for-clinical-candidate-selection",
-    "title": "AI for Clinical Candidate Selection",
-    "date": "2025-11-24",
-    "sector": "Pharma",
-    "summary": "How discovery teams pair modeling with assays to prioritize IND-ready molecules with clearer risk profiles.",
-    "tags": ["pharma", "clinical", "selection"]
   }
 ]

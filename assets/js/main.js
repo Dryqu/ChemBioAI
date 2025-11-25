@@ -1,4 +1,21 @@
-const FORM_ENDPOINT = 'https://formsubmit.co/chembioaiinsights@gmail.com';
+const FORM_EMAIL = 'chembioaiinsights@gmail.com';
+const FORM_ENDPOINT = `https://formsubmit.co/ajax/${FORM_EMAIL}`;
+const currentPath = window.location.pathname;
+const needsParent = currentPath.includes('/category/') || currentPath.includes('/posts/');
+const BASE_PREFIX = needsParent ? '../' : '';
+
+const POSTS_PATH = `${BASE_PREFIX}posts/posts.json`;
+const ARTICLE_BASE = `${BASE_PREFIX}posts`;
+const CATEGORY_BASE = `${BASE_PREFIX}category`;
+const ALL_CATEGORIES = [
+  'Pharma',
+  'AgTech',
+  'Science Labs',
+  'Tools & Tips',
+  'Global AI Trends',
+  'Learning Resources',
+  'Contribute',
+];
 
 const yearEl = document.getElementById('year');
 if (yearEl) {
@@ -94,6 +111,7 @@ const categoryChips = document.getElementById('categoryChips');
 const categoryTitle = document.getElementById('categoryTitle');
 const categoryHeading = document.getElementById('categoryHeading');
 const categoryDescription = document.getElementById('categoryDescription');
+const bodyCategory = document.body?.dataset?.category || '';
 
 const CATEGORY_DESCRIPTIONS = {
   Pharma: 'AI that accelerates drug discovery, development, and translational science.',
@@ -102,6 +120,7 @@ const CATEGORY_DESCRIPTIONS = {
   'Tools & Tips': 'How-to guides, benchmarks, and playbooks for applied AI.',
   'Global AI Trends': 'Signals on policy, releases, and standards that shape science.',
   'Learning Resources': 'Courses, reading lists, and exercises to upskill science teams.',
+  Contribute: 'Shared case studies, templates, and notes from the ChemBio AI community.',
 };
 
 const formatDate = value => {
@@ -110,32 +129,32 @@ const formatDate = value => {
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 };
 
-const renderArticleCard = (post, basePath = 'posts') => {
+const renderArticleCard = post => {
   const card = document.createElement('article');
   card.className = 'article-card';
   card.dataset.tags = `${post.sector || ''} ${(post.tags || []).join(' ')}`.trim();
-  const categoryHref = `category.html?category=${encodeURIComponent(post.sector)}`;
+  const categoryHref = `${CATEGORY_BASE}/${encodeURIComponent(post.sector.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and'))}.html`;
   card.innerHTML = `
     <p class="article-card__meta"><a href="${categoryHref}">${post.sector}</a> · ${formatDate(post.date)}</p>
     <h4>${post.title}</h4>
     <p>${post.summary}</p>
-    <a href="${basePath}/${post.slug}.html">Read article →</a>
+    <a href="${ARTICLE_BASE}/${post.slug}.html">Read article →</a>
   `;
   return card;
 };
 
-const renderFeatured = (container, post, basePath = 'posts') => {
+const renderFeatured = (container, post) => {
   if (!container) return;
   if (!post) {
     container.innerHTML = '';
     return;
   }
-  const categoryHref = `category.html?category=${encodeURIComponent(post.sector)}`;
+  const categoryHref = `${CATEGORY_BASE}/${encodeURIComponent(post.sector.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and'))}.html`;
   container.innerHTML = `
     <p class="article-card__meta"><a href="${categoryHref}">${post.sector}</a> · ${formatDate(post.date)}</p>
     <h3>${post.title}</h3>
     <p>${post.summary}</p>
-    <a href="${basePath}/${post.slug}.html">Read the latest →</a>
+    <a href="${ARTICLE_BASE}/${post.slug}.html">Read the latest →</a>
   `;
 };
 
@@ -145,20 +164,20 @@ const renderCategoryChips = (container, categories) => {
   categories.forEach(category => {
     const link = document.createElement('a');
     link.className = 'category-chip';
-    link.href = `category.html?category=${encodeURIComponent(category)}`;
+    link.href = `${CATEGORY_BASE}/${encodeURIComponent(category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and'))}.html`;
     link.textContent = category;
     container.appendChild(link);
   });
 };
 
 const loadArticles = () => {
-  fetch('posts/posts.json')
+  fetch(POSTS_PATH)
     .then(response => response.json())
     .then(data => {
       const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));
-      const categories = Array.from(new Set(sorted.map(post => post.sector))).filter(Boolean);
+      const categories = ALL_CATEGORIES;
 
-      if (!categories.length) {
+      if (!sorted.length) {
         if (articlesContainer) {
           articlesContainer.innerHTML = '<p class="muted">Articles are coming soon.</p>';
         }
@@ -190,7 +209,7 @@ const loadArticles = () => {
       }
 
       const params = new URLSearchParams(window.location.search);
-      const selectedCategory = decodeURIComponent(params.get('category') || '') || categories[0];
+      const selectedCategory = bodyCategory || decodeURIComponent(params.get('category') || '') || categories[0];
 
       if (categoryPageContainer) {
         if (selectedCategory) {
