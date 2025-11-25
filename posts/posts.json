@@ -1,11 +1,27 @@
 [
   {
+    "slug": "learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng",
+    "title": "Learn AI the Easy Way: AI For Everyone by Andrew Ng",
+    "date": "2025-11-24",
+    "sector": "Learning Resources",
+    "summary": "AI is changing the way we live and work faster than most people can keep up. We see headlines about ChatGPT, generative AI, and automation every day\u2014but understanding what\u2019s actually happening is not easy.",
+    "tags": [
+      "education",
+      "AI",
+      "Andrew Ng"
+    ]
+  },
+  {
     "slug": "lab-eln-automation-playbook",
     "title": "A Lightweight ELN Automation Playbook",
     "date": "2025-12-10",
     "sector": "Tools & Tips",
     "summary": "Practical steps to connect lab notebooks with AI helpers while keeping validation, privacy, and auditability front and center.",
-    "tags": ["ELN", "automation", "playbook"]
+    "tags": [
+      "ELN",
+      "automation",
+      "playbook"
+    ]
   },
   {
     "slug": "chembio-community-contributions",
@@ -13,7 +29,11 @@
     "date": "2025-12-07",
     "sector": "Contribute",
     "summary": "How to share case studies, field notes, and resources with ChemBio AI so peers can replicate results faster.",
-    "tags": ["community", "templates", "case studies"]
+    "tags": [
+      "community",
+      "templates",
+      "case studies"
+    ]
   },
   {
     "slug": "learning-paths-for-lab-ai",
@@ -21,7 +41,11 @@
     "date": "2025-12-01",
     "sector": "Learning Resources",
     "summary": "Structured study tracks that help chemists and biologists master AI without skipping scientific rigor.",
-    "tags": ["learning", "labs", "training"]
+    "tags": [
+      "learning",
+      "labs",
+      "training"
+    ]
   },
   {
     "slug": "ai-for-clinical-candidate-selection",
@@ -29,7 +53,11 @@
     "date": "2025-11-24",
     "sector": "Pharma",
     "summary": "How discovery teams pair modeling with assays to prioritize IND-ready molecules with clearer risk profiles.",
-    "tags": ["pharma", "clinical", "selection"]
+    "tags": [
+      "pharma",
+      "clinical",
+      "selection"
+    ]
   },
   {
     "slug": "ai-for-hplc-method-development",
@@ -37,7 +65,11 @@
     "date": "2025-11-19",
     "sector": "Science Labs",
     "summary": "How AI can help analytical chemists optimize HPLC methods faster and reduce trial-and-error.",
-    "tags": ["HPLC", "method development", "lab AI"]
+    "tags": [
+      "HPLC",
+      "method development",
+      "lab AI"
+    ]
   },
   {
     "slug": "ai-in-agtech-residue-analysis",
@@ -45,7 +77,11 @@
     "date": "2025-11-10",
     "sector": "AgTech",
     "summary": "Practical ways AI supports pesticide residue studies, field trials, and regulatory submissions.",
-    "tags": ["AgTech", "residue", "regulatory"]
+    "tags": [
+      "AgTech",
+      "residue",
+      "regulatory"
+    ]
   },
   {
     "slug": "global-ai-trends-2025",
@@ -53,6 +89,10 @@
     "date": "2025-10-28",
     "sector": "Global AI Trends",
     "summary": "Signals on model releases, standards, and policies that shape how lab and field teams deploy AI.",
-    "tags": ["policy", "benchmarks", "compliance"]
+    "tags": [
+      "policy",
+      "benchmarks",
+      "compliance"
+    ]
   }
 ]
