@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "lab-eln-automation-playbook",
+    "title": "A Lightweight ELN Automation Playbook",
+    "date": "2025-12-10",
+    "sector": "Tools & Tips",
+    "summary": "Practical steps to connect lab notebooks with AI helpers while keeping validation, privacy, and auditability front and center.",
+    "tags": ["ELN", "automation", "playbook"]
+  },
+  {
+    "slug": "chembio-community-contributions",
+    "title": "Contribute ChemBio AI Case Notes",
+    "date": "2025-12-07",
+    "sector": "Contribute",
+    "summary": "How to share case studies, field notes, and resources with ChemBio AI so peers can replicate results faster.",
+    "tags": ["community", "templates", "case studies"]
+  },
+  {
+    "slug": "learning-paths-for-lab-ai",
+    "title": "Learning Paths for Lab Teams Building AI Fluency",
+    "date": "2025-12-01",
+    "sector": "Learning Resources",
+    "summary": "Structured study tracks that help chemists and biologists master AI without skipping scientific rigor.",
+    "tags": ["learning", "labs", "training"]
+  },
+  {
+    "slug": "ai-for-clinical-candidate-selection",
+    "title": "AI for Clinical Candidate Selection",
+    "date": "2025-11-24",
+    "sector": "Pharma",
+    "summary": "How discovery teams pair modeling with assays to prioritize IND-ready molecules with clearer risk profiles.",
+    "tags": ["pharma", "clinical", "selection"]
+  },
+  {
+    "slug": "ai-for-hplc-method-development",
+    "title": "AI for HPLC Method Development",
+    "date": "2025-11-19",
+    "sector": "Science Labs",
+    "summary": "How AI can help analytical chemists optimize HPLC methods faster and reduce trial-and-error.",
+    "tags": ["HPLC", "method development", "lab AI"]
+  },
+  {
+    "slug": "ai-in-agtech-residue-analysis",
+    "title": "Using AI in AgTech for Residue Analysis",
+    "date": "2025-11-10",
+    "sector": "AgTech",
+    "summary": "Practical ways AI supports pesticide residue studies, field trials, and regulatory submissions.",
+    "tags": ["AgTech", "residue", "regulatory"]
+  },
+  {
+    "slug": "global-ai-trends-2025",
+    "title": "Global AI Trends for Regulated Science Teams",
+    "date": "2025-10-28",
+    "sector": "Global AI Trends",
+    "summary": "Signals on model releases, standards, and policies that shape how lab and field teams deploy AI.",
+    "tags": ["policy", "benchmarks", "compliance"]
+  }
+]
