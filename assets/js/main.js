@@ -6,6 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Sort posts: Newest first
             posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
+            // Store posts globally for search
+            allPosts = posts;
+
             // Determine where we are
             const path = window.location.pathname;
 
@@ -20,6 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Form Handling
     setupForms();
+
+    // Search functionality
+    setupSearch();
 });
 
 function renderLatestPosts(posts) {
@@ -29,7 +35,7 @@ function renderLatestPosts(posts) {
     // Get one article per category
     const categories = ['Pharma', 'AgTech', 'Science Labs', 'Tools & Tips', 'Global AI Trends', 'Learning Resources'];
     const latestByCategory = [];
-    
+
     categories.forEach(category => {
         const categoryPost = posts.find(post => post.category === category);
         if (categoryPost) {
@@ -142,4 +148,79 @@ function setupForms() {
                 });
         });
     });
+}
+
+// Search functionality
+let allPosts = [];
+
+function setupSearch() {
+    const searchInput = document.getElementById('search-input');
+    if (!searchInput) return;
+
+    // Handle Enter key to redirect to search page
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            const query = searchInput.value.trim();
+            if (query) {
+                window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+            }
+        }
+    });
+
+    // If we're on the search page, render results
+    if (window.location.pathname.includes('search.html')) {
+        renderSearchResults();
+    }
+}
+
+function renderSearchResults() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('q');
+    const container = document.getElementById('search-results');
+    const titleElement = document.getElementById('search-title');
+    const queryElement = document.getElementById('search-query');
+
+    if (!container || !query) {
+        if (container) {
+            container.innerHTML = '<p>No search query provided.</p>';
+        }
+        return;
+    }
+
+    // Update search input with the query
+    const searchInput = document.getElementById('search-input');
+    if (searchInput) {
+        searchInput.value = query;
+    }
+
+    // Display the search query
+    if (queryElement) {
+        queryElement.textContent = `Searching for: "${query}"`;
+    }
+
+    // Wait for posts to load
+    if (allPosts.length === 0) {
+        setTimeout(() => renderSearchResults(), 100);
+        return;
+    }
+
+    const filtered = allPosts.filter(post => {
+        return post.title.toLowerCase().includes(query.toLowerCase()) ||
+            post.excerpt.toLowerCase().includes(query.toLowerCase()) ||
+            post.category.toLowerCase().includes(query.toLowerCase());
+    });
+
+    // Update title with count
+    if (titleElement) {
+        const count = filtered.length;
+        const articleWord = count === 1 ? 'article' : 'articles';
+        titleElement.textContent = `Search Results (${count} ${articleWord} found)`;
+    }
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<p>No articles found matching your search. Try different keywords.</p>';
+    } else {
+        container.innerHTML = filtered.map(post => createPostCard(post)).join('');
+    }
 }

@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChemBio AI Insights - AI for a Healthier World</title>
-    <meta name="description" content="Fueling discoveries in pharmaceuticals, agtech, and science labs with practical AI tools, stories, and global trendlines.">
+    <meta name="description"
+        content="Fueling discoveries in pharmaceuticals, agtech, and science labs with practical AI tools, stories, and global trendlines.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,10 +23,22 @@
                     <span>Insights</span>
                 </div>
             </a>
-            <nav>
-                <!-- Simple nav for mobile/desktop -->
+
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="🔍 Search articles...">
+            </div>
+
+            <nav style="display: flex; align-items: center; gap: 1.5rem;">
+                <!-- Desktop Nav Links -->
+                <div class="nav-links" style="display: flex; gap: 1.5rem;">
+                    <a href="#latest" class="nav-link">Articles</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#subscribe" class="nav-link">Subscribe</a>
+                </div>
+
+                <!-- Browse Topics Button -->
                 <a href="#categories" class="btn"
-                    style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Browse
+                    style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color); white-space: nowrap;">Browse
                     Topics</a>
             </nav>
         </div>
@@ -70,7 +83,7 @@
             </div>
         </section>
 
-        <section class="container">
+        <section id="latest" class="container">
             <h2 class="section-title">Latest Articles</h2>
             <div id="latest-posts" class="articles-grid">
                 <!-- Populated by JS -->
@@ -78,7 +91,24 @@
             </div>
         </section>
 
-        <section class="container">
+        <section id="about" class="container" style="margin-bottom: 4rem;">
+            <h2 class="section-title">About the Founder</h2>
+            <div class="founder-card"
+                style="background: white; padding: 2.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); border: 1px solid var(--border-color); max-width: 900px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; line-height: 1.7; color: #334155; margin-bottom: 1.5rem;">
+                    <strong>Dr. Yi Qu</strong> is a scientist and AI innovator redefining how chemistry and biology
+                    intersect with artificial intelligence. He founded ChemBioAI with a clear mission: to harness
+                    <strong>AI for a healthier world</strong>.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.7; color: #334155;">
+                    His vision is to build an open, collaborative future where human expertise and AI intelligence
+                    evolve together—accelerating discovery, enhancing research efficiency, and unlocking new insights
+                    for the global scientific community.
+                </p>
+            </div>
+        </section>
+
+        <section id="subscribe" class="container">
             <h2 class="section-title">Stay Connected</h2>
             <div class="forms-section">
                 <div class="form-card">

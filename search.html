@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - ChemBio AI Insights</title>
+    <meta name="description" content="Search results for ChemBio AI Insights articles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a href="/" class="logo">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>ChemBio AI</h1>
+                    <span>Insights</span>
+                </div>
+            </a>
+
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="🔍 Search articles...">
+            </div>
+
+            <nav>
+                <a href="/" class="btn"
+                    style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back
+                    to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container" style="margin-top: 3rem;">
+            <div style="margin-bottom: 2rem;">
+                <h2 id="search-title" class="section-title">Search Results</h2>
+                <p id="search-query" style="color: #64748b; font-size: 1.1rem;"></p>
+            </div>
+
+            <div id="search-results" class="articles-grid">
+                <!-- Populated by JS -->
+                <p>Loading search results...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+            </div>
+            <div>
+                <p>Contact: <a href="mailto:chembioaiinsights@gmail.com"
+                        style="color: white;">chembioaiinsights@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
