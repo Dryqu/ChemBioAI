@@ -1,0 +1,12 @@
+{
+    "name": "analytical-chemistry-ai-assistant",
+    "version": "1.0.0",
+    "description": "Static site for ChemBio AI Insights",
+    "scripts": {
+        "refresh-posts": "node scripts/generate_posts.js",
+        "txt-to-html": "node scripts/txt-to-html.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+}

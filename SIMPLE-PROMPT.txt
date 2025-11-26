@@ -1,0 +1,15 @@
+================================================================================
+SIMPLE PROMPT FOR CHATGPT/MANUS AI
+================================================================================
+
+Publish this article:
+
+[PASTE YOUR ARTICLE HERE - Format: Line 1=Category, Line 2=Title, Line 3=Date, Line 4+=Content]
+
+Steps:
+1. Save as .txt file in repo root
+2. Run: node scripts/txt-to-html.js [filename].txt
+3. Run: npm run refresh-posts
+4. Commit and push with message: "Published: [Article Title]"
+
+================================================================================

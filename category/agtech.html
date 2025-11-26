@@ -1,51 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgTech Articles | ChemBio AI Insights</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgTech - ChemBio AI Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
-<body class="category-page" data-category="AgTech" id="top">
-  <header class="category-hero">
-    <div class="hero__content">
-      <p class="eyebrow">ChemBio AI Insights</p>
-      <h1 id="categoryTitle">AgTech articles</h1>
-      <p class="lead" id="categoryDescription">AI that strengthens crop protection chemistry and field biology.</p>
-      <div class="category-links" id="categoryChips"></div>
-    </div>
-    <div class="hero__media" aria-hidden="true">
-      <div class="orb orb--pink"></div>
-      <div class="orb orb--blue"></div>
-      <div class="orb orb--green"></div>
-      <img src="../assets/images/lab-network.svg" alt="Stylized AI network" />
-    </div>
-  </header>
 
-  <main>
-    <section class="articles category-view">
-      <div class="articles__header">
-        <h2 id="categoryHeading">Latest in AgTech</h2>
-        <p>See every article we have published in this focus area.</p>
-      </div>
-      <div class="featured" id="categoryFeatured" aria-live="polite"></div>
-      <div class="articles__grid" id="categoryArticles" aria-live="polite">
-        <p class="muted">Loading articles…</p>
-      </div>
-      <div class="articles__empty muted" id="categoryEmpty" hidden>
-        <p>No articles have been published in this category yet. Browse other topics above.</p>
-      </div>
-    </section>
-  </main>
+<body data-category="AgTech">
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>ChemBio AI</h1>
+                    <span>Insights</span>
+                </div>
+            </a>
+            <nav>
+                <a href="../index.html" class="btn"
+                    style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back
+                    to Home</a>
+            </nav>
+        </div>
+    </header>
 
-  <footer>
-    <p>© <span id="year"></span> ChemBio AI Insights · Crafted for GitHub Pages deployment.</p>
-    <a href="#top" class="back-to-top">Back to top ↑</a>
-  </footer>
+    <main>
+        <section class="hero" style="padding: 3rem 0; margin-bottom: 2rem;">
+            <div class="container">
+                <h2>AgTech</h2>
+                <p>Crop protection design, mode-of-action insights, and residue modeling.</p>
+            </div>
+        </section>
 
-  <script src="../assets/js/main.js"></script>
+        <section class="container">
+            <div id="category-posts" class="articles-grid">
+                <p>Loading articles...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+            </div>
+            <div>
+                <p>Contact: <a href="mailto:chembioaiinsights@gmail.com"
+                        style="color: white;">chembioaiinsights@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

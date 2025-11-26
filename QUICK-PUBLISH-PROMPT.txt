@@ -1,0 +1,48 @@
+COPY AND PASTE THIS TO CHATGPT OR MANUS AI:
+================================================================================
+
+Publish this article to the ChemBioAI-Insights GitHub repository.
+
+ARTICLE CONTENT:
+[PASTE YOUR ARTICLE HERE - Format: Line 1=Category, Line 2=Title, Line 3=Date, Line 4+=Content]
+
+STEPS TO EXECUTE:
+1. Save the article as a .txt file in the repository root (use article title as filename)
+2. Run: node scripts/txt-to-html.js [filename].txt
+3. Run: npm run refresh-posts
+4. Git add, commit (message: "Published: [Article Title]"), and push to main branch
+
+CATEGORIES (choose one):
+Pharma | AgTech | Science Labs | Tools & Tips | Global AI Trends | Learning Resources
+
+FORMATTING:
+- Use ## for section headers
+- Use - for bullet points
+- Separate paragraphs with blank lines
+
+================================================================================
+
+EXAMPLE ARTICLE:
+
+Pharma
+AI-Powered Drug Discovery
+December 1, 2025
+
+Artificial intelligence is transforming pharmaceutical research by accelerating the drug discovery process and reducing costs. Machine learning models can now predict molecular properties and identify promising drug candidates in a fraction of the time traditional methods require.
+
+## How It Works
+
+AI algorithms analyze vast databases of chemical compounds and biological data to identify patterns that humans might miss. This enables researchers to focus their efforts on the most promising candidates.
+
+## Key Benefits
+
+- Reduce discovery time from years to months
+- Lower research costs by 40-60%
+- Identify novel drug targets
+- Predict side effects earlier
+
+## Real-World Applications
+
+Major pharmaceutical companies are already using AI to discover treatments for cancer, Alzheimer's, and rare diseases. The technology is proving especially valuable for repurposing existing drugs for new indications.
+
+================================================================================

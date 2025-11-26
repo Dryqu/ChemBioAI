@@ -1,98 +1,56 @@
 [
   {
-    "slug": "learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng",
+    "id": 1,
+    "title": "A Lab Breakthrough: AI and Green Chemistry Streamline Drug Testing",
+    "slug": "a-lab-breakthrough-ai-and-green-chemistry-streamline-drug-testing",
+    "date": "November 25, 2025",
+    "category": "Science Labs",
+    "excerpt": "A recent study introduced a smart analytical chemistry approach that successfully determined solifenacin succinate (SOF) and mirabegron (MIR) simul...",
+    "contentUrl": "/posts/a-lab-breakthrough-ai-and-green-chemistry-streamline-drug-testing.html"
+  },
+  {
+    "id": 2,
+    "title": "AI Policy and Industry Restructuring",
+    "slug": "ai-policy-and-industry-restructuring",
+    "date": "November 25, 2025",
+    "category": "Global AI Trends",
+    "excerpt": "The AI landscape is rapidly evolving with major policy initiatives and industry shifts reshaping how companies and governments approach artificial ...",
+    "contentUrl": "/posts/ai-policy-and-industry-restructuring.html"
+  },
+  {
+    "id": 3,
+    "title": "AI Speeds Up Natural Crop Protection",
+    "slug": "ai-speeds-up-natural-crop-protection",
+    "date": "November 25, 2025",
+    "category": "AgTech",
+    "excerpt": "Modern agriculture needs smart, innovative solutions that protect crops while enhancing sustainability and meeting strict regulatory standards. Mic...",
+    "contentUrl": "/posts/ai-speeds-up-natural-crop-protection.html"
+  },
+  {
+    "id": 4,
+    "title": "Gemini 3, Antigravity, and What It Really Means for Developers",
+    "slug": "gemini-3-antigravity-and-what-it-really-means-for-developers",
+    "date": "November 25, 2025",
+    "category": "Tools & Tips",
+    "excerpt": "Google just launched Gemini 3 and the new Antigravity IDE. Many people say this is the start of a new era. Some even call it a \"programmer killer\"....",
+    "contentUrl": "/posts/gemini-3-antigravity-and-what-it-really-means-for-developers.html"
+  },
+  {
+    "id": 5,
     "title": "Learn AI the Easy Way: AI For Everyone by Andrew Ng",
-    "date": "2025-11-24",
-    "sector": "Learning Resources",
-    "summary": "AI is changing the way we live and work faster than most people can keep up. We see headlines about ChatGPT, generative AI, and automation every day\u2014but understanding what\u2019s actually happening is not easy.",
-    "tags": [
-      "education",
-      "AI",
-      "Andrew Ng"
-    ]
+    "slug": "learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng",
+    "date": "November 25, 2025",
+    "category": "Learning Resources",
+    "excerpt": "AI is changing the way we live and work faster than most people can keep up. We see headlines about ChatGPT, generative AI, and automation every da...",
+    "contentUrl": "/posts/learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng.html"
   },
   {
-    "slug": "lab-eln-automation-playbook",
-    "title": "A Lightweight ELN Automation Playbook",
-    "date": "2025-12-10",
-    "sector": "Tools & Tips",
-    "summary": "Practical steps to connect lab notebooks with AI helpers while keeping validation, privacy, and auditability front and center.",
-    "tags": [
-      "ELN",
-      "automation",
-      "playbook"
-    ]
-  },
-  {
-    "slug": "chembio-community-contributions",
-    "title": "Contribute ChemBio AI Case Notes",
-    "date": "2025-12-07",
-    "sector": "Contribute",
-    "summary": "How to share case studies, field notes, and resources with ChemBio AI so peers can replicate results faster.",
-    "tags": [
-      "community",
-      "templates",
-      "case studies"
-    ]
-  },
-  {
-    "slug": "learning-paths-for-lab-ai",
-    "title": "Learning Paths for Lab Teams Building AI Fluency",
-    "date": "2025-12-01",
-    "sector": "Learning Resources",
-    "summary": "Structured study tracks that help chemists and biologists master AI without skipping scientific rigor.",
-    "tags": [
-      "learning",
-      "labs",
-      "training"
-    ]
-  },
-  {
-    "slug": "ai-for-clinical-candidate-selection",
-    "title": "AI for Clinical Candidate Selection",
-    "date": "2025-11-24",
-    "sector": "Pharma",
-    "summary": "How discovery teams pair modeling with assays to prioritize IND-ready molecules with clearer risk profiles.",
-    "tags": [
-      "pharma",
-      "clinical",
-      "selection"
-    ]
-  },
-  {
-    "slug": "ai-for-hplc-method-development",
-    "title": "AI for HPLC Method Development",
-    "date": "2025-11-19",
-    "sector": "Science Labs",
-    "summary": "How AI can help analytical chemists optimize HPLC methods faster and reduce trial-and-error.",
-    "tags": [
-      "HPLC",
-      "method development",
-      "lab AI"
-    ]
-  },
-  {
-    "slug": "ai-in-agtech-residue-analysis",
-    "title": "Using AI in AgTech for Residue Analysis",
-    "date": "2025-11-10",
-    "sector": "AgTech",
-    "summary": "Practical ways AI supports pesticide residue studies, field trials, and regulatory submissions.",
-    "tags": [
-      "AgTech",
-      "residue",
-      "regulatory"
-    ]
-  },
-  {
-    "slug": "global-ai-trends-2025",
-    "title": "Global AI Trends for Regulated Science Teams",
-    "date": "2025-10-28",
-    "sector": "Global AI Trends",
-    "summary": "Signals on model releases, standards, and policies that shape how lab and field teams deploy AI.",
-    "tags": [
-      "policy",
-      "benchmarks",
-      "compliance"
-    ]
+    "id": 6,
+    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
+    "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
+    "date": "November 25, 2025",
+    "category": "Pharma",
+    "excerpt": "Drug discovery has always been one of the toughest proving grounds for technology. Molecules are complex; they twist, bind, and often defy simple p...",
+    "contentUrl": "/posts/shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs.html"
   }
 ]

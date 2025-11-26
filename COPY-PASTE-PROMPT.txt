@@ -1,0 +1,62 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                   📋 COPY THIS TO CHATGPT OR MANUS AI                        ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Publish this article to the ChemBioAI-Insights GitHub repository.
+
+ARTICLE CONTENT:
+[PASTE YOUR ARTICLE HERE]
+
+STEPS:
+1. Save as .txt file in repo root
+2. Run: node scripts/txt-to-html.js [filename].txt
+3. Run: npm run refresh-posts
+4. Commit and push with message: "Published: [Article Title]"
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                           📝 ARTICLE FORMAT                                  ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Line 1: Category (Pharma, AgTech, Science Labs, Tools & Tips, Global AI Trends, or Learning Resources)
+Line 2: Article Title
+Line 3: Date (format: Month DD, YYYY)
+Line 4+: Content (use ## for headers, - for bullets)
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                           ✨ EXAMPLE ARTICLE                                 ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+Tools & Tips
+AI-Powered Lab Automation
+December 1, 2025
+
+Modern laboratories are embracing artificial intelligence to streamline workflows and improve accuracy. This guide explores practical AI tools that can be implemented today.
+
+## Getting Started
+
+Begin with simple automation tasks like data entry and basic analysis. These quick wins demonstrate value and build confidence.
+
+## Key Benefits
+
+- Reduce manual errors by 90%
+- Save 10+ hours per week
+- Improve data quality
+- Enable better decision-making
+
+## Next Steps
+
+Start with free trials of AI tools designed for your specific field. Many vendors offer training and support for lab professionals.
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                              ✅ THAT'S IT!                                   ║
+║                                                                              ║
+║  Just replace [PASTE YOUR ARTICLE HERE] with your content and send to AI!   ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝

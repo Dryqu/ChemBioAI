@@ -1,0 +1,38 @@
+Science Labs
+A Lab Breakthrough: AI and Green Chemistry Streamline Drug Testing
+November 25, 2025
+
+A recent study introduced a smart analytical chemistry approach that successfully determined solifenacin succinate (SOF) and mirabegron (MIR) simultaneously. These drugs form a fixed-dose combination used to manage overactive bladder (OAB).
+
+## The Challenge and the AI Solution
+
+The analysis of this drug mixture faced several challenges. The spectral properties of SOF and MIR presented significant overlap. MIR exhibited a strong and extended spectral configuration between 200 nm and 400 nm, while SOF showed an indistinct peak near 220 nm.
+
+To solve the spectral overlap, researchers integrated Artificial Intelligence (AI) into the analytical process. AI was applied to optimize signal resolution and select the appropriate wavelength in spectrophotometry.
+
+The methodology developed two complementary smart resolution strategies:
+
+- A zero-window scenario: This used absorbance resolution (AR) for MIR quantification and first derivative (D1) for SOF.
+- A ratio-window scenario: This involved ratio extraction (RE) for MIR, followed by absorbance variation (AV) for SOF.
+
+The smart spectrophotometric methods quantify SOF and MIR without prior separation of the compounds. The zero-order spectra analysis showed that MIR had maxima at 249.0 nm.
+
+## Prioritizing Sustainability in the Lab
+
+The study incorporated the principles of Green Analytical Chemistry (GAC) and aimed for sustainable analysis. Strategic decisions were implemented to align the method with the twelve principles of GAC.
+
+A critical choice in the method design was the selection of ethanol as the main solvent. The developed method's greenness was quantitatively assessed using the Analytical Green Star Area (AGSA) tool.
+
+## Visualizing Complex Results
+
+To summarize the analytical results and enhance clarity, the GLANCE framework was employed. GLANCE, which stands for Graphical Layout for Analytical Chemistry Evaluation, visualizes the method attributes across twelve key dimensions.
+
+This tool addresses the challenge of presenting complex analytical information in a concise, structured format, aiding scientific communication.
+
+## Key Takeaways
+
+This research exemplifies how smart analytical chemistry—merging AI, GAC, and computational intelligence—can deliver structured, accurate, and eco-friendly alternatives for pharmaceutical quality control.
+
+## Citation
+
+Lotfy, H. M., Obaydo, R. H., & Mouhamed, A. A. (2025). GLANCE visualization for smart analytical chemistry methods: Artificial intelligence for spectrophotometric determination of solifenacin–mirabegron combination. Sustainable Chemistry and Pharmacy, 47, 102159.

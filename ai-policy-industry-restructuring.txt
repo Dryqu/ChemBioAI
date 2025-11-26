@@ -1,0 +1,29 @@
+Global AI Trends
+AI Policy and Industry Restructuring
+November 25, 2025
+
+The AI landscape is rapidly evolving with major policy initiatives and industry shifts reshaping how companies and governments approach artificial intelligence infrastructure and development.
+
+## Trump Launches 'Genesis Mission' to Build Integrated National AI Platform
+
+President Trump signed an executive order launching the "Genesis Mission," a coordinated national effort to build the American Science and Security Platform, an integrated AI system harnessing federal supercomputers and scientific datasets.
+
+This initiative signals a major, federally-funded push to accelerate U.S. scientific discovery and technological leadership by treating AI infrastructure as a critical national asset, potentially leading to breakthroughs in energy, health, and manufacturing.
+
+## HP to Cut Up to 6,000 Jobs by 2028, Ramps Up AI Efforts
+
+HP Inc. announced plans to reduce its workforce by 4,000 to 6,000 employees by fiscal 2028 as part of a restructuring plan to cut costs and shift investment toward AI-driven opportunities.
+
+This is a clear example of how major corporations are reallocating resources, trading traditional roles for new AI-focused positions, underscoring the technology's transformative and disruptive impact on the global job market.
+
+## Variational AI Redefines Drug Discovery with Generative AI Platform, Secures Strategic Collaboration with Merck
+
+Variational AI, a generative AI drug discovery company, announced a strategic collaboration with Merck to use its Enki™ platform to design and optimize novel small molecule candidates.
+
+This collaboration validates the shift from traditional high-throughput screening to AI-native chemistry, enabling R&D teams to rapidly generate entirely new, optimized drug molecules from scratch, significantly accelerating the path to new therapeutics.
+
+## Nvidia Stock Falls Amid Report of Google and Meta AI Chip Deal Talks
+
+Nvidia's stock dipped following a report that Google and Meta are in talks for a multi-billion dollar deal to supply each other with custom-designed AI chips, reducing reliance on Nvidia's hardware.
+
+This move by two of the largest AI players highlights the intense, multi-billion dollar race to control the underlying AI infrastructure, suggesting a future where custom-built chips challenge the current dominance of a single supplier.
