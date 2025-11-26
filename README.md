@@ -4,7 +4,7 @@ A modern, static website featuring AI-driven insights for pharmaceuticals, agtec
 
 ## 🌐 Live Website
 
-Visit the site at: [ChemBio AI Insights](https://dryqu.github.io/ChemBioAI/)
+Visit the site at: [ChemBio AI Insights](https://chembioai.com/)
 
 ## ✨ Features
 
