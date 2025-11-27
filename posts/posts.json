@@ -1,5 +1,14 @@
 [
   {
+    "id": 10,
+    "title": "AI Digest — AI's Job Impact and Google's Hardware Push",
+    "slug": "ai-digest-ai-s-job-impact-and-google-s-hardware-push",
+    "date": "November 27, 2025",
+    "category": "Global AI Trends",
+    "excerpt": "A new MIT study estimates that current AI systems are technically and economically capable of performing tasks equivalent to 11.7% of the U.S. labor market, representing about $1.2 trillion in wages.",
+    "contentUrl": "/posts/ai-digest-ai-s-job-impact-and-google-s-hardware-push.html"
+  },
+  {
     "id": 3,
     "title": "AI's Global Impact: Jobs, Chips, and Molecular Design",
     "slug": "ai-s-global-impact-jobs-chips-and-molecular-design",
