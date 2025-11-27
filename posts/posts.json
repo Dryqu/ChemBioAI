@@ -3,7 +3,7 @@
     "id": 3,
     "title": "AI's Global Impact: Jobs, Chips, and Molecular Design",
     "slug": "ai-s-global-impact-jobs-chips-and-molecular-design",
-    "date": "November 26, 2025",
+    "date": "November 27, 2025",
     "category": "Global AI Trends",
     "excerpt": "",
     "contentUrl": "/posts/ai-s-global-impact-jobs-chips-and-molecular-design.html"
@@ -12,7 +12,7 @@
     "id": 5,
     "title": "Don’t Get Left Behind in the AI Era",
     "slug": "dont-get-left-behind-in-the-ai-era",
-    "date": "Nov 26, 2025",
+    "date": "November 27, 2025",
     "category": "Tools & Tips",
     "excerpt": "If we don’t want to fall behind in the AI era, there is one simple habit we can build:",
     "contentUrl": "/posts/dont-get-left-behind-in-the-ai-era.html"
@@ -21,7 +21,7 @@
     "id": 1,
     "title": "A Lab Breakthrough: AI and Green Chemistry Streamline Drug Testing",
     "slug": "a-lab-breakthrough-ai-and-green-chemistry-streamline-drug-testing",
-    "date": "November 25, 2025",
+    "date": "November 27, 2025",
     "category": "Science Labs",
     "excerpt": "A recent study introduced a smart analytical chemistry approach that successfully determined solifenacin succinate (SOF) and mirabegron (MIR) simul...",
     "contentUrl": "/posts/a-lab-breakthrough-ai-and-green-chemistry-streamline-drug-testing.html"
@@ -30,7 +30,7 @@
     "id": 2,
     "title": "AI Policy and Industry Restructuring",
     "slug": "ai-policy-and-industry-restructuring",
-    "date": "November 25, 2025",
+    "date": "November 27, 2025",
     "category": "Global AI Trends",
     "excerpt": "The AI landscape is rapidly evolving with major policy initiatives and industry shifts reshaping how companies and governments approach artificial ...",
     "contentUrl": "/posts/ai-policy-and-industry-restructuring.html"
@@ -39,7 +39,7 @@
     "id": 4,
     "title": "AI Speeds Up Natural Crop Protection",
     "slug": "ai-speeds-up-natural-crop-protection",
-    "date": "November 25, 2025",
+    "date": "November 27, 2025",
     "category": "AgTech",
     "excerpt": "Modern agriculture needs smart, innovative solutions that protect crops while enhancing sustainability and meeting strict regulatory standards. Mic...",
     "contentUrl": "/posts/ai-speeds-up-natural-crop-protection.html"
@@ -48,7 +48,7 @@
     "id": 6,
     "title": "Gemini 3, Antigravity, and What It Really Means for Developers",
     "slug": "gemini-3-antigravity-and-what-it-really-means-for-developers",
-    "date": "November 25, 2025",
+    "date": "November 27, 2025",
     "category": "Tools & Tips",
     "excerpt": "Google just launched Gemini 3 and the new Antigravity IDE. Many people say this is the start of a new era. Some even call it a \"programmer killer\"....",
     "contentUrl": "/posts/gemini-3-antigravity-and-what-it-really-means-for-developers.html"
@@ -57,9 +57,18 @@
     "id": 7,
     "title": "Learn AI the Easy Way: AI For Everyone by Andrew Ng",
     "slug": "learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng",
-    "date": "November 25, 2025",
+    "date": "November 27, 2025",
     "category": "Learning Resources",
     "excerpt": "AI is changing the way we live and work faster than most people can keep up. We see headlines about ChatGPT, generative AI, and automation every da...",
     "contentUrl": "/posts/learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng.html"
+  },
+    {
+    "id": 8,
+    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
+    "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
+    "date": "November 27, 2025",
+    "category": "Pharma",
+    "excerpt": "Drug discovery has always been one of the toughest proving grounds for technology. Molecules are complex; they twist, bind, and often defy simple p...",
+    "contentUrl": "/posts/shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs.html"
   }
 ]
