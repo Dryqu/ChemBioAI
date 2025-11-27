@@ -61,14 +61,5 @@
     "category": "Learning Resources",
     "excerpt": "AI is changing the way we live and work faster than most people can keep up. We see headlines about ChatGPT, generative AI, and automation every da...",
     "contentUrl": "/posts/learn-ai-the-easy-way-ai-for-everyone-by-andrew-ng.html"
-  },
-  {
-    "id": 8,
-    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
-    "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
-    "date": "November 25, 2025",
-    "category": "Pharma",
-    "excerpt": "Drug discovery has always been one of the toughest proving grounds for technology. Molecules are complex; they twist, bind, and often defy simple p...",
-    "contentUrl": "/posts/shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs.html"
   }
 ]
