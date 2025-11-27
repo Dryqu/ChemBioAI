@@ -53,4 +53,14 @@
     "excerpt": "Drug discovery has always been one of the toughest proving grounds for technology. Molecules are complex; they twist, bind, and often defy simple p...",
     "contentUrl": "/posts/shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs.html"
   }
+  },
+  {
+    "id": 7,
+    "title": "AI's Global Impact: Jobs, Chips, and Molecular Design",
+    "slug": "ai-s-global-impact-jobs-chips-and-molecular-design",
+    "date": "November 26, 2025",
+    "category": "Global AI Trends",
+    "excerpt": "A new study from MIT and Oak Ridge National Laboratory, using a labor simulation tool called the Iceberg Index, found that current AI systems could already perform tasks equivalent to 11.7% of the U.S. labor market, or $1.2 trillion in wages.",
+    "contentUrl": "/posts/ai-s-global-impact-jobs-chips-and-molecular-design.html"
+  }
 ]
