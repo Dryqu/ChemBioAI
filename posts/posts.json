@@ -1,5 +1,14 @@
 [
   {
+    "id": 11,
+    "title": "Forget Chatbots: The AI Revolution Is Moving to Autonomous Agents",
+    "slug": "forget-chatbots-the-ai-revolution-is-moving-to-autonomous-agents",
+    "date": "November 28, 2025",
+    "category": "Global AI Trends",
+    "excerpt": "I just read the new introduction to agents white paper from Google, and it covers an important topic: Artificial Intelligence is undergoing a fundamental shift. For years, AI was passive, focused on discrete tasks like generating text or answering one question. It needed constant human guidance.",
+    "contentUrl": "/posts/forget-chatbots-the-ai-revolution-is-moving-to-autonomous-agents.html"
+  },
+  {
     "id": 10,
     "title": "AI Digest — AI's Job Impact and Google's Hardware Push",
     "slug": "ai-digest-ai-s-job-impact-and-google-s-hardware-push",
