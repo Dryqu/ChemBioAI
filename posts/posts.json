@@ -1,5 +1,14 @@
 [
   {
+    "id": 12,
+    "title": "Start Orchestrating AI: Why Your Company Needs a Conductor, Not Just Bridges",
+    "slug": "start-orchestrating-ai-why-your-company-needs-a-conductor-not-just-bridges",
+    "date": "November 29, 2025",
+    "category": "Learning Resources",
+    "excerpt": "I recently read the incredibly insightful report from Zapier, Beyond integration: Why top enterprises are choosing AI orchestration, and I wanted to share what I learned from this report about why modern businesses need to stop just integrating AI and start orchestrating it.",
+    "contentUrl": "/posts/start-orchestrating-ai-why-your-company-needs-a-conductor-not-just-bridges.html"
+  },
+  {
     "id": 11,
     "title": "Forget Chatbots: The AI Revolution Is Moving to Autonomous Agents",
     "slug": "forget-chatbots-the-ai-revolution-is-moving-to-autonomous-agents",
