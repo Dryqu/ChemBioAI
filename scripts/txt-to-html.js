@@ -109,7 +109,7 @@ try {
             <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
                 <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">${category}</span>
                 <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">${title}</h1>
-                <p style="color: #64748b;">${date}</p>
+                <p style="color: #64748b;">${date} • By Yi Qu</p>
             </div>
 
             <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
