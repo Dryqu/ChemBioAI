@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Decide When to Split a Document for AI (and My Simple Rules) - ChemBio AI Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>ChemBio AI</h1>
+                    <span>Insights</span>
+                </div>
+            </a>
+            <nav>
+                <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
+            <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
+                <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Tools & Tips</span>
+                <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">How I Decide When to Split a Document for AI (and My Simple Rules)</h1>
+                <p style="color: #64748b;">December 2, 2025 • By Yi Qu</p>
+            </div>
+
+            <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">The Problem with Giant Files</h2>
+                <p style="margin-bottom: 1.5rem;">When I first used AI to search my notes, I dropped giant files into the system and hoped for magic.</p>
+                <p style="margin-bottom: 1.5rem;">Instead, I got slow searches, vague answers, and sometimes the AI skipped the one section I needed.</p>
+                <p style="margin-bottom: 1.5rem;">So I changed my approach. Now, before I upload anything, I pause and ask:</p>
+                <p style="margin-bottom: 1.5rem;"><strong>Should I split this into smaller pieces, or keep it as one file?</strong></p>
+                <p style="margin-bottom: 1.5rem;">Over time, I turned that into a simple checklist that you can also use.</p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">My Core Philosophy: The Rule of Thumb</h2>
+                <p style="margin-bottom: 1.5rem;">I use one main rule to guide my decision:</p>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split</strong> if it’s big, mixed, or updated in different parts.</li>
+                    <li><strong>Keep</strong> if it’s small, focused, and rarely changed.</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">But what counts as “big” or “mixed”? That’s where my more concrete checks help.</p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">The AI Document Splitting Checklist</h2>
+                <p style="margin-bottom: 1.5rem;">When I’m not sure, I run through this simple list of checks. I don’t treat these numbers as strict laws; they are guardrails to prevent a giant “junk drawer” file.</p>
+
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; margin-bottom: 0.5rem;">1. File Size</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split:</strong> If the file is over <strong>~100 MB</strong>.</li>
+                    <li><strong>Keep:</strong> If it’s under <strong>~100 MB</strong> and easy to upload and re-index.</li>
+                </ul>
+
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; margin-bottom: 0.5rem;">2. Number of Topics</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split:</strong> If it covers many unrelated topics (e.g., travel + finances + meeting notes).</li>
+                    <li><strong>Keep:</strong> If it’s one clear story or guide.</li>
+                </ul>
+
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; margin-bottom: 0.5rem;">3. Search Needs (Precision)</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split:</strong> If I need high precision (“Find the decision from that one meeting”).</li>
+                    <li><strong>Keep:</strong> If it’s just a general reference I browse.</li>
+                </ul>
+
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; margin-bottom: 0.5rem;">4. Update Frequency</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split:</strong> If I often update only part of the file (like a “FAQ” section).</li>
+                    <li><strong>Keep:</strong> If I rarely change it.</li>
+                </ul>
+
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; margin-bottom: 0.5rem;">5. Structured Data (Tables, Spreadsheets)</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split or Move:</strong> If a table has more than <strong>~2,000 rows</strong>, consider moving it to a database.</li>
+                    <li><strong>Keep:</strong> If it consists of small tables or summaries.</li>
+                </ul>
+
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2rem; margin-bottom: 0.5rem;">6. Compliance and Permissions</h3>
+                <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: disc;">
+                    <li><strong>Split:</strong> If some sections need special access or rules.</li>
+                    <li><strong>Keep:</strong> If there are no special compliance needs.</li>
+                </ul>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">The Payoff: Why This Habit Works</h2>
+                <p style="margin-bottom: 1.5rem;">This tiny habit—asking “split or keep?” and checking against my list—pays off in three ways:</p>
+                <ol style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: decimal;">
+                    <li><strong>Better AI Answers:</strong> The model reads less noise and finds the right context faster.</li>
+                    <li><strong>Less Maintenance:</strong> I know exactly which piece to edit and re-index.</li>
+                    <li><strong>Future-Proof System:</strong> As my knowledge grows, it stays organized instead of turning into chaos.</li>
+                </ol>
+                <p style="margin-bottom: 1.5rem;">I’m not trying to build a perfect system. I’m just giving both myself and the AI a fair chance to find the right thing, quickly.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+            </div>
+            <div>
+                <p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

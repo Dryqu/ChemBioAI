@@ -1,5 +1,16 @@
 [
   {
+    "id": 14,
+    "title": "How I Decide When to Split a Document for AI (and My Simple Rules)",
+    "slug": "how-i-decide-when-to-split-a-document-for-ai-and-my-simple-rules",
+    "date": "December 2, 2025",
+    "category": "Tools & Tips",
+    "excerpt": "When I first used AI to search my notes, I dropped giant files into the system and hoped for magic. Instead, I got slow searches, vague answers, and sometimes the AI skipped the one section I needed. So I changed my approach. Now, before I upload anything, I pause and ask: Should I split this into smaller pieces, or keep it as one file?",
+    "contentUrl": "/posts/how-i-decide-when-to-split-a-document-for-ai-and-my-simple-rules.html",
+    "name": "Yi Qu",
+    "readingTime": "3 min"
+  },
+  {
     "id": 13,
     "title": "AI Digest — Gemini 3 and the Global AI Infrastructure Race",
     "slug": "ai-digest-gemini-3-and-the-global-ai-infrastructure-race",
