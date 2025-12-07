@@ -142,4 +142,16 @@
     "excerpt": "If we don\u2019t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
     "contentUrl": "/posts/dont-get-left-behind-in-the-ai-era.html"
   }
+  },
+  {
+    "id": 17,
+    "title": "Today's AI Digest — Frontier Models, Drug Discovery, and Data Scarcity",
+    "slug": "ai-digest-frontier-models-drug-discovery-and-data-scarcity",
+    "date": "December 07, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "Mistral AI released its new family of open-source models, Mistral 3, which includes the powerful, sparse Mixture-of-Experts model, Mistral Large 3, and smaller, highly efficient Ministral 3 models, all featuring multimodal and multilingual capabilities.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-frontier-models-drug-discovery-and-data-scarcity.html"
+  }
 ]
