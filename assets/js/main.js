@@ -76,7 +76,7 @@ function createPostCard(post) {
                 <h3 class="article-title">
                     <a href="${post.contentUrl}">${post.title}</a>
                 </h3>
-                <p class="article-excerpt">${post.excerpt}</p>
+                <p class="article-excerpt">${post.summary || post.excerpt}</p>
                 <a href="${post.contentUrl}" class="read-more">Read Article &rarr;</a>
             </div>
         </article>
