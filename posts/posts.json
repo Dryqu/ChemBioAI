@@ -1,7 +1,7 @@
 [
   {
     "id": 16,
-    "title": "AI Digest \u2014 AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
+    "title": "AI Digest — AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
     "slug": "ai-digest-ai-ready-chemistry-secures-drug-supply-plus-chatgpts-shopping-edge",
     "date": "December 06, 2025",
     "category": "Global AI Trends",
@@ -16,7 +16,7 @@
     "slug": "what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation",
     "date": "December 3, 2025",
     "category": "Global AI Trends",
-    "excerpt": "Today I attended a webinar regarding Microsoft\u2019s Internal HR Transformation, featuring leaders from Microsoft. Here\u2019s What I Learned About the Future of Work.",
+    "excerpt": "Today I attended a webinar regarding Microsoft’s Internal HR Transformation, featuring leaders from Microsoft. Here’s What I Learned About the Future of Work.",
     "contentUrl": "/posts/what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation.html",
     "name": "Yi Qu",
     "readingTime": "3 min"
@@ -34,7 +34,7 @@
   },
   {
     "id": 13,
-    "title": "AI Digest \u2014 Gemini 3 and the Global AI Infrastructure Race",
+    "title": "AI Digest — Gemini 3 and the Global AI Infrastructure Race",
     "slug": "ai-digest-gemini-3-and-the-global-ai-infrastructure-race",
     "date": "November 30, 2025",
     "category": "Global AI Trends",
@@ -63,7 +63,7 @@
   },
   {
     "id": 10,
-    "title": "AI Digest \u2014 AI's Job Impact and Google's Hardware Push",
+    "title": "AI Digest — AI's Job Impact and Google's Hardware Push",
     "slug": "ai-digest-ai-s-job-impact-and-google-s-hardware-push",
     "date": "November 27, 2025",
     "category": "Global AI Trends",
@@ -127,7 +127,7 @@
   },
   {
     "id": 8,
-    "title": "Shuttle Pharma\u2019s Smartest Move Yet: Teaching Machines to Discover Drugs",
+    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
     "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
     "date": "November 27, 2025",
     "category": "Pharma",
@@ -136,11 +136,11 @@
   },
   {
     "id": 6,
-    "title": "Don\u2019t Get Left Behind in the AI Era",
+    "title": "Don’t Get Left Behind in the AI Era",
     "slug": "dont-get-left-behind-in-the-ai-era",
     "date": "November 27, 2025",
     "category": "Tools & Tips",
-    "excerpt": "If we don\u2019t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
+    "excerpt": "If we don’t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
     "contentUrl": "/posts/dont-get-left-behind-in-the-ai-era.html"
   },
   {
@@ -153,5 +153,16 @@
     "summary": "This digest focuses on the release of frontier models like Mistral 3 and Gen-4.5, the validation of an AI-designed drug, and the critical issue of data scarcity forcing a shift to synthetic data.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/ai-digest-frontier-models-drug-discovery-and-data-scarcity.html"
+  },
+  {
+    "id": 18,
+    "title": "AI Digest — AI's Regulatory Future and Automated Drug Discovery",
+    "slug": "ai-digest-ai-s-regulatory-future-and-automated-drug-discovery",
+    "date": "December 08, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "This digest covers major developments in AI, including a $45M funding round for ChemLex's automated drug discovery lab, President Trump's plan for a single national AI regulatory framework, the partnership between Warby Parker and Google on AI-powered smart glasses, and the expansion of Google's Gemini 3 Pro to the command-line interface.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/ai-digest-ai-s-regulatory-future-and-automated-drug-discovery.html"
   }
 ]
