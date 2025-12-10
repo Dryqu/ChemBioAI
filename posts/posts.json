@@ -230,5 +230,16 @@
     "summary": "This article explains the Mixture of Experts (MoE) architecture, a method that allows a single large AI model to act like a team of specialized experts, leading to faster and cheaper computation while maintaining high quality.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/how-can-one-ai-model-act-like-a-whole-team-of-experts.html"
+  },
+  {
+    "id": 25,
+    "title": "AI Rules in 60 Seconds: The EU AI Act",
+    "slug": "ai-rules-in-60-seconds-the-eu-ai-act",
+    "date": "December 10, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "The European Union’s AI Act is designed to harness the power of artificial intelligence while protecting people’s health, safety, and fundamental rights. The core philosophy is to stimulate innovation, but only “within certain boundaries”. I am sharing my key takeaways and perspectives below.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/ai-rules-in-60-seconds-the-eu-ai-act.html"
   }
 ]
