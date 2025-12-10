@@ -222,7 +222,6 @@
     "summary": "A reliable workflow using OCR and Excel's 'Get Data from PDF' feature to accurately extract data from complex, scanned PDF tables, which often fail with general AI tools.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/how-i-turn-scanned-pdf-tables-into-excel.html"
-  }
   },
   {
     "id": 24,
