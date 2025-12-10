@@ -164,8 +164,7 @@
     "summary": "This digest covers major developments in AI, including a $45M funding round for ChemLex's automated drug discovery lab, President Trump's plan for a single national AI regulatory framework, the partnership between Warby Parker and Google on AI-powered smart glasses, and the expansion of Google's Gemini 3 Pro to the command-line interface.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/ai-digest-ai-s-regulatory-future-and-automated-drug-discovery.html"
-  }
-,
+  },
   {
     "id": 19,
     "title": "Why I Did It with the Mindset of “AI First” (and Why Verification Matters)",
@@ -187,8 +186,7 @@
     "summary": "In a session led by Make, the focus was on moving beyond simple task automation to implementing enterprise-grade governance, lifecycle management, and reliable AI integration for workflows. The session provided a technical deep dive into event-driven architecture using Google Apps Script and Webhooks, and outlined a critical scenario lifecycle for managing automations.",
     "readingTime": "5 min read",
     "contentUrl": "/posts/from-hobbyist-to-enterprise-mastering-workflow-automation-with-make.html"
-  }
-,
+  },
   {
     "id": 21,
     "title": "A Simple AI Tip: Use Built-In OCR Instead of Installing Your Own",
@@ -199,8 +197,7 @@
     "summary": "Many AI assistants now include powerful Optical Character Recognition (OCR) built-in. This tip suggests using the AI's native OCR capabilities to convert images or PDFs with text into editable text, bypassing the need for separate, often complex, local OCR software like Tesseract.",
     "readingTime": "1 min read",
     "contentUrl": "/posts/a-simple-ai-tip-use-built-in-ocr-instead-of-installing-your-own.html"
-  }
-,
+  },
   {
     "id": 22,
     "title": "Turn a Paper Business Card into a Phone Contact with AI",
