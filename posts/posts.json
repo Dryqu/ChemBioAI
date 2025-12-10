@@ -211,5 +211,16 @@
     "summary": "A simple, three-step guide on how to use an AI chat app (like ChatGPT) to quickly convert a physical business card into a digital phone contact (vCard file), eliminating manual typing and reducing errors.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/turn-a-paper-business-card-into-a-phone-contact-with-ai.html"
+  },
+  {
+    "id": 23,
+    "title": "How I Turn Scanned PDF Tables into Excel",
+    "slug": "how-i-turn-scanned-pdf-tables-into-excel",
+    "date": "December 10, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "A reliable workflow using OCR and Excel's 'Get Data from PDF' feature to accurately extract data from complex, scanned PDF tables, which often fail with general AI tools.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/how-i-turn-scanned-pdf-tables-into-excel.html"
   }
 ]

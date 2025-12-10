@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How I Turn Scanned PDF Tables into Excel</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <a href="../index.html" class="logo">ChemBio AI Insights</a>
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <article class="container post-article">
+            <header class="post-header">
+                <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">How I Turn Scanned PDF Tables into Excel</h1>
+                <p class="post-meta" style="font-size: 1rem; color: var(--text-color-light);">
+                    <span style="margin-right: 1rem;">December 10, 2025 | Yi Qu</span>
+                    <span style="margin-right: 1rem;">Category: Tools & Tips</span>
+                    <span>2 min read</span>
+                </p>
+            </header>
+            <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+                <p style="margin-bottom: 1.5rem;">Recently I ran into a problem that really pushed me to look for a better workflow.</p>
+                <p style="margin-bottom: 1.5rem;">Someone sent me a long PDF report. It looked fine at first, but then I realized: every page was actually a scan. All the tables were just images. I couldn't copy anything, I couldn't edit any numbers, and I definitely didn't want to type everything by hand.</p>
+                <p style="margin-bottom: 1.5rem;">My first idea was:</p>
+                <blockquote style="border-left: 4px solid var(--accent-color); padding-left: 1rem; margin: 1.5rem 0; font-style: italic;">"No problem, I'll just use AI. I'll upload the PDF and ask it to turn everything into Excel."</blockquote>
+                <p style="margin-bottom: 1.5rem;">So I tried several large language models and different AI tools.</p>
+                <p style="margin-bottom: 1.5rem;">My experience was:</p>
+                <ul>
+                    <li>For very simple tables, sometimes it worked.</li>
+                    <li>But for more complex tables (many pages, many columns, messy layout), the results were often wrong or incomplete: rows missed, columns mixed, table structure broken</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">After a few tests, I realized: for serious work, I needed a more stable and controllable method.</p>
+                <p style="margin-bottom: 1.5rem;">That's when I started using a combo of OCR + Excel's "Get Data from PDF".</p>
+                <p style="margin-bottom: 1.5rem;">This has worked much better for me, so I'd like to share my steps.</p>
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Step 1: (Sometimes) Use OCR First</h2>
+                <p style="margin-bottom: 1.5rem;">If the PDF is clearly a scan (you cannot select any text), I first run it through an OCR tool.</p>
+                <p style="margin-bottom: 1.5rem;">You can use:</p>
+                <ul>
+                    <li>an AI tool that has OCR, or</li>
+                    <li>a normal PDF tool that supports OCR</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">My goal is to turn the file into a searchable PDF, so that:</p>
+                <ul>
+                    <li>I can select text</li>
+                    <li>I can search for a word or number inside the PDF</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">If that works, then I know the OCR step is OK.</p>
+                <p style="margin-bottom: 1.5rem;">Sometimes I skip this step and test Excel directly.</p>
+                <p style="margin-bottom: 1.5rem;">If Excel can't recognize the tables properly, then I go back and add the OCR step.</p>
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Step 2: Use Excel - Get Data → From PDF</h2>
+                <p style="margin-bottom: 1.5rem;">Next, I open Excel and:</p>
+                <ul>
+                    <li>Go to the Data tab</li>
+                    <li>Click Get Data → From File → From PDF</li>
+                    <li>Choose my PDF file</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">Excel then analyzes the PDF and shows me:</p>
+                <ul>
+                    <li>the pages</li>
+                    <li>the tables it finds on each page</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">I can pick the table or page I want to import.</p>
+                <p style="margin-bottom: 1.5rem;">Note: This feature is available in newer versions of Excel (for example, Microsoft 365).</p>
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Step 3: Load or Transform the Data</h2>
+                <p style="margin-bottom: 1.5rem;">After I select a table, Excel gives me two options:</p>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Load</h3>
+                <p style="margin-bottom: 1.5rem;">I use this when the table already looks clean. It just puts the table into Excel directly.</p>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Transform Data</h3>
+                <p style="margin-bottom: 1.5rem;">I use this when I need to clean things first. Here I can:</p>
+                <ul>
+                    <li>remove extra rows or columns</li>
+                    <li>rename columns</li>
+                    <li>change data types</li>
+                    <li>even transpose the table (swap rows and columns)</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">Then I load the cleaned table into Excel.</p>
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">What I Learned</h2>
+                <p style="margin-bottom: 1.5rem;">From my own trials, I found:</p>
+                <ul>
+                    <li>Asking AI to handle a long, complex, scanned PDF all at once is still risky.</li>
+                    <li>Using OCR + Excel's "Get Data from PDF" is much more reliable for real work.</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">Now, whenever I receive a scanned PDF full of tables, this is my go-to workflow.</p>
+                <p style="margin-bottom: 1.5rem;">If you also deal with scanned reports and tables, you might want to try this method and see if it saves you time and frustration like it did for me.</p>
+            </div>
+        </article>
+    </main>
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+            </div>
+            <div>
+                <p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
