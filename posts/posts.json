@@ -223,4 +223,16 @@
     "readingTime": "2 min read",
     "contentUrl": "/posts/how-i-turn-scanned-pdf-tables-into-excel.html"
   }
+  },
+  {
+    "id": 24,
+    "title": "How Can One AI Model Act Like a Whole Team of Experts?",
+    "slug": "how-can-one-ai-model-act-like-a-whole-team-of-experts",
+    "date": "December 10, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "This article explains the Mixture of Experts (MoE) architecture, a method that allows a single large AI model to act like a team of specialized experts, leading to faster and cheaper computation while maintaining high quality.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/how-can-one-ai-model-act-like-a-whole-team-of-experts.html"
+  }
 ]
