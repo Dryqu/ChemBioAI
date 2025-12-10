@@ -176,5 +176,16 @@
     "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of “AI first.”",
     "readingTime": "1 min read",
     "contentUrl": "/posts/why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters.html"
+  },
+  {
+    "id": 20,
+    "title": "From Hobbyist to Enterprise: Mastering Workflow Automation with Make",
+    "slug": "from-hobbyist-to-enterprise-mastering-workflow-automation-with-make",
+    "date": "December 09, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "In a session led by Make, the focus was on moving beyond simple task automation to implementing enterprise-grade governance, lifecycle management, and reliable AI integration for workflows. The session provided a technical deep dive into event-driven architecture using Google Apps Script and Webhooks, and outlined a critical scenario lifecycle for managing automations.",
+    "readingTime": "5 min read",
+    "contentUrl": "/posts/from-hobbyist-to-enterprise-mastering-workflow-automation-with-make.html"
   }
 ]
