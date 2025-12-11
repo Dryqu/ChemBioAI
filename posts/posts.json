@@ -241,5 +241,16 @@
     "summary": "The European Union’s AI Act is designed to harness the power of artificial intelligence while protecting people’s health, safety, and fundamental rights. The core philosophy is to stimulate innovation, but only “within certain boundaries”. I am sharing my key takeaways and perspectives below.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/ai-rules-in-60-seconds-the-eu-ai-act.html"
+  },
+  {
+    "id": 26,
+    "title": "Can an AI Really Turn Your Video or Audio Into High-Quality Text?",
+    "slug": "can-an-ai-really-turn-your-video-or-audio-into-high-quality-text",
+    "date": "December 10, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "An exploration of how modern large language models, such as Gemini 3, can accurately and efficiently transcribe video and audio files, including features like speaker detection, timestamped subtitles, and multilingual support, significantly reducing the time spent turning spoken content into text.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/can-an-ai-really-turn-your-video-or-audio-into-high-quality-text.html"
   }
 ]
