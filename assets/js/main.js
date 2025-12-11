@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Load posts
-    fetch('/posts/posts.json')
+    fetch('./posts/posts.json')
         .then(response => response.json())
         .then(posts => {
             // Sort posts: Newest first
