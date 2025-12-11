@@ -216,41 +216,19 @@
     "date": "December 10, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "A reliable workflow using OCR and Excel's 'Get Data from PDF' feature to accurately extract data from complex, scanned PDF tables, which often fail with general AI tools.",
-    "readingTime": "2 min read",
+    "summary": "A guide on using AI to extract data from scanned PDF tables and convert it into an Excel-ready format, focusing on the efficiency and accuracy of modern AI tools over traditional OCR methods.",
+    "readingTime": "3 min read",
     "contentUrl": "/posts/how-i-turn-scanned-pdf-tables-into-excel.html"
   },
   {
     "id": 24,
-    "title": "How Can One AI Model Act Like a Whole Team of Experts?",
-    "slug": "how-can-one-ai-model-act-like-a-whole-team-of-experts",
+    "title": "5 Google Agent Playbooks You Should Read",
+    "slug": "5-google-agent-playbooks-you-should-read",
     "date": "December 10, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "This article explains the Mixture of Experts (MoE) architecture, a method that allows a single large AI model to act like a team of specialized experts, leading to faster and cheaper computation while maintaining high quality.",
-    "readingTime": "2 min read",
-    "contentUrl": "/posts/how-can-one-ai-model-act-like-a-whole-team-of-experts.html"
-  },
-  {
-    "id": 25,
-    "title": "AI Rules in 60 Seconds: The EU AI Act",
-    "slug": "ai-rules-in-60-seconds-the-eu-ai-act",
-    "date": "December 10, 2025",
-    "category": "Global AI Trends",
-    "name": "Yi Qu",
-    "summary": "The European Union’s AI Act is designed to harness the power of artificial intelligence while protecting people’s health, safety, and fundamental rights. The core philosophy is to stimulate innovation, but only “within certain boundaries”. I am sharing my key takeaways and perspectives below.",
-    "readingTime": "2 min read",
-    "contentUrl": "/posts/ai-rules-in-60-seconds-the-eu-ai-act.html"
-  },
-  {
-    "id": 26,
-    "title": "Can an AI Really Turn Your Video or Audio Into High-Quality Text?",
-    "slug": "can-an-ai-really-turn-your-video-or-audio-into-high-quality-text",
-    "date": "December 10, 2025",
-    "category": "Tools & Tips",
-    "name": "Yi Qu",
-    "summary": "An exploration of how modern large language models, such as Gemini 3, can accurately and efficiently transcribe video and audio files, including features like speaker detection, timestamped subtitles, and multilingual support, significantly reducing the time spent turning spoken content into text.",
+    "summary": "A short guide to five free whitepapers from Google and Kaggle (over 250 pages) on building real-world AI agents, covering agent basics, tools (MCP), memory, quality, and production. It provides a quick summary of each paper's key takeaways.",
     "readingTime": "3 min read",
-    "contentUrl": "/posts/can-an-ai-really-turn-your-video-or-audio-into-high-quality-text.html"
+    "contentUrl": "/posts/5-google-agent-playbooks-you-should-read.html"
   }
 ]

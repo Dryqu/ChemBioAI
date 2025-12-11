@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Google Agent Playbooks You Should Read - ChemBio AI Insights</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-icon">AI</div>
+                <div class="logo-text">
+                    <h1>ChemBio AI</h1>
+                    <span>Insights</span>
+                </div>
+            </a>
+            <nav>
+                <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back to Home</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
+            <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
+                <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Learning Resources</span>
+                <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">5 Google Agent Playbooks You Should Read</h1>
+                <p style="color: #64748b;">December 10, 2025 • By Yi Qu</p>
+            </div>
+
+            <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+                <p style="margin-bottom: 1.5rem;">Have you ever felt lost when people talk about “agents”, “MCP”, or “AgentOps” – and wished someone could just explain it in plain English?</p>
+                <p style="margin-bottom: 1.5rem;">Google and Kaggle released five free whitepapers (over 250 pages) about how to build real-world AI agents. They cover everything from agent basics to tools, memory, quality, and production.</p>
+                <p style="margin-bottom: 1.5rem;">Here is a short 2–3 minute guide. You can scan the summaries and click Download for any paper you want to read in full.</p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">1. Introduction to Agents – What is an Agent, Really?</h2>
+                <p style="margin-bottom: 1.5rem;">This paper answers one big question: what is an AI agent?</p>
+                <p style="margin-bottom: 1.5rem;">Google’s view: an agent is not just a model. It is:</p>
+                <blockquote style="border-left: 4px solid var(--accent-color); padding-left: 1rem; margin: 1.5rem 0; font-style: italic;">
+                    Agent = Brain (model) + Hands (tools) + Orchestration (the “nervous system”)
+                </blockquote>
+                <p style="margin-bottom: 1.5rem;">It explains:</p>
+                <ul>
+                    <li>Different levels of agents – from simple chatbots to self-improving systems.</li>
+                    <li>The 5-step loop: get a task → observe → think → act → reflect.</li>
+                    <li>High-level architecture and basic safety ideas.</li>
+                </ul>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Why it matters</h3>
+                <p style="margin-bottom: 1.5rem;">This paper gives your team a shared language so PMs, engineers, and leaders all mean the same thing when they say “agent”. It also helps you avoid over-engineering: sometimes you only need a simple helper, not a full multi-agent system.</p>
+                <p style="margin-bottom: 1.5rem;">Download:</p>
+                <p style="margin-bottom: 1.5rem;">👉 <a href="https://www.kaggle.com/whitepaper-introduction-to-agents">Introduction to Agents (Kaggle whitepaper)</a></p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">2. Agent Tools & Interoperability with MCP – How Agents Use Tools</h2>
+                <p style="margin-bottom: 1.5rem;">This paper focuses on tools – the actions an agent can take: call an API, query a database, send a message, and more.</p>
+                <p style="margin-bottom: 1.5rem;">It explains:</p>
+                <ul>
+                    <li>How to design tools so the model knows what they do, not just which API to call.</li>
+                    <li>MCP (Model Context Protocol) – a standard “USB port” for agents to plug into many tools and services.</li>
+                    <li>Security risks of dynamic tool discovery and how to control which tools an agent can see and use.</li>
+                </ul>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Why it matters</h3>
+                <p style="margin-bottom: 1.5rem;">Real agents must act on real systems. This paper is for backend and platform engineers who connect agents to existing services. If you want one agent to work with many tools safely, these patterns and the MCP standard are very useful.</p>
+                <p style="margin-bottom: 1.5rem;">Download:</p>
+                <p style="margin-bottom: 1.5rem;">👉 <a href="https://www.kaggle.com/whitepaper-agent-tools-and-interoperability-with-mcp">Agent Tools & Interoperability with MCP (Kaggle whitepaper)</a></p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">3. Context Engineering: Sessions & Memory – What the Agent Should Remember</h2>
+                <p style="margin-bottom: 1.5rem;">Here Google talks about what goes into the context window and what should become long-term memory.</p>
+                <p style="margin-bottom: 1.5rem;">Key ideas:</p>
+                <ul>
+                    <li>Session = short-term workspace for the current task or conversation.</li>
+                    <li>Memory = long-term, cleaned-up knowledge about the user, tasks, and domain.</li>
+                    <li>Memory lifecycle: capture → compress and de-duplicate → store → retrieve.</li>
+                    <li>RAG ≠ Memory: RAG is like a librarian for public facts; memory is like a personal assistant who knows your preferences.</li>
+                </ul>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Why it matters</h3>
+                <p style="margin-bottom: 1.5rem;">Without good context and memory, agents feel forgetful, slow, and expensive. This paper helps you design agents that: stay consistent across sessions, personalize over time, and still respect privacy and latency limits. Perfect if you are building copilots, customer-support bots, or long-running workflows.</p>
+                <p style="margin-bottom: 1.5rem;">Download:</p>
+                <p style="margin-bottom: 1.5rem;">👉 <a href="https://www.kaggle.com/whitepaper-context-engineering-sessions-and-memory">Context Engineering: Sessions & Memory (Kaggle whitepaper)</a></p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">4. Agent Quality – How Do We Know It Works?</h2>
+                <p style="margin-bottom: 1.5rem;">Traditional tests (input A → expect output B) are not enough for agents. This paper gives a quality framework with four pillars:</p>
+                <ul>
+                    <li>Effectiveness – did the task actually get done?</li>
+                    <li>Efficiency – how many steps and how much cost?</li>
+                    <li>Robustness – can it recover when tools fail?</li>
+                    <li>Safety – does it avoid harmful or out-of-scope actions?</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">It also covers:</p>
+                <ul>
+                    <li>Using real failure cases and “golden” datasets.</li>
+                    <li>LLM-as-a-Judge evaluation.</li>
+                    <li>Tracing and observability so you can see the agent’s decision path.</li>
+                </ul>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Why it matters</h3>
+                <p style="margin-bottom: 1.5rem;">If you want to move from “cool demo” to reliable product, you need a way to measure quality. This paper is a strong starting point for QA, data science, and governance teams designing evaluation pipelines.</p>
+                <p style="margin-bottom: 1.5rem;">Download:</p>
+                <p style="margin-bottom: 1.5rem;">👉 <a href="https://www.kaggle.com/whitepaper-agent-quality">Agent Quality (Kaggle whitepaper)</a></p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">5. Prototype to Production – Shipping Agents in the Real World</h2>
+                <p style="margin-bottom: 1.5rem;">The last paper is about turning a small experiment into a production system.</p>
+                <p style="margin-bottom: 1.5rem;">It talks about:</p>
+                <ul>
+                    <li>Agent-friendly CI/CD pipelines and evaluation gates.</li>
+                    <li>Safe rollout methods: canary releases, shadow mode, and rollback plans.</li>
+                    <li>Operating a fleet of agents, including monitoring, cost control, and multi-agent collaboration.</li>
+                </ul>
+                <h3 style="font-size: 1.5rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Why it matters</h3>
+                <p style="margin-bottom: 1.5rem;">Writing the agent is maybe 20% of the work. The other 80% is making sure it is stable, observable, and safe in production. This paper is the operations playbook for SREs, DevOps, and tech leads who need to run agents for real users.</p>
+                <p style="margin-bottom: 1.5rem;">Download:</p>
+                <p style="margin-bottom: 1.5rem;">👉 <a href="https://www.kaggle.com/whitepaper-prototype-to-production">Prototype to Production (Kaggle whitepaper)</a></p>
+
+                <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">How to Use This Set</h2>
+                <p style="margin-bottom: 1.5rem;">You don’t have to read all 250+ pages at once. A simple path:</p>
+                <ul>
+                    <li>Start with <strong>Introduction to Agents</strong> to align on concepts.</li>
+                    <li>Pick one of the middle three based on your role: tools (MCP), memory, or quality.</li>
+                    <li>When you are close to launch, study <strong>Prototype to Production</strong> as your go-live checklist.</li>
+                </ul>
+                <p style="margin-bottom: 1.5rem;">In a world full of agent hype, these papers give something rare: clear, detailed guidance from a team that has actually built and shipped these systems.</p>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div>
+                <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+            </div>
+            <div>
+                <p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
