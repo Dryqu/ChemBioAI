@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', () => {
             } else if (path.includes('/category/')) {
                 const category = document.body.dataset.category;
                 renderCategoryPosts(posts, category);
+            } else if (path.includes('search.html')) {
+                // Render search results after posts are loaded
+                renderSearchResults();
             }
         })
         .catch(error => console.error('Error loading posts:', error));
@@ -167,11 +170,6 @@ function setupSearch() {
             }
         }
     });
-
-    // If we're on the search page, render results
-    if (window.location.pathname.includes('search.html')) {
-        renderSearchResults();
-    }
 }
 
 function renderSearchResults() {
@@ -199,16 +197,14 @@ function renderSearchResults() {
         queryElement.textContent = `Searching for: "${query}"`;
     }
 
-    // Wait for posts to load
-    if (allPosts.length === 0) {
-        setTimeout(() => renderSearchResults(), 100);
-        return;
-    }
-
+    // Search through posts (handle both 'excerpt' and 'summary' fields)
     const filtered = allPosts.filter(post => {
-        return post.title.toLowerCase().includes(query.toLowerCase()) ||
-            post.excerpt.toLowerCase().includes(query.toLowerCase()) ||
-            post.category.toLowerCase().includes(query.toLowerCase());
+        const searchText = (
+            post.title.toLowerCase() + ' ' +
+            (post.excerpt || post.summary || '').toLowerCase() + ' ' +
+            post.category.toLowerCase()
+        );
+        return searchText.includes(query.toLowerCase());
     });
 
     // Update title with count
