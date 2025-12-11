@@ -158,18 +158,52 @@ let allPosts = [];
 
 function setupSearch() {
     const searchInput = document.getElementById('search-input');
-    if (!searchInput) return;
+    const mobileSearchInput = document.getElementById('mobile-search-input');
+    const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+    const mobileSearchBar = document.getElementById('mobile-search-bar');
 
-    // Handle Enter key to redirect to search page
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault();
-            const query = searchInput.value.trim();
-            if (query) {
-                window.location.href = `/search.html?q=${encodeURIComponent(query)}`;
+    // Handle Enter key for desktop search
+    if (searchInput) {
+        searchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                }
             }
-        }
-    });
+        });
+    }
+
+    // Handle Enter key for mobile search
+    if (mobileSearchInput) {
+        mobileSearchInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                const query = mobileSearchInput.value.trim();
+                if (query) {
+                    window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+                }
+            }
+        });
+    }
+
+    // Toggle mobile search bar
+    if (mobileSearchToggle && mobileSearchBar) {
+        mobileSearchToggle.addEventListener('click', () => {
+            mobileSearchBar.classList.toggle('active');
+            if (mobileSearchBar.classList.contains('active')) {
+                mobileSearchInput.focus();
+            }
+        });
+
+        // Close mobile search when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileSearchBar.contains(e.target) && !mobileSearchToggle.contains(e.target)) {
+                mobileSearchBar.classList.remove('active');
+            }
+        });
+    }
 }
 
 function renderSearchResults() {

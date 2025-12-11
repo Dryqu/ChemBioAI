@@ -27,11 +27,21 @@
                 <input type="text" id="search-input" class="search-input" placeholder="🔍 Search articles...">
             </div>
 
-            <nav>
+            <nav style="display: flex; align-items: center; gap: 1.5rem;">
+                <!-- Mobile Search Toggle -->
+                <button id="mobile-search-toggle" class="mobile-search-toggle" aria-label="Search">
+                    🔍
+                </button>
+
                 <a href="/" class="btn"
                     style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back
                     to Home</a>
             </nav>
+        </div>
+
+        <!-- Mobile Search Bar -->
+        <div id="mobile-search-bar" class="mobile-search-bar">
+            <input type="text" id="mobile-search-input" class="mobile-search-input" placeholder="🔍 Search articles...">
         </div>
     </header>
 

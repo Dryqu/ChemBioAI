@@ -29,6 +29,11 @@
             </div>
 
             <nav style="display: flex; align-items: center; gap: 1.5rem;">
+                <!-- Mobile Search Toggle -->
+                <button id="mobile-search-toggle" class="mobile-search-toggle" aria-label="Search">
+                    🔍
+                </button>
+
                 <!-- Desktop Nav Links -->
                 <div class="nav-links" style="display: flex; gap: 1.5rem;">
                     <a href="#latest" class="nav-link">Articles</a>
@@ -41,6 +46,11 @@
                     style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color); white-space: nowrap;">Browse
                     Topics</a>
             </nav>
+        </div>
+
+        <!-- Mobile Search Bar -->
+        <div id="mobile-search-bar" class="mobile-search-bar">
+            <input type="text" id="mobile-search-input" class="mobile-search-input" placeholder="🔍 Search articles...">
         </div>
     </header>
 
