@@ -230,5 +230,16 @@
     "summary": "A short guide to five free whitepapers from Google and Kaggle (over 250 pages) on building real-world AI agents, covering agent basics, tools (MCP), memory, quality, and production. It provides a quick summary of each paper's key takeaways.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/5-google-agent-playbooks-you-should-read.html"
+  },
+  {
+    "id": 25,
+    "title": "Today's AI Digest — AI's Architects Take Center Stage, Plus a Scientific Leap",
+    "slug": "today-s-ai-digest-ai-s-architects-take-center-stage-plus-a-scientific-leap",
+    "date": "December 11, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "Today's AI Digest covers Time magazine naming 'The Architects of AI' as its 2025 Person of the Year, OpenAI's release of GPT-5.2 for scientific problem-solving, a $52M funding round for 'Physical AI Scientists' developer Medra, Thales's new AI Security Fabric, and Zoovu's MCP Server for agentic commerce.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/today-s-ai-digest-ai-s-architects-take-center-stage-plus-a-scientific-leap.html"
   }
 ]
