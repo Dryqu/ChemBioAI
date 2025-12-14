@@ -1,7 +1,18 @@
 [
   {
+    "id": 28,
+    "title": "The $100 Billion Breakthrough: How AI is Finally Solving the Biggest Bottleneck in Drug Manufacturing",
+    "slug": "the-100-billion-breakthrough-how-ai-is-finally-solving-the-biggest-bottleneck-in-drug-manufacturing",
+    "date": "December 14, 2025",
+    "category": "Pharma",
+    "name": "Yi Qu",
+    "summary": "A quiet revolution is underway, driven by the surging demand for some of the most important new medicines today\u2014specifically, peptides. These critical building blocks are the core components of modern therapeutics, including the rapidly growing GLP-1 treatments used for diabetes and weight loss. The numbers are staggering: the global peptide market is projected to more than double by 2030, potentially reaching over $100 billion. Yet, this massive growth faces an immediate, tangible threat: supply chain constraints and chemical processes that are difficult to scale up. This urgent need for innovation is why WR Grace & Co, a global leader in specialty chemicals, has struck a strategic, multi-year pact with Molecule.one, a pioneer in chemical AI. Their mission: to reinvent how these crucial chemical compounds are manufactured at scale and break the manufacturing bottlenecks slowing down innovation. MARIA: The Engine Driving Novel Chemistry The key to this collaboration is the deployment of Molecule.one\u2019s MARIA AI and high-throughput experimentation platform. This platform is more than just a software tool; it combines computational intelligence with thousands of autonomously executed, miniaturized reactions. By doing this, MARIA rapidly identifies and prioritizes production routes that are far more efficient than conventional methods. The partnership is starting by advancing the synthesis of select peptide components, aiming to use this combined approach to deliver scalable solutions that outperform older peptide synthesis methods. As Brenda Kelly, President of Materials Technologies at Grace, noted, combining Grace\u2019s deep expertise in fine chemicals with Molecule.one\u2019s platform is intended to transform how they scale and manufacture pharmaceuticals, while also strengthening their capabilities at their US Fine Chemicals Manufacturing sites.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/the-100-billion-breakthrough-how-ai-is-finally-solving-the-biggest-bottleneck-in-drug-manufacturing.html"
+  },
+  {
     "id": 16,
-    "title": "AI Digest — AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
+    "title": "AI Digest \u2014 AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
     "slug": "ai-digest-ai-ready-chemistry-secures-drug-supply-plus-chatgpts-shopping-edge",
     "date": "December 06, 2025",
     "category": "Global AI Trends",
@@ -16,7 +27,7 @@
     "slug": "what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation",
     "date": "December 3, 2025",
     "category": "Global AI Trends",
-    "excerpt": "Today I attended a webinar regarding Microsoft’s Internal HR Transformation, featuring leaders from Microsoft. Here’s What I Learned About the Future of Work.",
+    "excerpt": "Today I attended a webinar regarding Microsoft\u2019s Internal HR Transformation, featuring leaders from Microsoft. Here\u2019s What I Learned About the Future of Work.",
     "contentUrl": "/posts/what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation.html",
     "name": "Yi Qu",
     "readingTime": "3 min"
@@ -34,7 +45,7 @@
   },
   {
     "id": 13,
-    "title": "AI Digest — Gemini 3 and the Global AI Infrastructure Race",
+    "title": "AI Digest \u2014 Gemini 3 and the Global AI Infrastructure Race",
     "slug": "ai-digest-gemini-3-and-the-global-ai-infrastructure-race",
     "date": "November 30, 2025",
     "category": "Global AI Trends",
@@ -63,7 +74,7 @@
   },
   {
     "id": 10,
-    "title": "AI Digest — AI's Job Impact and Google's Hardware Push",
+    "title": "AI Digest \u2014 AI's Job Impact and Google's Hardware Push",
     "slug": "ai-digest-ai-s-job-impact-and-google-s-hardware-push",
     "date": "November 27, 2025",
     "category": "Global AI Trends",
@@ -127,7 +138,7 @@
   },
   {
     "id": 8,
-    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
+    "title": "Shuttle Pharma\u2019s Smartest Move Yet: Teaching Machines to Discover Drugs",
     "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
     "date": "November 27, 2025",
     "category": "Pharma",
@@ -136,16 +147,16 @@
   },
   {
     "id": 6,
-    "title": "Don’t Get Left Behind in the AI Era",
+    "title": "Don\u2019t Get Left Behind in the AI Era",
     "slug": "dont-get-left-behind-in-the-ai-era",
     "date": "November 27, 2025",
     "category": "Tools & Tips",
-    "excerpt": "If we don’t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
+    "excerpt": "If we don\u2019t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
     "contentUrl": "/posts/dont-get-left-behind-in-the-ai-era.html"
   },
   {
     "id": 17,
-    "title": "Today's AI Digest — Frontier Models, Drug Discovery, and Data Scarcity",
+    "title": "Today's AI Digest \u2014 Frontier Models, Drug Discovery, and Data Scarcity",
     "slug": "ai-digest-frontier-models-drug-discovery-and-data-scarcity",
     "date": "December 07, 2025",
     "category": "Global AI Trends",
@@ -156,7 +167,7 @@
   },
   {
     "id": 18,
-    "title": "AI Digest — AI's Regulatory Future and Automated Drug Discovery",
+    "title": "AI Digest \u2014 AI's Regulatory Future and Automated Drug Discovery",
     "slug": "ai-digest-ai-s-regulatory-future-and-automated-drug-discovery",
     "date": "December 08, 2025",
     "category": "Global AI Trends",
@@ -167,12 +178,12 @@
   },
   {
     "id": 19,
-    "title": "Why I Did It with the Mindset of “AI First” (and Why Verification Matters)",
+    "title": "Why I Did It with the Mindset of \u201cAI First\u201d (and Why Verification Matters)",
     "slug": "why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters",
     "date": "December 09, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of “AI first.”",
+    "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of \u201cAI first.\u201d",
     "readingTime": "1 min read",
     "contentUrl": "/posts/why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters.html"
   },
@@ -233,7 +244,7 @@
   },
   {
     "id": 25,
-    "title": "Today's AI Digest — AI's Architects Take Center Stage, Plus a Scientific Leap",
+    "title": "Today's AI Digest \u2014 AI's Architects Take Center Stage, Plus a Scientific Leap",
     "slug": "today-s-ai-digest-ai-s-architects-take-center-stage-plus-a-scientific-leap",
     "date": "December 11, 2025",
     "category": "Global AI Trends",
@@ -244,7 +255,7 @@
   },
   {
     "id": 26,
-    "title": "AI Digest — AI Giants Clash, Policy Tightens, and Pharma Gets a Boost",
+    "title": "AI Digest \u2014 AI Giants Clash, Policy Tightens, and Pharma Gets a Boost",
     "slug": "ai-digest-ai-giants-clash-policy-tightens-and-pharma-gets-a-boost",
     "date": "December 12, 2025",
     "category": "Global AI Trends",
@@ -255,7 +266,7 @@
   },
   {
     "id": 27,
-    "title": "AI Digest — Infrastructure Collides with Code, Plus GPT-5.2's Expert Upgrade",
+    "title": "AI Digest \u2014 Infrastructure Collides with Code, Plus GPT-5.2's Expert Upgrade",
     "slug": "ai-digest-infrastructure-collides-with-code-plus-gpt-5-2-s-expert-upgrade",
     "date": "December 13, 2025",
     "category": "Global AI Trends",
