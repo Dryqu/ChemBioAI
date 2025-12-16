@@ -1,5 +1,16 @@
 [
   {
+    "id": 31,
+    "title": "Why Your AI Model Needs Post-Training to Survive Production",
+    "slug": "why-your-ai-model-needs-post-training-to-survive-production",
+    "date": "December 16, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "AI teams often have a simple goal: ship fast, affordable, and compliant AI products that can survive when real usage scales up. Yet, many start by prototyping with closed APIs or general-purpose chatb...",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/why-your-ai-model-needs-post-training-to-survive-production.html"
+  },
+  {
     "id": 30,
     "title": "5-Day AI Agents Intensive Course with Google: Build Autonomous AI Systems",
     "slug": "5-day-ai-agents-intensive-course-with-google-build-autonomous-ai-systems",
