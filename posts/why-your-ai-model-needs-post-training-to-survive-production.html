@@ -1,21 +1,142 @@
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Why Your AI Model Needs Post-Training to Survive Production - ChemBio AI Insights</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
   <style>
+    :root {
+      --primary-color: var(--primary-color, #0f172a);
+      --text-color: var(--text-color, #0f172a);
+      --muted-color: #64748b;
+      --border-color: var(--border-color, #e2e8f0);
+      --accent-color: var(--accent-color, #2563eb);
+      --card-bg: #ffffff;
+      --bg-soft: #f8fafc;
+      --shadow: 0 10px 30px rgba(2, 6, 23, 0.08);
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    main {
+      padding: 0 0 2rem;
+    }
+
+    .article-wrap {
+      max-width: 860px;
+      margin: 3rem auto 5rem;
+      padding: 0 1rem;
+    }
+
+    .article-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .article-hero {
+      padding: 2.25rem 1.75rem 1.25rem;
+      background: linear-gradient(180deg, rgba(37,99,235,0.1), rgba(255,255,255,0));
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .kicker {
+      display: inline-block;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      color: var(--accent-color);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+    }
+
+    .article-title {
+      margin: 0.9rem 0 0.5rem;
+      font-size: clamp(1.8rem, 3.2vw, 2.55rem);
+      line-height: 1.15;
+      color: var(--primary-color);
+      letter-spacing: -0.02em;
+    }
+
+    .meta {
+      color: var(--muted-color);
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    .article-body {
+      padding: 1.75rem 1.75rem 2rem;
+      font-size: 1.07rem;
+      color: var(--text-color);
+    }
+
     .article-body p {
       margin-bottom: 1.25rem;
-      line-height: 1.7;
+      line-height: 1.75;
     }
-    /* Custom style to make all links in the article body blue, as requested */
+
+    .article-body h2 {
+      margin: 2rem 0 0.75rem;
+      font-size: 1.35rem;
+      color: var(--primary-color);
+      letter-spacing: -0.01em;
+    }
+
     .article-body a {
-        color: #2563eb; /* A shade of blue */
-        text-decoration: underline;
+      color: #2563eb;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .resources {
+      margin-top: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .resource-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1rem;
+    }
+
+    .resource-item {
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1rem;
+      background: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-item .label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .resource-item .desc {
+      color: var(--muted-color);
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+    }
+
+    footer a {
+      color: #ffffff;
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -31,61 +152,97 @@
         </div>
       </a>
       <nav>
-        <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back to Home</a>
+        <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">
+          Back to Home
+        </a>
       </nav>
     </div>
   </header>
 
   <main>
-    <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
-      <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
-        <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Learning Resources</span>
-        <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
-          Why Your AI Model Needs Post-Training to Survive Production
-        </h1>
-        <p style="color: #64748b;">December 16, 2025 • By Yi Qu</p>
-      </div>
+    <article class="article-wrap">
+      <div class="article-card">
+        <header class="article-hero">
+          <span class="kicker">Learning Resources</span>
+          <h1 class="article-title">Why Your AI Model Needs Post-Training to Survive Production</h1>
+          <p class="meta">December 16, 2025 • By Yi Qu</p>
+        </header>
 
-      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
-<p>AI teams often have a simple goal: ship fast, affordable, and compliant AI products that can survive when real usage scales up. Yet, many start by prototyping with closed APIs or general-purpose chatbots, relying on prompt engineering and small orchestrations.</p>
+        <div class="article-body">
+          <p>AI teams often have a simple goal: ship fast, affordable, and compliant AI products that can survive when real usage scales up. Yet, many start by prototyping with closed APIs or general-purpose chatbots, relying on prompt engineering and small orchestrations.</p>
 
-<p>While this works for early demos, it usually collapses at scale. Why? Because reliance on proprietary vendors leads to high and unpredictable costs per token, opaque data handling, and a complete lack of control over model behavior, pricing, and latency. The fundamental blocker is the lack of control.</p>
+          <p>While this works for early demos, it usually collapses at scale. Why? Because reliance on proprietary vendors leads to high and unpredictable costs per token, opaque data handling, and a complete lack of control over model behavior, pricing, and latency. The fundamental blocker is the lack of control.</p>
 
-<p>This is why post-training and using open models have moved from being specialized techniques to being necessary for any team that wants to move into real production.</p>
+          <p>This is why post-training and using open models have moved from being specialized techniques to being necessary for any team that wants to move into real production.</p>
 
-<p>The Solution: Control and Customization</p>
+          <h2>The Solution: Control and Customization</h2>
+          <p>Post-training is how you adapt a generic foundation model to your specific business needs. It allows you to transform raw compute into structured, reliable model intelligence at scale.</p>
 
-<p>Post-training is how you adapt a generic foundation model to your specific business needs. It allows you to transform raw compute into structured, reliable model intelligence at scale.</p>
+          <p>Here is what post-training unlocks:</p>
 
-<p>Here is what post-training unlocks:</p>
+          <p><strong>Better Performance and Cost:</strong> Post-training aligns models to specific domains and workflows, increasing accuracy on target use cases. By distilling large proprietary models into smaller forms (like reducing a 100B+ model down to a Gemma 2B model), customers have seen their costs reduced by more than 4x and latency reduced by more than 2x. You can cut the dollar per token cost and scale to hundreds of billions of tokens per day without rewriting your technology stack.</p>
 
-<p>Better Performance and Cost: Post-training aligns models to specific domains and workflows, increasing accuracy on target use cases. By distilling large proprietary models into smaller forms (like reducing a 100B+ model down to a Gemma 2B model), customers have seen their costs reduced by more than 4x and latency reduced by more than 2x. You can cut the dollar per token cost and scale to hundreds of billions of tokens per day without rewriting your technology stack.</p>
+          <p><strong>Control and Compliance:</strong> Using models you control ensures predictable performance, transparent economics, and audit-friendly execution. For enterprises, this means meeting critical compliance needs, like SOC 2 and HIPAA, enforcing zero data retention, and providing access control.</p>
 
-<p>Control and Compliance: Using models you control ensures predictable performance, transparent economics, and audit-friendly execution. For enterprises, this means meeting critical compliance needs, like SOC 2 and HIPAA, enforcing zero data retention, and providing access control.</p>
+          <p><strong>Specific Alignment:</strong> Post-training helps instill consistency of tone, brand requirements, and necessary safety guardrails.</p>
 
-<p>Specific Alignment: Post-training helps instill consistency of tone, brand requirements, and necessary safety guardrails.</p>
+          <h2>Post-Training Techniques</h2>
+          <p>The process of post-training involves specific techniques to adapt models:</p>
 
-<p>Post-Training Techniques</p>
+          <p><strong>Supervised Fine-Tuning (SFT):</strong> This is the most used technique and involves training the model on pairs of input and output examples to teach it new skills or task specialization, such as domain-specific Q&amp;A or contract extraction.</p>
 
-<p>The process of post-training involves specific techniques to adapt models:</p>
+          <p><strong>Adapters (LoRA/QLoRA):</strong> These techniques allow lightweight, parameter-efficient training where only a small subset of the model’s weights (around 1–2%) are updated. This makes training runs much more efficient, faster, and cheaper.</p>
 
-<p>Supervised Fine-Tuning (SFT): This is the most used technique and involves training the model on pairs of input and output examples to teach it new skills or task specialization, such as domain-specific Q&A or contract extraction.</p>
+          <p><strong>Preference Optimization (DPO/RLHF):</strong> These methods teach the model what “good” answers look like by incorporating human preference signals, ensuring the output is helpful, safe, and aligned with company policies.</p>
 
-<p>Adapters (LoRA/QLoRA): These techniques allow lightweight, parameter-efficient training where only a small subset of the model's weights (around 1–2%) are updated. This makes training runs much more efficient, faster, and cheaper.</p>
+          <p><strong>Model Distillation:</strong> This involves using a larger “teacher” model to train a much smaller “student” model on a target task, preserving accuracy while significantly reducing model size for deployment efficiency.</p>
 
-<p>Preference Optimization (DPO/RLHF): These methods teach the model what "good" answers look like by incorporating human preference signals, ensuring the output is helpful, safe, and aligned with company policies.</p>
+          <p>A critical factor for success is data quality; it is considered more important than the quantity of data when doing fine-tuning.</p>
 
-<p>Model Distillation: This involves using a larger "teacher" model to train a much smaller "student" model on a target task, preserving accuracy while significantly reducing model size for deployment efficiency.</p>
+          <h2>Getting Started with Nebius Token Factory</h2>
+          <p>Nebius Token Factory is a platform built on a full-stack AI cloud designed specifically for AI workloads. It unifies high-performance inference, post-training governance, and numerous integrations.</p>
 
-<p>A critical factor for success is data quality; it is considered more important than the quantity of data when doing fine-tuning.</p>
+          <p>The platform allows you to fine-tune or distill open-source models, such as DeepSeek or GPT OSS, and immediately run them on isolated endpoints. You can easily kick off training jobs using the console UI or the API.</p>
 
-<p>Getting Started with Nebius Token Factory</p>
+          <p>Importantly, there is no lock-in. After training, you can download the artifacts and take the weights of your fine-tuned models with you.</p>
 
-<p>Nebius Token Factory is a platform built on a full-stack AI cloud designed specifically for AI workloads. It unifies high-performance inference, post-training governance, and numerous integrations.</p>
+          <section class="resources">
+            <h2>Resources</h2>
+            <p style="color:#64748b;">Official pages and docs to help you fine-tune, deploy, and operationalize post-training.</p>
 
-<p>The platform allows you to fine-tune or distill open-source models, such as DeepSeek or GPT OSS, and immediately run them on isolated endpoints. You can easily kick off training jobs using the console UI or the API.</p>
+            <ul class="resource-list">
+              <li class="resource-item">
+                <span class="label">Nebius Token Factory (post-training &amp; model deployment)</span>
+                <p class="desc">Platform overview for post-training workflows and deployment.</p>
+                <a href="https://nebius.com/services/token-factory/post-training" target="_blank">https://nebius.com/services/token-factory/post-training</a>
+              </li>
 
-<p>Importantly, there is no lock-in. After training, you can download the artifacts and take the weights of your fine-tuned models with you.</p>
+              <li class="resource-item">
+                <span class="label">Quickstart (onboarding &amp; API usage)</span>
+                <p class="desc">General onboarding guide plus core API concepts.</p>
+                <a href="https://docs.tokenfactory.nebius.com/quickstart" target="_blank">https://docs.tokenfactory.nebius.com/quickstart</a>
+              </li>
+
+              <li class="resource-item">
+                <span class="label">Fine-tuning overview</span>
+                <p class="desc">End-to-end overview of the fine-tuning process and options.</p>
+                <a href="https://docs.tokenfactory.nebius.com/fine-tuning/overview" target="_blank">https://docs.tokenfactory.nebius.com/fine-tuning/overview</a>
+              </li>
+
+              <li class="resource-item">
+                <span class="label">Supported fine-tuning models</span>
+                <p class="desc">List of models you can fine-tune and deploy.</p>
+                <a href="https://docs.tokenfactory.nebius.com/fine-tuning/models" target="_blank">https://docs.tokenfactory.nebius.com/fine-tuning/models</a>
+              </li>
+
+              <li class="resource-item">
+                <span class="label">Deploy a custom / LoRA model</span>
+                <p class="desc">Step-by-step guide to deploying your own trained or adapter-based model.</p>
+                <a href="https://docs.tokenfactory.nebius.com/fine-tuning/deploy-custom-model" target="_blank">https://docs.tokenfactory.nebius.com/fine-tuning/deploy-custom-model</a>
+              </li>
+            </ul>
+          </section>
+        </div>
       </div>
     </article>
   </main>
@@ -93,7 +250,7 @@
   <footer>
     <div class="container footer-content">
       <div><p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p></div>
-      <div><p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p></div>
+      <div><p>Contact: <a href="mailto:chembioaiinsights@gmail.com">chembioaiinsights@gmail.com</a></p></div>
     </div>
   </footer>
 </body>
