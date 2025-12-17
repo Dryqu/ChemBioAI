@@ -1,4 +1,4 @@
-[
+[\n  {\n    "id": 32,\n    "title": "The Secret Engine of ChatGPT: Why the \\"Transformer\\" AI Learns So Well",\n    "slug": "the-secret-engine-of-chatgpt-why-the-transformer-ai-learns-so-well",\n    "date": "December 16, 2025",\n    "category": "Learning Resources",\n    "name": "Yi Qu",\n    "summary": "If you have used ChatGPT, you know it generates surprisingly coherent and helpful text. But what is the core technology driving this modern AI boom? It’s called the **Transformer**.",\n    "readingTime": "5 min read",\n    "contentUrl": "/posts/the-secret-engine-of-chatgpt-why-the-transformer-ai-learns-so-well.html"\n  },
   {
     "id": 31,
     "title": "Why Your AI Model Needs Post-Training to Survive Production",
