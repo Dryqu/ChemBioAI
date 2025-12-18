@@ -351,5 +351,16 @@
     "summary": "When we train a machine learning model, we need a way to measure how well it is doing. A loss function is simply a number that tells us how wrong the model is.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/what-is-a-loss-function.html"
+  },
+  {
+    "id": 35,
+    "title": "Dawn Song, Berkeley RDI, and the Rise of Agentic AI Education",
+    "slug": "dawn-song-berkeley-rdi-and-the-rise-of-agentic-ai-education",
+    "date": "December 17, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "A year ago, “agentic AI” was still insider language. In 2025, it became the fastest-moving layer of the AI stack—because it turns models into systems that can actually get work done.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/dawn-song-berkeley-rdi-and-the-rise-of-agentic-ai-education.html"
   }
 ]
