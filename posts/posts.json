@@ -1,5 +1,16 @@
 [
   {
+    "id": 34,
+    "title": "GitHub for Everyone: A Fast Way to Find Real Tools and Real Trends",
+    "slug": "github-for-everyone-a-fast-way-to-find-real-tools-and-real-trends",
+    "date": "December 17, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "GitHub is a public library of modern tech ideas, from AI projects to new experiments, that often appear before they become popular on social media. Learn a simple routine to find real tools and trends.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/github-for-everyone-a-fast-way-to-find-real-tools-and-real-trends.html"
+  },
+  {
     "id": 33,
     "title": "Today's AI Digest: Enterprise AI Strategy Shifts as Open Models Gain Ground",
     "slug": "ai-digest-enterprise-ai-strategy-shifts-as-open-models-gain-ground",
