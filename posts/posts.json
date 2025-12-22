@@ -272,7 +272,7 @@
     "category": "Learning Resources",
     "name": "Yi Qu",
     "summary": "In a session led by Make, the focus was on moving beyond simple task automation to implementing enterprise-grade governance, lifecycle management, and reliable AI integration for workflows. The session provided a technical deep dive into event-driven architecture using Google Apps Script and Webhooks, and outlined a critical scenario lifecycle for managing automations.",
-    ""readingTime": "5 min read",
+    "readingTime": "5 min read",
     "contentUrl": "/posts/from-hobbyist-to-enterprise-mastering-workflow-automation-with-make.html"
   },
   {
