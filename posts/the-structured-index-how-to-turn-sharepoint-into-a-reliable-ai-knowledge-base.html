@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Most Reliable Way to Build an AI-Powered Enterprise Information/Knowledge Manager - ChemBio AI Insights</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -11,22 +12,106 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="../assets/css/style.css">
+
   <style>
+    /* Layout helpers (no content changes) */
+    main {
+      padding: 0 1rem;
+    }
+
+    article.container {
+      max-width: 800px;
+      margin: 3rem auto 5rem;
+    }
+
+    /* Article typography */
+    .article-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .article-header .kicker {
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: inline-block;
+    }
+
+    .article-header .title {
+      font-size: 2.5rem;
+      margin: 1rem 0;
+      color: var(--primary-color);
+    }
+
+    .article-header .meta {
+      color: #64748b;
+      margin: 0;
+    }
+
+    .article-body {
+      font-size: 1.125rem;
+      color: var(--text-color);
+    }
+
     .article-body p {
-      margin-bottom: 1.25rem;
+      margin: 0 0 1.25rem;
       line-height: 1.7;
     }
+
     .article-body h3 {
-      margin-top: 2.5rem;
-      margin-bottom: 0.75rem;
+      margin: 2.5rem 0 0.75rem;
       line-height: 1.3;
     }
+
+    .article-body h4 {
+      margin: 2rem 0 0.75rem;
+      line-height: 1.35;
+    }
+
+    .article-body ul,
+    .article-body ol {
+      margin: 0 0 1.25rem;
+      padding-left: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .article-body li {
+      margin: 0.35rem 0;
+    }
+
+    .article-body ul ul {
+      margin-top: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
     .article-body a {
       color: #2563eb;
       text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .article-body strong {
+      font-weight: 600;
+    }
+
+    /* Optional: improve header button alignment without changing content */
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Footer link style stays readable on dark backgrounds */
+    footer a {
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container nav-container">
@@ -37,6 +122,7 @@
           <span>Insights</span>
         </div>
       </a>
+
       <nav>
         <a
           href="../index.html"
@@ -48,20 +134,20 @@
       </nav>
     </div>
   </header>
+
   <main>
-    <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
-      <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
-        <span
-          style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;"
-        >
-          Learning Resources
-        </span>
-        <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
+    <article class="container">
+      <div class="article-header">
+        <span class="kicker">Learning Resources</span>
+
+        <h1 class="title">
           The Most Reliable Way to Build an AI-Powered Enterprise Information/Knowledge Manager
         </h1>
-        <p style="color: #64748b;">December 22, 2025 • By Yi Qu</p>
+
+        <p class="meta">December 22, 2025 • By Yi Qu</p>
       </div>
-      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+
+      <div class="article-body">
         <p>
           (With Copilot—and a Clear, Practical Role for Databricks & Microsoft Fabric)
         </p>
@@ -83,6 +169,7 @@
         <p>
           It’s an information architecture problem.
         </p>
+
         <h3>The Recommended Architecture: The Structured Index</h3>
         <p>
           Files + a Machine-Readable Metadata Map (Index Spreadsheets)
@@ -99,6 +186,7 @@
         <p>
           AI should not “hunt” blindly. It should navigate first, then read.
         </p>
+
         <h3>When the Structured Index is unnecessary</h3>
         <p>
           If your goal is quick enablement (not strict traceability), you can skip the structured index and simply upload the original files directly into the AI knowledge base.
@@ -115,7 +203,9 @@
         <p>
           If you require reliable citations (document + page/section + SharePoint location) and want to minimize missed documents, the Structured Index becomes the most dependable option.
         </p>
+
         <h3>The Recommended Setup</h3>
+
         <h4>1️⃣ Keep Original Files in SharePoint</h4>
         <p>
           SharePoint remains the system of record for:
@@ -133,6 +223,7 @@
         <p>
           Leave documents where business users already work.
         </p>
+
         <h4>2️⃣ Bootstrap Index Column Names Using 2–3 Sample Files per Document Type</h4>
         <p>
           Instead of guessing column names, start with a faster, evidence-based approach:
@@ -192,6 +283,7 @@
         <p>
           Mixing document types into one giant sheet creates “empty-cell noise” and reduces accuracy.
         </p>
+
         <h4>Schema Discovery Prompts (AI-Assisted, Human-Approved)</h4>
         <p>
           <strong>✅ System Prompt (for Schema Discovery Assistant)</strong>
@@ -242,6 +334,7 @@
         <p>
           AI can propose columns, but humans approve and freeze them.
         </p>
+
         <h4>3️⃣ Fill the Index Using SharePoint URLs + Copilot Extraction</h4>
         <p>
           Once the schema is locked, the scalable approach is:
@@ -322,6 +415,7 @@
           <li>For key requirements/findings, include the page/section number</li>
           <li>Output: Return a table matching the schema order.</li>
         </ul>
+
         <h4>4️⃣ The Upload Strategy (Still Critical)</h4>
         <p>
           Upload to AI knowledge base: the index spreadsheets
@@ -332,6 +426,7 @@
         <p>
           This ensures AI always has the “map” and uses SharePoint files as the “territory.”
         </p>
+
         <h3>How AI Uses This Architecture</h3>
         <p>
           In practice, AI should follow this sequence:
@@ -348,6 +443,7 @@
             </ul>
           </li>
         </ul>
+
         <h3>Databricks vs. Microsoft Fabric: The Automation Layer</h3>
         <p>
           Databricks is a cloud data/AI platform commonly used for large-scale data processing and custom code-heavy workflows. Microsoft Fabric is Microsoft’s end-to-end analytics platform (OneLake, Data Factory, Power BI, etc.) designed for unified data management and governance in the Microsoft ecosystem.
@@ -398,6 +494,7 @@
         <p>
           No platform compensates for poorly structured knowledge.
         </p>
+
         <h3>AI Instructions for Answering End-User Questions (System + User)</h3>
         <p>
           <strong>✅ System Prompt (for the Q&A Assistant: Copilot Studio / Custom GPT)</strong>
@@ -428,6 +525,7 @@
         <p>
           Please check the SOP_Index first, then cite: document name + version + page/section + SharePoint link.
         </p>
+
         <h3>Core Principles</h3>
         <ul>
           <li>Start small: Upload 2–3 representative files per document type to let AI propose the best schema.</li>
@@ -442,6 +540,7 @@
       </div>
     </article>
   </main>
+
   <footer>
     <div class="container footer-content">
       <div>
@@ -450,7 +549,7 @@
       <div>
         <p>
           Contact:
-          <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">
+          <a href="mailto:chembioaiinsights@gmail.com">
             chembioaiinsights@gmail.com
           </a>
         </p>
