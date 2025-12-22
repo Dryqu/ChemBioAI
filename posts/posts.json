@@ -1,12 +1,23 @@
 [
   {
+    "id": 37,
+    "title": "The Hardest Part of Building an AI Knowledge Base is Not Technology",
+    "slug": "the-hardest-part-of-building-an-ai-knowledge-base-is-not-technology",
+    "date": "December 21, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "Building an AI knowledge base is less about the technology (LLMs, vector databases) and more about the management of knowledge itself. The real challenge is ensuring the knowledge stays useful, trusted, and alive through effective capture of tacit knowledge, clear ownership, and building user trust.",
+    "readingTime": "4 min read",
+    "contentUrl": "/posts/the-hardest-part-of-building-an-ai-knowledge-base-is-not-technology.html"
+  },
+  {
     "id": 36,
     "title": "The Three Skills That Actually Separate AI Engineers in Industry",
     "slug": "the-three-skills-that-actually-separate-ai-engineers-in-industry",
     "date": "December 18, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "AI application engineer roles are growing right now. But hiring teams aren't impressed by buzzwords anymore—they're looking for people who can actually build, debug, and ship AI systems.",
+    "summary": "AI application engineer roles are growing right now. But hiring teams aren't impressed by buzzwords anymore\u2014they're looking for people who can actually build, debug, and ship AI systems.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/the-three-skills-that-actually-separate-ai-engineers-in-industry.html"
   },
@@ -39,7 +50,7 @@
     "date": "December 16, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "If you have used ChatGPT, you know it generates surprisingly coherent and helpful text. But what is the core technology driving this modern AI boom? It’s called the **Transformer**.",
+    "summary": "If you have used ChatGPT, you know it generates surprisingly coherent and helpful text. But what is the core technology driving this modern AI boom? It\u2019s called the **Transformer**.",
     "readingTime": "5 min read",
     "contentUrl": "/posts/the-secret-engine-of-chatgpt-why-the-transformer-ai-learns-so-well.html"
   },
@@ -359,7 +370,7 @@
     "date": "December 17, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "A year ago, “agentic AI” was still insider language. In 2025, it became the fastest-moving layer of the AI stack—because it turns models into systems that can actually get work done.",
+    "summary": "A year ago, \u201cagentic AI\u201d was still insider language. In 2025, it became the fastest-moving layer of the AI stack\u2014because it turns models into systems that can actually get work done.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/dawn-song-berkeley-rdi-and-the-rise-of-agentic-ai-education.html"
   },
