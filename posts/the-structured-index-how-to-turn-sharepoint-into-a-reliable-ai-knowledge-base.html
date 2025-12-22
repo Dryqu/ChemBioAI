@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Structured Index: How to Turn SharePoint into a Reliable AI Knowledge Base - ChemBio AI Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .article-body p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .article-body h3 {
+      margin-top: 2.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+    .article-body a {
+      color: #2563eb;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">AI</div>
+        <div class="logo-text">
+          <h1>ChemBio AI</h1>
+          <span>Insights</span>
+        </div>
+      </a>
+      <nav>
+        <a
+          href="../index.html"
+          class="btn"
+          style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);"
+        >
+          Back to Home
+        </a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
+      <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
+        <span
+          style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;"
+        >
+          Learning Resources
+        </span>
+        <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
+          The Structured Index: How to Turn SharePoint into a Reliable AI Knowledge Base
+        </h1>
+        <p style="color: #64748b;">December 22, 2025 • By Yi Qu</p>
+      </div>
+      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+        <p>
+          (With Copilot—and a Clear, Practical Role for Databricks & Microsoft Fabric)
+        </p>
+        <p>
+          Many organizations want the same outcome:
+        </p>
+        <p>
+          When users ask AI a question, it should return an accurate answer, clearly state which document it came from, identify the page or section, and show exactly where the file lives in SharePoint.
+        </p>
+        <p>
+          This becomes difficult when enterprise content includes reports, SOPs, spreadsheets, presentations, and images, most of which are unstructured.
+        </p>
+        <p>
+          The biggest mistake teams make is assuming this is an AI or tooling problem.
+        </p>
+        <p>
+          It isn’t.
+        </p>
+        <p>
+          It’s an information architecture problem.
+        </p>
+        <h3>The Recommended Architecture: The Structured Index</h3>
+        <p>
+          Files + a Machine-Readable Metadata Map (Index Spreadsheets)
+        </p>
+        <p>
+          This approach consistently delivers the highest accuracy because it separates Storage from Retrieval:
+        </p>
+        <p>
+          <strong>The Map (Index Spreadsheets):</strong> A structured index to locate the exact right file.
+        </p>
+        <p>
+          <strong>The Territory (Original Files):</strong> The source content for the final answer.
+        </p>
+        <p>
+          AI should not “hunt” blindly. It should navigate first, then read.
+        </p>
+        <h3>When the Structured Index is unnecessary</h3>
+        <p>
+          If your goal is quick enablement (not strict traceability), you can skip the structured index and simply upload the original files directly into the AI knowledge base.
+        </p>
+        <p>
+          This “upload-only” approach is usually sufficient when:
+        </p>
+        <ul>
+          <li>You have a small collection of documents (e.g., tens—not thousands)</li>
+          <li>Users only need general answers (page/section citations are not required)</li>
+          <li>Documents are consistent, well-written, and not frequently updated</li>
+          <li>Occasional misses or weaker citations are acceptable</li>
+        </ul>
+        <p>
+          If you require reliable citations (document + page/section + SharePoint location) and want to minimize missed documents, the Structured Index becomes the most dependable option.
+        </p>
+        <h3>The Recommended Setup</h3>
+        <h4>1️⃣ Keep Original Files in SharePoint</h4>
+        <p>
+          SharePoint remains the system of record for:
+        </p>
+        <ul>
+          <li>SOPs</li>
+          <li>Reports</li>
+          <li>Data spreadsheets</li>
+          <li>Slides</li>
+          <li>Images</li>
+        </ul>
+        <p>
+          Critical rule: Do not move files into a new “AI folder.”
+        </p>
+        <p>
+          Leave documents where business users already work.
+        </p>
+        <h4>2️⃣ Bootstrap Index Column Names Using 2–3 Sample Files per Document Type</h4>
+        <p>
+          Instead of guessing column names, start with a faster, evidence-based approach:
+        </p>
+        <p>
+          <strong>What you do</strong>
+        </p>
+        <p>
+          For each document type (SOPs, Reports, Data Spreadsheets), upload 2–3 representative files and ask AI to propose the index columns for that type.
+        </p>
+        <p>
+          <strong>How to choose representative files (brief guidance):</strong>
+        </p>
+        <ul>
+          <li>Select finalized, authoritative documents (not drafts or placeholders)</li>
+          <li>Prefer files that are commonly referenced by users</li>
+          <li>Include variation when possible (e.g., different versions, regions, or use cases)</li>
+          <li>Avoid outliers or one-off exceptions</li>
+        </ul>
+        <p>
+          These samples define the shape of the schema, so they should reflect what “typical” looks like.
+        </p>
+        <p>
+          Slides and images should be indexed only when they carry unique, frequently referenced, or authoritative information; otherwise, making them accessible to AI via SharePoint (without a structured index) is sufficient.
+        </p>
+        <p>
+          Special note for large numbers of slides (PPT):
+        </p>
+        <p>
+          If you have many PowerPoint decks in SharePoint, do not index every deck by default. Instead:
+        </p>
+        <ul>
+          <li>For most decks, simply make them accessible to AI via SharePoint (no structured index).</li>
+          <li>Identify a small subset of high-value decks that are frequently referenced, decision-making, authoritative (single source), or externally shared.</li>
+          <li>Create a lightweight Slides index (deck-level) only for those high-value decks (e.g., Deck File Name, Purpose, Key Topics/Key Messages, Date/Period, Owner, SharePoint URL).</li>
+          <li>Optionally add Slide Locator Notes for a few critical slides (e.g., “Architecture: slide 6; Process flow: slide 9”).</li>
+        </ul>
+        <p>
+          This avoids index bloat while still making critical slide content discoverable by AI.
+        </p>
+        <p>
+          <strong>Best practice</strong>
+        </p>
+        <p>
+          Create one index spreadsheet per document type:
+        </p>
+        <ul>
+          <li>SOP_Index.xlsx</li>
+          <li>Reports_Index.xlsx</li>
+          <li>Data_Index.xlsx</li>
+          <li>PPT_Index.xlsx (if necessary)</li>
+          <li>Image_Index.xlsx (if necessary)</li>
+        </ul>
+        <p>
+          Example: If you don’t have a PPT_Index.xlsx or Image_Index.xlsx, Copilot will still search and open those PPT/image files directly in SharePoint—but it won’t have an index to pre-rank or reliably cite specific slides/figures.
+        </p>
+        <p>
+          Mixing document types into one giant sheet creates “empty-cell noise” and reduces accuracy.
+        </p>
+        <h4>Schema Discovery Prompts (AI-Assisted, Human-Approved)</h4>
+        <p>
+          <strong>✅ System Prompt (for Schema Discovery Assistant)</strong>
+        </p>
+        <p>
+          Use this only if you are configuring a dedicated “Schema Builder” Copilot/agent.
+        </p>
+        <p>
+          Role: You are an enterprise indexing architect.
+        </p>
+        <p>
+          Task: Propose an index spreadsheet schema for a single document type based only on the provided sample files.
+        </p>
+        <p>
+          Rules:
+        </p>
+        <ul>
+          <li>Propose stable column names that generalize to many files of this type</li>
+          <li>For each column: define meaning, mark Required/Optional, and explain how AI will use it</li>
+          <li>Do not invent fields not evidenced in the sample documents</li>
+          <li>Output must be a schema table and nothing else</li>
+          <li>Output format: Column_Name | Required (Y/N) | Description | How AI Uses It</li>
+        </ul>
+        <p>
+          <strong>✅ User Prompt (Schema Discovery Request)</strong>
+        </p>
+        <p>
+          What you (a human) type after uploading 2–3 sample SOPs / Reports / Data sheets.
+        </p>
+        <p>
+          I uploaded 3 sample [SOP / Report / Data Spreadsheet] files.
+        </p>
+        <p>
+          Please propose the best index spreadsheet schema for this document type.
+        </p>
+        <p>
+          Requirements:
+        </p>
+        <ul>
+          <li>Column names should be stable and usable for many future files</li>
+          <li>Each column must include: Required/Optional + description + how it improves AI search/citation</li>
+          <li>Do not infer fields that aren’t supported by the samples</li>
+          <li>Output the schema in a table: Column_Name | Required (Y/N) | Description | How AI Uses It</li>
+        </ul>
+        <p>
+          <strong>✅ After this step, lock the schema.</strong>
+        </p>
+        <p>
+          AI can propose columns, but humans approve and freeze them.
+        </p>
+        <h4>3️⃣ Fill the Index Using SharePoint URLs + Copilot Extraction</h4>
+        <p>
+          Once the schema is locked, the scalable approach is:
+        </p>
+        <ul>
+          <li>Keep files in SharePoint</li>
+          <li>Provide SharePoint URLs</li>
+          <li>Ask Copilot to extract values and fill the index spreadsheet</li>
+        </ul>
+        <p>
+          This is how you ensure:
+        </p>
+        <ul>
+          <li>AI reads authoritative sources</li>
+          <li>Index stays complete</li>
+          <li>Answers include page/section citations</li>
+        </ul>
+        <p>
+          <strong>Index Filling Prompts</strong>
+        </p>
+        <p>
+          <strong>✅ System Prompt (for the Index-Filling Assistant)</strong>
+        </p>
+        <p>
+          Use this if you are configuring a Copilot/agent that will repeatedly populate index rows.
+        </p>
+        <p>
+          Role: You are an Enterprise Index Builder.
+        </p>
+        <p>
+          Knowledge/Inputs: You will receive (1) a fixed index spreadsheet schema and (2) SharePoint URLs to documents.
+        </p>
+        <p>
+          Protocol:
+        </p>
+        <ul>
+          <li>Open each SharePoint URL and extract values to match the schema exactly</li>
+          <li>Never rename or add columns</li>
+          <li>Never invent values; if not found, write “Not Found”</li>
+          <li>Preserve exact file names and URLs</li>
+          <li>For requirements/findings, include the page or section number where the text appears</li>
+          <li>Output a table in the exact column order provided</li>
+        </ul>
+        <p>
+          <strong>✅ User Prompt (Index Filling Request)</strong>
+        </p>
+        <p>
+          What a user types when they have a list of SharePoint URLs and want the spreadsheet filled.
+        </p>
+        <p>
+          Use the following fixed schema (columns) to populate an index table.
+        </p>
+        <p>
+          Index schema (column order):
+        </p>
+        <p>
+          [Paste column headers here, in order]
+        </p>
+        <p>
+          Documents (SharePoint URLs):
+        </p>
+        <p>
+          [URL 1]
+        </p>
+        <p>
+          [URL 2]
+        </p>
+        <p>
+          [URL 3]
+        </p>
+        <p>
+          Rules:
+        </p>
+        <ul>
+          <li>Fill each row by reading the document at its URL</li>
+          <li>Do not rename columns</li>
+          <li>If a value cannot be found, write “Not Found”</li>
+          <li>For key requirements/findings, include the page/section number</li>
+          <li>Output: Return a table matching the schema order.</li>
+        </ul>
+        <h4>4️⃣ The Upload Strategy (Still Critical)</h4>
+        <p>
+          Upload to AI knowledge base: the index spreadsheets
+        </p>
+        <p>
+          Keep in SharePoint: the original documents
+        </p>
+        <p>
+          This ensures AI always has the “map” and uses SharePoint files as the “territory.”
+        </p>
+        <h3>How AI Uses This Architecture</h3>
+        <p>
+          In practice, AI should follow this sequence:
+        </p>
+        <ul>
+          <li>Index first — identify the correct document via the index spreadsheet</li>
+          <li>Verify — open the original file using the SharePoint URL</li>
+          <li>Answer with citations — include:
+            <ul>
+              <li>Document name</li>
+              <li>Version (if available)</li>
+              <li>Page/Section number</li>
+              <li>SharePoint location (path/link)</li>
+            </ul>
+          </li>
+        </ul>
+        <h3>Databricks vs. Microsoft Fabric: The Automation Layer</h3>
+        <p>
+          Databricks is a cloud data/AI platform commonly used for large-scale data processing and custom code-heavy workflows. Microsoft Fabric is Microsoft’s end-to-end analytics platform (OneLake, Data Factory, Power BI, etc.) designed for unified data management and governance in the Microsoft ecosystem.
+        </p>
+        <p>
+          They are introduced not to improve AI answers, but to automate ingestion, keep indexes current, and enforce control as document volume, change rate, and compliance requirements grow.
+        </p>
+        <p>
+          “Use Databricks and Fabric only when scale demands it.” In practice, this means:
+        </p>
+        <p>
+          <strong>Do NOT use Databricks or Fabric yet when:</strong>
+        </p>
+        <ul>
+          <li>You have hundreds (not tens of thousands) of documents</li>
+          <li>Human-reviewed index spreadsheets are feasible</li>
+          <li>Documents change infrequently</li>
+          <li>Your main problem is accuracy, traceability, and citation</li>
+          <li>Copilot can already answer correctly using SharePoint + structured indexes</li>
+        </ul>
+        <p>
+          <strong>Use Microsoft Fabric when (the orchestrator):</strong>
+        </p>
+        <ul>
+          <li>You need to automatically watch SharePoint for new or changed files</li>
+          <li>Index spreadsheets must be refreshed on a schedule or trigger</li>
+          <li>You want low-code workflows inside Microsoft 365</li>
+          <li>You need guardrails (right access, traceable changes, audit/security readiness)</li>
+        </ul>
+        <p>
+          <strong>Use Databricks when (the engine):</strong>
+        </p>
+        <ul>
+          <li>Documents are messy (scanned PDFs, images, poor formatting)</li>
+          <li>OCR, heavy parsing, or custom Python logic is required before indexing</li>
+          <li>You are processing very large volumes (tens or hundreds of thousands of files)</li>
+          <li>Extraction cost/performance needs fine-grained control</li>
+        </ul>
+        <p>
+          In short: start with SharePoint + Copilot + structured indexes. Add Fabric for automation and governance. Add Databricks only when raw documents require heavy processing.
+        </p>
+        <p>
+          <strong>Key principle</strong>
+        </p>
+        <p>
+          Databricks and Fabric solve scale and governance problems—not understanding problems.
+        </p>
+        <p>
+          No platform compensates for poorly structured knowledge.
+        </p>
+        <h3>AI Instructions for Answering End-User Questions (System + User)</h3>
+        <p>
+          <strong>✅ System Prompt (for the Q&A Assistant: Copilot Studio / Custom GPT)</strong>
+        </p>
+        <p>
+          Role: You are an Enterprise Information Assistant.
+        </p>
+        <p>
+          Knowledge Sources: Structured Index Spreadsheets (SOP_Index, Reports_Index, Data_Index, optional PPT_Index and Image_Index) and original SharePoint documents accessible by URL.
+        </p>
+        <p>
+          Protocol:
+        </p>
+        <ul>
+          <li>Index First (when available): If an index exists for the document type (e.g., SOP_Index, Reports_Index, Data_Index, PPT_Index, Image_Index), search the relevant index first to identify the correct document(s).</li>
+          <li>Fallback (when no index exists): If there is no index for PPTs or images, search and open the PPT/image files directly in SharePoint.</li>
+          <li>Verify: Use the SharePoint URL to read the source document.</li>
+          <li>Citation Required: Cite document name, version (if available), and page/section number (or slide/figure when applicable and available).</li>
+          <li>Drift Check: If the document version is newer than the index, warn the user.</li>
+          <li>Uncertainty: If information is missing, say so and list what you checked.</li>
+        </ul>
+        <p>
+          <strong>✅ User Prompt (what employees should type)</strong>
+        </p>
+        <p>
+          What are the data retention requirements for analytical reports?
+        </p>
+        <p>
+          Please check the SOP_Index first, then cite: document name + version + page/section + SharePoint link.
+        </p>
+        <h3>Core Principles</h3>
+        <ul>
+          <li>Start small: Upload 2–3 representative files per document type to let AI propose the best schema.</li>
+          <li>Lock the schema: AI suggests; humans approve and freeze.</li>
+          <li>Scale with URLs: Provide SharePoint URLs and let Copilot fill the index deterministically.</li>
+          <li>Answer with proof: Always cite document + version + page/section + SharePoint location.</li>
+          <li>Automate only when needed: Fabric orchestrates; Databricks extracts messy content.</li>
+        </ul>
+        <p>
+          This is how you turn Copilot into a reliable enterprise information manager—accurate, traceable, and scalable.
+        </p>
+      </div>
+    </article>
+  </main>
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+      </div>
+      <div>
+        <p>
+          Contact:
+          <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">
+            chembioaiinsights@gmail.com
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

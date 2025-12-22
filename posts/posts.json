@@ -272,7 +272,7 @@
     "category": "Learning Resources",
     "name": "Yi Qu",
     "summary": "In a session led by Make, the focus was on moving beyond simple task automation to implementing enterprise-grade governance, lifecycle management, and reliable AI integration for workflows. The session provided a technical deep dive into event-driven architecture using Google Apps Script and Webhooks, and outlined a critical scenario lifecycle for managing automations.",
-    "readingTime": "5 min read",
+    ""readingTime": "5 min read",
     "contentUrl": "/posts/from-hobbyist-to-enterprise-mastering-workflow-automation-with-make.html"
   },
   {
@@ -384,5 +384,16 @@
     "summary": "When we train a machine learning model, we need a way to measure how well it is doing. A loss function is simply a number that tells us how wrong the model is.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/what-is-a-loss-function.html"
+  },
+  {
+    "id": 38,
+    "title": "The Structured Index: How to Turn SharePoint into a Reliable AI Knowledge Base",
+    "slug": "the-structured-index-how-to-turn-sharepoint-into-a-reliable-ai-knowledge-base",
+    "date": "December 22, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "A guide to building a reliable enterprise AI knowledge base by separating storage (SharePoint) from retrieval (Structured Index), ensuring accurate, traceable, and scalable answers with Copilot, Databricks, and Microsoft Fabric.",
+    "readingTime": "5 min read",
+    "contentUrl": "/posts/the-structured-index-how-to-turn-sharepoint-into-a-reliable-ai-knowledge-base.html"
   }
 ]
