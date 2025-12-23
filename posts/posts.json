@@ -406,9 +406,7 @@
     "summary": "A guide to building a reliable enterprise AI knowledge base by separating storage (SharePoint) from retrieval (Structured Index), ensuring accurate, traceable, and scalable answers with Copilot, Databricks, and Microsoft Fabric.",
     "readingTime": "5 min read",
     "contentUrl": "/posts/the-structured-index-how-to-turn-sharepoint-into-a-reliable-ai-knowledge-base.html"
-  }
-]
-,
+  },
   {
     "id": 39,
     "title": "AI Digest — AI's Economic Shift: Layoffs, Bubble Talk, and New Agentic Tools",
