@@ -41,6 +41,31 @@
       color: #2563eb; /* Blue color for links */
       text-decoration: none;
     }
+
+    /* Post-body scoped readability tweaks (only within .article-body[data-post-format-scope]) */
+    .article-body[data-post-format-scope] h2 {
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .article-body[data-post-format-scope] .learning-loop {
+      margin: 1.25rem 0 1.5rem;
+      padding-left: 1.25rem;
+    }
+    .article-body[data-post-format-scope] .learning-loop > li {
+      margin-bottom: 1rem;
+    }
+    .article-body[data-post-format-scope] .learning-loop .step-title {
+      display: inline-block;
+      margin-bottom: 0.25rem;
+    }
+    .article-body[data-post-format-scope] .learning-loop .step-desc {
+      margin: 0.35rem 0 0.75rem;
+    }
+    .article-body[data-post-format-scope] .learning-loop .step-prompt {
+      margin: 0.5rem 0 0;
+    }
   </style>
 </head>
 
@@ -70,31 +95,42 @@
         <p style="color: #64748b;">December 24, 2025 • By Yi Qu</p>
       </div>
 
-      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+      <div class="article-body" data-post-format-scope style="font-size: 1.125rem; color: var(--text-color);">
         <p>Our most common learning illusion is this: you read an article, remember a story, and think you’ve “got it.”</p>
         <p>But the moment you try to explain it clearly, the gaps show up instantly.</p>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">The real problem: learning feels good even when it’s fake</h2>
+        <h2>The real problem: learning feels good even when it’s fake</h2>
         <p>Traditional learning is comfortable. You read an article, save it, remember an example, and you feel smarter. But when you have to teach the idea to someone else, the gaps show up fast.</p>
         <p>That’s the core of the **Feynman Technique**: if you can’t explain it clearly, you don’t really know it.</p>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">A simple 3-step loop: speak → diagnose → quiz</h2>
+        <h2>A simple 3-step loop: speak → diagnose → quiz</h2>
         <p>I tried a new AI-style learning flow using Gemini 3 that felt surprisingly effective:</p>
 
-        <p><strong>Speak the concept</strong><br>Record a short voice note explaining an idea in your own words.</p>
+        <ol class="learning-loop">
+          <li>
+            <strong class="step-title">Speak the concept</strong>
+            <p class="step-desc">Record a short voice note explaining an idea in your own words.</p>
+          </li>
 
-        <p><strong>Let AI diagnose your blind spots</strong><br>AI points out where your logic jumps, where you skipped a key step, or where your definition is vague.</p>
-        <p>The prompt I used: <em>You are a senior coach. You are good at using the “Feynman Technique” to help students find gaps in their understanding.</em></p>
+          <li>
+            <strong class="step-title">Let AI diagnose your blind spots</strong>
+            <p class="step-desc">AI points out where your logic jumps, where you skipped a key step, or where your definition is vague.</p>
+            <p class="step-prompt">The prompt I used: <em>You are a senior coach. You are good at using the “Feynman Technique” to help students find gaps in their understanding.</em></p>
+          </li>
 
-        <p><strong>Take a custom quiz</strong><br>AI creates questions based on your weak points and explains each answer.</p>
-        <p>The prompt I used: <em>You need to generate a matching quiz for me, and test me using knowledge cards (flashcard style)</em></p>
+          <li>
+            <strong class="step-title">Take a custom quiz</strong>
+            <p class="step-desc">AI creates questions based on your weak points and explains each answer.</p>
+            <p class="step-prompt">The prompt I used: <em>You need to generate a matching quiz for me, and test me using knowledge cards (flashcard style)</em></p>
+          </li>
+        </ol>
 
         <p>This turns learning into a tight loop: output → feedback → practice.</p>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">My Story</h2>
+        <h2>My Story</h2>
         <p>Earlier this year I need to give a project presentation. I knew the topic, but my explanation felt shaky. I recorded a 90-second voice note and asked AI to critique it. AI kept pointing to the same issue: your conclusions were fine, but you skipped the “why this step is valid” bridge. I used AI’s questions to rebuild the missing logic, and my final presentation became much clearer and well received.</p>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">Suggestions</h2>
+        <h2>Suggestions</h2>
         <p>If you would like to try this, pick one concept you “kind of” know. Record a one-minute explanation. Then let AI challenge you. The blind spots show up faster than you expect.</p>
       </div>
     </article>
