@@ -428,5 +428,16 @@
     "summary": "Today's AI Digest covers the economic shift driven by AI, including job cuts at major tech companies, the debate over the AI investment 'bubble,' the release of Anthropic's open-source agentic framework 'Bloom,' and Al Jazeera's new AI-integrated news model.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/ai-digest-ai-s-economic-shift-layoffs-bubble-talk-and-new-agentic-tools.html"
+  },
+  {
+    "id": 40,
+    "title": "From Prompt Engineering to Context Engineering: How to Get Better AI Results",
+    "slug": "from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results",
+    "date": "December 24, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering—understanding what information the model needs so it doesn’t have to guess. This article outlines the shift and the four types of context that actually improve results.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results.html"
   }
 ]
