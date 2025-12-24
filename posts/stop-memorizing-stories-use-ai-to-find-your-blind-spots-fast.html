@@ -66,6 +66,16 @@
     .article-body[data-post-format-scope] .learning-loop .step-prompt {
       margin: 0.5rem 0 0;
     }
+    .article-body[data-post-format-scope] blockquote.prompt-quote {
+      margin: 0.75rem 0 0;
+      padding: 0.9rem 1rem;
+      border-left: 4px solid var(--border-color);
+      background: rgba(37, 99, 235, 0.06);
+      border-radius: 12px;
+    }
+    .article-body[data-post-format-scope] blockquote.prompt-quote p {
+      margin: 0;
+    }
   </style>
 </head>
 
@@ -115,13 +125,19 @@
           <li>
             <strong class="step-title">Let AI diagnose your blind spots</strong>
             <p class="step-desc">AI points out where your logic jumps, where you skipped a key step, or where your definition is vague.</p>
-            <p class="step-prompt">The prompt I used: <em>You are a senior coach. You are good at using the “Feynman Technique” to help students find gaps in their understanding.</em></p>
+            <p class="step-prompt">The prompt I used: </p>
+            <blockquote class="prompt-quote">
+              <p><em>You are a senior coach. You are good at using the “Feynman Technique” to help students find gaps in their understanding.</em></p>
+            </blockquote>
           </li>
 
           <li>
             <strong class="step-title">Take a custom quiz</strong>
             <p class="step-desc">AI creates questions based on your weak points and explains each answer.</p>
-            <p class="step-prompt">The prompt I used: <em>You need to generate a matching quiz for me, and test me using knowledge cards (flashcard style)</em></p>
+            <p class="step-prompt">The prompt I used: </p>
+            <blockquote class="prompt-quote">
+              <p><em>You need to generate a matching quiz for me, and test me using knowledge cards (flashcard style)</em></p>
+            </blockquote>
           </li>
         </ol>
 
