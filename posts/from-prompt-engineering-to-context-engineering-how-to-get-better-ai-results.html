@@ -5,169 +5,232 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>From Prompt Engineering to Context Engineering: How to Get Better AI Results - ChemBio AI Insights</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../assets/css/style.css">
+
   <style>
     .article-body p {
       margin-bottom: 1.25rem;
       line-height: 1.7;
     }
-    .cta-group {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+    .article-body h2 {
+      font-size: 1.75rem;
+      color: var(--primary-color);
+      margin-top: 3rem;
+      margin-bottom: 1rem;
+    }
+    .article-body ul,
+    .article-body ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-body li {
+      margin-bottom: 0.6rem;
+    }
+    .divider {
+      margin: 3rem 0;
+      opacity: 0.15;
+    }
+    .callout {
+      background: #f8fafc;
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
       margin: 2rem 0;
     }
-    .cta-button {
-      display: inline-block;
-      background-color: #2563eb; /* brand blue */
-      color: #fff;
-      padding: 0.8rem 1.6rem;
-      font-weight: 600;
-      border-radius: 10px;
-      text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: all 0.25s ease;
-    }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    }
-    .cta-button.youtube {
-      background-color: #dc2626;
-    }
-    .blue-link {
-      color: #2563eb; /* Blue color for links */
-      text-decoration: none;
+    blockquote {
+      margin: 1.5rem 0;
+      padding-left: 1rem;
+      border-left: 4px solid #2563eb;
+      color: #334155;
+      font-style: italic;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav-container">
-      <a href="../index.html" class="logo">
-        <div class="logo-text">
-          <h1>ChemBio AI</h1>
-          <span>Insights</span>
-        </div>
-      </a>
-      <nav>
-        <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back to Home</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
-      <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
-        <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Tools & Tips</span>
-        <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
-          From Prompt Engineering to Context Engineering: How to Get Better AI Results
-        </h1>
-        <p style="color: #64748b;">December 24, 2025 • By Yi Qu</p>
+<header>
+  <div class="container nav-container">
+    <a href="../index.html" class="logo">
+      <div class="logo-text">
+        <h1>ChemBio AI</h1>
+        <span>Insights</span>
+      </div>
+    </a>
+    <nav>
+      <a href="../index.html" class="btn"
+         style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">
+        Back to Home
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
+
+    <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
+      <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">
+        Tools & Tips
+      </span>
+      <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
+        From Prompt Engineering to Context Engineering: How to Get Better AI Results
+      </h1>
+      <p style="color: #64748b;">December 24, 2025 • By Yi Qu</p>
+    </div>
+
+    <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+
+      <p><strong>You can write a beautiful, detailed prompt and still get a disappointing answer.</strong>
+        Not because you did it “wrong,” but because the real lever has shifted.</p>
+
+      <p>The new advantage isn’t longer prompts.
+        <strong>It’s context engineering</strong>—and understanding where your context should live.</p>
+
+      <hr class="divider">
+
+      <h2>1) Why “Perfect Prompts” Matter Less Than They Used To</h2>
+
+      <p>Early AI systems needed extremely detailed instructions to perform well.
+        You had to spell out everything step by step.</p>
+
+      <p>Modern models have absorbed common interaction patterns from millions of users.
+        Platforms now add defaults, guardrails, and tools around the model.</p>
+
+      <p><strong>The problem:</strong> “acceptable” is not the same as <em>reliable</em>.
+        If you want outputs that consistently fit your needs, you need a different approach.</p>
+
+      <hr class="divider">
+
+      <h2>2) The Real Shift: Context Engineering</h2>
+
+      <p>Traditional prompting focuses on wording:</p>
+
+      <blockquote>“How do I say this so the model understands?”</blockquote>
+
+      <p>Context engineering reframes the question:</p>
+
+      <blockquote><strong>“What information does the model need so it doesn’t have to guess?”</strong></blockquote>
+
+      <p>Instead of longer prose, you provide decision-making material:</p>
+
+      <ul>
+        <li>Examples of what you like</li>
+        <li>Constraints you must follow</li>
+        <li>Your real situation</li>
+        <li>Grounding references</li>
+      </ul>
+
+      <p>When the model stops guessing, it stops sounding generic.</p>
+
+      <hr class="divider">
+
+      <h2>3) The Missing Piece: Where Should Context Live?</h2>
+
+      <p>“Give it more context” raises a practical question:</p>
+
+      <p><strong>System prompt or user prompt?</strong></p>
+
+      <ul>
+        <li><strong>System prompt:</strong> stable rules and preferences</li>
+        <li><strong>User prompt:</strong> task-specific details</li>
+      </ul>
+
+      <p>Mixing these layers is one of the fastest ways to get inconsistent results.</p>
+
+      <hr class="divider">
+
+      <h2>4) The 4 Types of Context That Actually Improve Results</h2>
+
+      <ol>
+        <li><strong>Past preferences</strong> — concrete examples of “good”</li>
+        <li><strong>Style preferences</strong> — do / avoid rules</li>
+        <li><strong>Specific scenario</strong> — goals and constraints</li>
+        <li><strong>References</strong> — trusted grounding material</li>
+      </ol>
+
+      <hr class="divider">
+
+      <h2>5) A Mini Story and an Example</h2>
+
+      <p>A family member complained that AI trip plans always felt the same:
+        touristy, packed, unrealistic.</p>
+
+      <p>They rewrote the prompt again and again.</p>
+
+      <p><strong>Nothing changed.</strong></p>
+
+      <p>Then they pasted two itineraries they loved from past trips
+        plus a short list of non-negotiables.</p>
+
+      <p>The next plan finally felt personal.</p>
+
+      <hr class="divider">
+
+      <h2>System Prompt (Permanent Preferences)</h2>
+
+      <div class="callout">
+        <p><strong>You are my practical planning assistant.</strong></p>
+        <ul>
+          <li>Default to realistic, doable plans</li>
+          <li>Question feasibility at every step</li>
+          <li>Output: recommendation → options → checklist → risks</li>
+        </ul>
+        <p><strong>My usual preferences:</strong></p>
+        <ul>
+          <li>Local food over museums</li>
+          <li>Fewer stops, more depth</li>
+          <li>Comfort over optimization</li>
+        </ul>
       </div>
 
-      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
-        <p>You can write a beautiful, detailed prompt and still get a disappointing answer. Not because you did it “wrong,” but because the real lever has shifted.</p>
-        <p>The new advantage isn’t longer prompts. It’s context engineering—and understanding where your context should live.</p>
+      <h2>User Prompt (This Task Only)</h2>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">1) Why “Perfect Prompts” Matter Less Than They Used To</h2>
-        <p>Early AI systems needed extremely detailed instructions to perform well. You had to spell out everything step by step.</p>
-        <p>But modern models have learned common request patterns from years of interaction. Platforms also improve the surrounding workflow—defaults, guardrails, tool use—so you often get acceptable results with less instruction.</p>
-        <p>The catch: “acceptable” is not “reliable.” If you want outputs that are consistently useful (and not generic), you need a different approach.</p>
+      <div class="callout">
+        <p><strong>Task:</strong> Plan a 3-day Tokyo trip for two people.</p>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">2) The Real Shift: Context Engineering</h2>
-        <p>Traditional prompting is mostly about wording: “How do I say it so the model understands?”</p>
-        <p>Context engineering is about inputs: “What information does the model need so it doesn’t have to guess?”</p>
-        <p>Instead of writing a longer prompt describing your preferences, you give the model what humans use to make good decisions:</p>
-        <ul>
-          <li>examples of what you like,</li>
-          <li>constraints you must follow,</li>
-          <li>your real situation,</li>
-          <li>and references that ground the answer.</li>
-        </ul>
-        <p>When the model stops guessing, it stops sounding generic.</p>
-
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">3) The Missing Piece: Where Should Context Live?</h2>
-        <p>“Give it more context” raises a practical question: system prompt or user prompt?</p>
-        <p>Most AI systems treat prompts like a hierarchy:</p>
-        <ul>
-          <li><strong>System prompt (highest priority):</strong> stable rules that should apply every time</li>
-          <li><strong>User prompt (lower priority):</strong> today’s task and details</li>
-        </ul>
-
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">4) The 4 Types of Context That Actually Improve Results</h2>
-        <p>Most “better outputs” come from these four inputs:</p>
-        <ol>
-          <li><strong>Your past preferences (examples)</strong><br>What “good” looks like for you—sample itineraries, messages, plans, decisions, etc.</li>
-          <li><strong>Your style preferences (do/avoid rules)</strong><br>Simple vs detailed, budget vs comfort, fast-paced vs relaxed, no red-eyes, no museums, etc.</li>
-          <li><strong>Your specific scenario (goal + constraints)</strong><br>Who’s going, when, budget, mobility, time limits, priorities.</li>
-          <li><strong>Relevant references (grounding material)</strong><br>Lists you trust, schedules you already have, must-visit places, constraints from tickets, maps, or notes.</li>
-        </ol>
-
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">5) A Mini Story and An Example</h2>
-        <p>My family member used AI to plan trips and complained that every itinerary looked the same: touristy, overstuffed, and unrealistic. They kept rewriting the prompt—more rules, more emphasis, more “please be practical.”</p>
-        <p>Nothing changed.</p>
-        <p>Then they did one small thing: they pasted two itineraries they actually loved from past trips, plus a short list of non-negotiables (pace, food priorities, budget range). The next plan finally felt like it was made for them.</p>
-        <p>Here’s a template that uses all four context types—and puts them in the right layer.</p>
-
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">System Prompt (Permanent Preferences)</h2>
-        <p>You are my practical planning assistant.</p>
-        <ul>
-          <li>Default to clear, realistic plans (not fantasy itineraries).</li>
-          <li>Ask yourself: “Is this doable in real life?”</li>
-          <li>Output format: (1) a short recommendation, (2) 2–3 options, (3) a simple checklist, (4) what could go wrong + fixes.</li>
-        </ul>
-        <p>My preferences (usually true):</p>
-        <ul>
-          <li>I like local food and walking neighborhoods more than museums.</li>
-          <li>I prefer fewer stops, more time per place.</li>
-          <li>I value comfort and simplicity over “maximizing everything.”</li>
-        </ul>
-
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">User Prompt (This Task Only)</h2>
-        <p>Task: Plan a 3-day trip to Tokyo for two people.</p>
-        <p>(1) Scenario</p>
+        <p><strong>Scenario</strong></p>
         <ul>
           <li>Dates: March 14–16</li>
-          <li>Budget: mid-range (comfortable but not luxury)</li>
-          <li>Hotel: near Shinjuku (already booked)</li>
-          <li>Constraints: no super early mornings; one afternoon reserved for shopping; one nice dinner</li>
-        </ul>
-        <p>(2) Past Preferences (examples of what “good” looks like)</p>
-        <p>Here are two mini itineraries I loved—match this pacing:</p>
-        <ul>
-          <li>Example A: “Day starts at 10am, one main neighborhood, one anchor meal, one sunset spot, back by 9pm.”</li>
-          <li>Example B: “Pick 2–3 highlights only. Leave time for wandering. Include one ‘backup plan’ if it rains.”</li>
-        </ul>
-        <p>(3) Style Preferences (for this plan)</p>
-        <ul>
-          <li>Keep each day to 3–4 main items max</li>
-          <li>Include food suggestions near each area</li>
-          <li>Add a “Too tired?” alternative for each day</li>
-        </ul>
-        <p>(4) References</p>
-        <ul>
-          <li>Must-do list: sushi omakase (one meal), a quiet coffee shop, a night view</li>
-          <li>Avoid list: theme parks, packed tour buses</li>
-          <li>Notes: I like places similar to cozy alleyways and small izakayas</li>
+          <li>Budget: mid-range</li>
+          <li>Hotel: Shinjuku</li>
+          <li>Constraints: slow mornings, shopping, one nice dinner</li>
         </ul>
 
-        <p>If you haven’t tried context engineering approach, I would recommend you give it a try for a task you might repeat regularly.</p>
+        <p><strong>Style Preferences</strong></p>
+        <ul>
+          <li>3–4 main items per day</li>
+          <li>Food near each area</li>
+          <li>“Too tired?” backup option</li>
+        </ul>
       </div>
-    </article>
-  </main>
 
-  <footer>
-    <div class="container footer-content">
-      <div><p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p></div>
-      <div><p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p></div>
+      <p style="margin-top: 2.5rem;">
+        <strong>If you haven’t tried a context engineering approach,</strong>
+        give it a try for a task you repeat regularly.
+      </p>
+
     </div>
-  </footer>
-</body>
+  </article>
+</main>
 
+<footer>
+  <div class="container footer-content">
+    <div>
+      <p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p>
+    </div>
+    <div>
+      <p>Contact:
+        <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">
+          chembioaiinsights@gmail.com
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+</body>
 </html>
