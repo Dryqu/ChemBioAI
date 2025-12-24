@@ -43,6 +43,59 @@
       color: #2563eb; /* Blue color for links */
       text-decoration: none;
     }
+
+    /* Post formatting improvements (scoped to main content only) */
+    .article-body[data-post-format-scope] {
+      --post-surface: rgba(15, 23, 42, 0.04);
+      --post-border: rgba(15, 23, 42, 0.10);
+      --post-soft: rgba(37, 99, 235, 0.06);
+    }
+    .article-body[data-post-format-scope] h2 {
+      line-height: 1.25;
+    }
+    .article-body[data-post-format-scope] h3 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      font-size: 1.2rem;
+      color: var(--primary-color);
+      line-height: 1.3;
+    }
+    .article-body[data-post-format-scope] .post-section {
+      margin-top: 2rem;
+      padding-top: 0.25rem;
+    }
+    .article-body[data-post-format-scope] .post-section + .post-section {
+      border-top: 1px solid var(--post-border);
+      padding-top: 2rem;
+    }
+    .article-body[data-post-format-scope] ul,
+    .article-body[data-post-format-scope] ol {
+      padding-left: 1.25rem;
+      margin: 1rem 0 1.25rem;
+    }
+    .article-body[data-post-format-scope] li {
+      margin: 0.45rem 0;
+    }
+    .article-body[data-post-format-scope] ol li p {
+      margin: 0.6rem 0 0;
+    }
+    .article-body[data-post-format-scope] .prompt-block {
+      margin: 1.25rem 0 1.75rem;
+      padding: 1.25rem 1.25rem 0.25rem;
+      background: var(--post-surface);
+      border: 1px solid var(--post-border);
+      border-radius: 14px;
+    }
+    .article-body[data-post-format-scope] .prompt-block .prompt-block__meta {
+      margin-top: 0.75rem;
+      padding: 0.9rem 1rem;
+      background: var(--post-soft);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      border-radius: 12px;
+    }
+    .article-body[data-post-format-scope] .prompt-block .prompt-block__meta p:last-child {
+      margin-bottom: 1.25rem;
+    }
   </style>
 </head>
 
@@ -71,93 +124,117 @@
         <p style="color: #64748b;">December 24, 2025 • By Yi Qu</p>
       </div>
 
-      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
-        <p>You can write a beautiful, detailed prompt and still get a disappointing answer. Not because you did it “wrong,” but because the real lever has shifted.</p>
-        <p>The new advantage isn’t longer prompts. It’s context engineering—and understanding where your context should live.</p>
+      <div class="article-body" data-post-format-scope style="font-size: 1.125rem; color: var(--text-color);">
+        <section class="post-section">
+          <p>You can write a beautiful, detailed prompt and still get a disappointing answer. Not because you did it “wrong,” but because the real lever has shifted.</p>
+          <p>The new advantage isn’t longer prompts. It’s context engineering—and understanding where your context should live.</p>
+        </section>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">1) Why “Perfect Prompts” Matter Less Than They Used To</h2>
-        <p>Early AI systems needed extremely detailed instructions to perform well. You had to spell out everything step by step.</p>
-        <p>But modern models have learned common request patterns from years of interaction. Platforms also improve the surrounding workflow—defaults, guardrails, tool use—so you often get acceptable results with less instruction.</p>
-        <p>The catch: “acceptable” is not “reliable.” If you want outputs that are consistently useful (and not generic), you need a different approach.</p>
+        <section class="post-section">
+          <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">1) Why “Perfect Prompts” Matter Less Than They Used To</h2>
+          <p>Early AI systems needed extremely detailed instructions to perform well. You had to spell out everything step by step.</p>
+          <p>But modern models have learned common request patterns from years of interaction. Platforms also improve the surrounding workflow—defaults, guardrails, tool use—so you often get acceptable results with less instruction.</p>
+          <p>The catch: “acceptable” is not “reliable.” If you want outputs that are consistently useful (and not generic), you need a different approach.</p>
+        </section>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">2) The Real Shift: Context Engineering</h2>
-        <p>Traditional prompting is mostly about wording: “How do I say it so the model understands?”</p>
-        <p>Context engineering is about inputs: “What information does the model need so it doesn’t have to guess?”</p>
-        <p>Instead of writing a longer prompt describing your preferences, you give the model what humans use to make good decisions:</p>
-        <ul>
-          <li>examples of what you like,</li>
-          <li>constraints you must follow,</li>
-          <li>your real situation,</li>
-          <li>and references that ground the answer.</li>
-        </ul>
-        <p>When the model stops guessing, it stops sounding generic.</p>
+        <section class="post-section">
+          <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">2) The Real Shift: Context Engineering</h2>
+          <p>Traditional prompting is mostly about wording: “How do I say it so the model understands?”</p>
+          <p>Context engineering is about inputs: “What information does the model need so it doesn’t have to guess?”</p>
+          <p>Instead of writing a longer prompt describing your preferences, you give the model what humans use to make good decisions:</p>
+          <ul>
+            <li>examples of what you like,</li>
+            <li>constraints you must follow,</li>
+            <li>your real situation,</li>
+            <li>and references that ground the answer.</li>
+          </ul>
+          <p>When the model stops guessing, it stops sounding generic.</p>
+        </section>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">3) The Missing Piece: Where Should Context Live?</h2>
-        <p>“Give it more context” raises a practical question: system prompt or user prompt?</p>
-        <p>Most AI systems treat prompts like a hierarchy:</p>
-        <ul>
-          <li><strong>System prompt (highest priority):</strong> stable rules that should apply every time</li>
-          <li><strong>User prompt (lower priority):</strong> today’s task and details</li>
-        </ul>
+        <section class="post-section">
+          <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">3) The Missing Piece: Where Should Context Live?</h2>
+          <p>“Give it more context” raises a practical question: system prompt or user prompt?</p>
+          <p>Most AI systems treat prompts like a hierarchy:</p>
+          <ul>
+            <li><strong>System prompt (highest priority):</strong> stable rules that should apply every time</li>
+            <li><strong>User prompt (lower priority):</strong> today’s task and details</li>
+          </ul>
+        </section>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">4) The 4 Types of Context That Actually Improve Results</h2>
-        <p>Most “better outputs” come from these four inputs:</p>
-        <ol>
-          <li><strong>Your past preferences (examples)</strong><p>What “good” looks like for you—sample itineraries, messages, plans, decisions, etc.</p></li>
-          <li><strong>Your style preferences (do/avoid rules)</strong><p>Simple vs detailed, budget vs comfort, fast-paced vs relaxed, no red-eyes, no museums, etc.</p></li>
-          <li><strong>Your specific scenario (goal + constraints)</strong><p>Who’s going, when, budget, mobility, time limits, priorities.</p></li>
-          <li><strong>Relevant references (grounding material)</strong><p>Lists you trust, schedules you already have, must-visit places, constraints from tickets, maps, or notes.</p></li>
-        </ol>
+        <section class="post-section">
+          <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">4) The 4 Types of Context That Actually Improve Results</h2>
+          <p>Most “better outputs” come from these four inputs:</p>
+          <ol>
+            <li><strong>Your past preferences (examples)</strong><p>What “good” looks like for you—sample itineraries, messages, plans, decisions, etc.</p></li>
+            <li><strong>Your style preferences (do/avoid rules)</strong><p>Simple vs detailed, budget vs comfort, fast-paced vs relaxed, no red-eyes, no museums, etc.</p></li>
+            <li><strong>Your specific scenario (goal + constraints)</strong><p>Who’s going, when, budget, mobility, time limits, priorities.</p></li>
+            <li><strong>Relevant references (grounding material)</strong><p>Lists you trust, schedules you already have, must-visit places, constraints from tickets, maps, or notes.</p></li>
+          </ol>
+        </section>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">5) A Mini Story and An Example</h2>
-        <p>My family member used AI to plan trips and complained that every itinerary looked the same: touristy, overstuffed, and unrealistic. They kept rewriting the prompt—more rules, more emphasis, more “please be practical.”</p>
-        <p>Nothing changed.</p>
-        <p>Then they did one small thing: they pasted two itineraries they actually loved from past trips, plus a short list of non-negotiables (pace, food priorities, budget range). The next plan finally felt like it was made for them.</p>
-        <p>Here’s a template that uses all four context types—and puts them in the right layer.</p>
+        <section class="post-section">
+          <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">5) A Mini Story and An Example</h2>
+          <p>My family member used AI to plan trips and complained that every itinerary looked the same: touristy, overstuffed, and unrealistic. They kept rewriting the prompt—more rules, more emphasis, more “please be practical.”</p>
+          <p>Nothing changed.</p>
+          <p>Then they did one small thing: they pasted two itineraries they actually loved from past trips, plus a short list of non-negotiables (pace, food priorities, budget range). The next plan finally felt like it was made for them.</p>
+          <p>Here’s a template that uses all four context types—and puts them in the right layer.</p>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">System Prompt (Permanent Preferences)</h2>
-        <p>You are my practical planning assistant.</p>
-        <ul>
-          <li>Default to clear, realistic plans (not fantasy itineraries).</li>
-          <li>Ask yourself: “Is this doable in real life?”</li>
-          <li>Output format: (1) a short recommendation, (2) 2–3 options, (3) a simple checklist, (4) what could go wrong + fixes.</li>
-        </ul>
-        <p>My preferences (usually true):</p>
-        <ul>
-          <li>I like local food and walking neighborhoods more than museums.</li>
-          <li>I prefer fewer stops, more time per place.</li>
-          <li>I value comfort and simplicity over “maximizing everything.”</li>
-        </ul>
+          <div class="prompt-block">
+            <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">System Prompt (Permanent Preferences)</h2>
+            <div class="prompt-block__meta">
+              <p>You are my practical planning assistant.</p>
+              <ul>
+                <li>Default to clear, realistic plans (not fantasy itineraries).</li>
+                <li>Ask yourself: “Is this doable in real life?”</li>
+                <li>Output format: (1) a short recommendation, (2) 2–3 options, (3) a simple checklist, (4) what could go wrong + fixes.</li>
+              </ul>
+              <p>My preferences (usually true):</p>
+              <ul>
+                <li>I like local food and walking neighborhoods more than museums.</li>
+                <li>I prefer fewer stops, more time per place.</li>
+                <li>I value comfort and simplicity over “maximizing everything.”</li>
+              </ul>
+            </div>
+          </div>
 
-        <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">User Prompt (This Task Only)</h2>
-        <p>Task: Plan a 3-day trip to Tokyo for two people.</p>
-        <h3>(1) Scenario</h3>
-        <ul>
-          <li>Dates: March 14–16</li>
-          <li>Budget: mid-range (comfortable but not luxury)</li>
-          <li>Hotel: near Shinjuku (already booked)</li>
-          <li>Constraints: no super early mornings; one afternoon reserved for shopping; one nice dinner</li>
-        </ul>
-        <h3>(2) Past Preferences (examples of what “good” looks like)</h3>
-        <p>Here are two mini itineraries I loved—match this pacing:</p>
-        <ul>
-          <li>Example A: “Day starts at 10am, one main neighborhood, one anchor meal, one sunset spot, back by 9pm.”</li>
-          <li>Example B: “Pick 2–3 highlights only. Leave time for wandering. Include one ‘backup plan’ if it rains.”</li>
-        </ul>
-        <h3>(3) Style Preferences (for this plan)</h3>
-        <ul>
-          <li>Keep each day to 3–4 main items max</li>
-          <li>Include food suggestions near each area</li>
-          <li>Add a “Too tired?” alternative for each day</li>
-        </ul>
-        <h3>(4) References</h3>
-        <ul>
-          <li>Must-do list: sushi omakase (one meal), a quiet coffee shop, a night view</li>
-          <li>Avoid list: theme parks, packed tour buses</li>
-          <li>Notes: I like places similar to cozy alleyways and small izakayas</li>
-        </ul>
+          <div class="prompt-block">
+            <h2 style="font-size: 1.75rem; color: var(--primary-color); margin-top: 2.5rem; margin-bottom: 1rem;">User Prompt (This Task Only)</h2>
+            <div class="prompt-block__meta">
+              <p>Task: Plan a 3-day trip to Tokyo for two people.</p>
 
-        <p>If you haven’t tried context engineering approach, I would recommend you give it a try for a task you might repeat regularly.</p>
+              <h3>(1) Scenario</h3>
+              <ul>
+                <li>Dates: March 14–16</li>
+                <li>Budget: mid-range (comfortable but not luxury)</li>
+                <li>Hotel: near Shinjuku (already booked)</li>
+                <li>Constraints: no super early mornings; one afternoon reserved for shopping; one nice dinner</li>
+              </ul>
+
+              <h3>(2) Past Preferences (examples of what “good” looks like)</h3>
+              <p>Here are two mini itineraries I loved—match this pacing:</p>
+              <ul>
+                <li>Example A: “Day starts at 10am, one main neighborhood, one anchor meal, one sunset spot, back by 9pm.”</li>
+                <li>Example B: “Pick 2–3 highlights only. Leave time for wandering. Include one ‘backup plan’ if it rains.”</li>
+              </ul>
+
+              <h3>(3) Style Preferences (for this plan)</h3>
+              <ul>
+                <li>Keep each day to 3–4 main items max</li>
+                <li>Include food suggestions near each area</li>
+                <li>Add a “Too tired?” alternative for each day</li>
+              </ul>
+
+              <h3>(4) References</h3>
+              <ul>
+                <li>Must-do list: sushi omakase (one meal), a quiet coffee shop, a night view</li>
+                <li>Avoid list: theme parks, packed tour buses</li>
+                <li>Notes: I like places similar to cozy alleyways and small izakayas</li>
+              </ul>
+            </div>
+          </div>
+
+          <p>If you haven’t tried context engineering approach, I would recommend you give it a try for a task you might repeat regularly.</p>
+        </section>
       </div>
     </article>
   </main>
