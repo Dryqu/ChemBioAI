@@ -23,27 +23,33 @@ let likesData = {};
 async function init() {
     console.log('Engage Module: Initializing...');
 
-    // 1. Render Initial UI (Scaffolding) immediately so it's not empty
+    // 1. Render Scaffolding immediately
     renderScaffolding();
 
-    // 2. Load Supabase & Clerk in parallel
+    // 2. Initialize Buttons & Share features IMMEDIATELY (Don't wait for network)
+    updateUIState();
+    enableLikeButton();
+    initShare();
+
+    // 3. Load Supabase & Clerk in parallel
     try {
         await Promise.all([loadSupabase(), loadClerk()]);
         console.log('Engage Module: Scripts loaded.');
 
-        // 3. Initialize Logic
-        updateUIState();
-        enableLikeButton();
-        initShare();
-        fetchComments(); // Fetch data now that scripts are ready
+        // 4. Initialize Logic that requires scripts
+        updateUIState(); // Re-run to update with User state
+        fetchComments();
 
     } catch (e) {
         console.error('Engage Module: Critical Init Error', e);
-        document.getElementById('comments-container').innerHTML =
-            `<div style="padding:1rem; border:1px solid red; color:red; border-radius:8px;">
-                <strong>Error loading module:</strong> ${e.message}<br>
-                <small>Check console for details.</small>
-             </div>`;
+        const container = document.getElementById('comments-container');
+        if (container) {
+            container.innerHTML =
+                `<div style="padding:1rem; border:1px solid red; color:red; border-radius:8px;">
+                    <strong>Error loading module:</strong> ${e.message}<br>
+                    <small>Button features might still work. Check console.</small>
+                 </div>`;
+        }
     }
 }
 
@@ -66,8 +72,10 @@ function renderScaffolding() {
 
 function loadSupabase() {
     return new Promise((resolve, reject) => {
-        if (window.supabase) {
-            supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+        // Check if already loaded
+        const existingProvider = window.supabase || window.Supabase;
+        if (existingProvider && existingProvider.createClient) {
+            supabase = existingProvider.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
             resolve();
             return;
         }
@@ -75,8 +83,16 @@ function loadSupabase() {
         const script = document.createElement('script');
         script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
         script.onload = () => {
+            // Try both common global names
+            const provider = window.supabase || window.Supabase;
+
+            if (!provider) {
+                reject(new Error('Supabase loaded but global object not found.'));
+                return;
+            }
+
             try {
-                supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+                supabase = provider.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
                 resolve();
             } catch (err) {
                 reject(new Error('Supabase CreateClient Failed: ' + err.message));
