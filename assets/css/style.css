@@ -490,3 +490,126 @@ footer {
     display: none !important;
   }
 }
+
+/* ============================================
+   ENGAGE MODULE STYLES
+   ============================================ */
+
+.engage-module {
+  margin-top: 4rem;
+  padding-top: 3rem;
+}
+
+.engage-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--border-color), transparent);
+  margin-bottom: 2rem;
+}
+
+.engage-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding: 1.5rem;
+  background: var(--bg-color);
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.engage-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid var(--border-color);
+  background: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text-color);
+}
+
+.engage-btn:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.like-btn {
+  font-weight: 600;
+}
+
+.like-btn.liked {
+  background: #fee2e2;
+  border-color: #ef4444;
+  color: #dc2626;
+}
+
+.like-btn.liked svg {
+  fill: #dc2626;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.share-btn {
+  padding: 0.75rem;
+  min-width: 44px;
+  justify-content: center;
+}
+
+.share-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.engage-comments {
+  margin-top: 2rem;
+}
+
+.comments-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.auth-prompt {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-color);
+  border-radius: 0.5rem;
+  color: var(--text-color);
+}
+
+.signin-link {
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.signin-link:hover {
+  color: var(--accent-hover);
+}
+
+/* Giscus theme override */
+.giscus {
+  max-width: 100%;
+}
+
+@media (max-width: 640px) {
+  .engage-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .share-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+}
