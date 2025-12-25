@@ -3,8 +3,8 @@
 // ============================================
 
 const CONFIG = {
-    // CLERK KEYS
-    clerkPublishableKey: 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA',
+    // CLERK - Use Frontend API for this account
+    clerkFrontendApi: 'https://blessed-beagle-93.clerk.accounts.dev',
 
     // SUPABASE KEYS
     supabaseUrl: 'https://opeibcpemzavmiurxpmp.supabase.co',
@@ -124,8 +124,8 @@ function loadClerk() {
                     console.log('✅ window.Clerk found! Initializing...');
                     try {
                         clerk = window.Clerk;
-                        console.log('🔑 Calling clerk.load() with key:', CONFIG.clerkPublishableKey.substring(0, 20) + '...');
-                        await clerk.load({ publishableKey: CONFIG.clerkPublishableKey });
+                        console.log('🔑 Calling clerk.load() with frontendApi:', CONFIG.clerkFrontendApi);
+                        await clerk.load({ frontendApi: CONFIG.clerkFrontendApi });
                         console.log('✅ clerk.load() completed');
                         checkUser();
                         console.log('👤 checkUser() completed, user:', !!user);
