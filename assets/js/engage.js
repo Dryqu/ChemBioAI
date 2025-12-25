@@ -21,33 +21,47 @@ let likesData = {};
 // 1. INIT
 // ============================================
 async function init() {
-    console.log('Engage Module: Initializing...');
-
-    // 1. Render Scaffolding immediately
+    console.log('🚀 Engage Module: Starting initialization...');
     renderScaffolding();
-
-    // 2. Initialize Buttons & Share features IMMEDIATELY (Don't wait for network)
     updateUIState();
     enableLikeButton();
     initShare();
 
-    // 3. Load Supabase & Clerk in parallel
     try {
-        await Promise.all([loadSupabase(), loadClerk()]);
-        console.log('Engage Module: Scripts loaded.');
+        console.log('📦 Loading Supabase and Clerk in parallel...');
+        const results = await Promise.allSettled([loadSupabase(), loadClerk()]);
 
-        // 4. Initialize Logic that requires scripts
-        updateUIState(); // Re-run to update with User state
-        fetchComments();
-
-    } catch (e) {
-        console.error('Engage Module: Init Error', e);
-        // We only show critical errors if Supabase fails (comments won't work).
-        // If Clerk fails, we handle it gracefully in the buttons.
-        if (e.message.includes('Supabase')) {
-            const container = document.getElementById('comments-container');
-            if (container) container.innerHTML = `<div style="padding:1rem;color:red;border:1px solid red;">Error: ${e.message}</div>`;
+        // Check individual results
+        if (results[0].status === 'rejected') {
+            console.error('❌ Supabase failed:', results[0].reason);
+            showError('Supabase Error: ' + results[0].reason.message);
+        } else {
+            console.log('✅ Supabase loaded');
         }
+
+        if (results[1].status === 'rejected') {
+            console.error('❌ Clerk failed:', results[1].reason);
+            showError('Clerk Error: ' + results[1].reason.message + ' (Like/Comment features disabled)');
+        } else {
+            console.log('✅ Clerk loaded');
+        }
+
+        console.log('📊 Final state - clerk:', !!clerk, 'supabase:', !!supabase, 'user:', !!user);
+        updateUIState();
+        fetchComments();
+    } catch (e) {
+        console.error('💥 Engage Module: Unexpected Init Error', e);
+        showError('Initialization Error: ' + e.message);
+    }
+}
+
+function showError(message) {
+    const container = document.getElementById('comments-container');
+    if (container) {
+        container.innerHTML = `<div style="padding:1rem;color:#dc2626;background:#fee2e2;border:1px solid #dc2626;border-radius:8px;margin:1rem 0;">
+            <strong>⚠️ Error:</strong> ${message}<br>
+            <small>Check browser console (F12) for details.</small>
+        </div>`;
     }
 }
 
@@ -55,16 +69,13 @@ function renderScaffolding() {
     const container = document.getElementById('comments-container');
     if (!container) return;
 
-    // Render placeholders
     container.innerHTML = `
         <div id="comment-input-container">
             <div style="background: #f8fafc; border: 1px dashed var(--border-color); border-radius: 0.5rem; padding: 1.5rem; text-align: center; color: #64748b;">
-                Loading comments...
+                ⏳ Loading community features...
             </div>
         </div>
-        <div id="comment-list" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-            <!-- Comments will appear here -->
-        </div>
+        <div id="comment-list" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;"></div>
     `;
 }
 
@@ -84,43 +95,59 @@ async function loadSupabase() {
 }
 
 function loadClerk() {
+    console.log('🔐 Starting Clerk load...');
     return new Promise((resolve, reject) => {
         if (window.Clerk) {
+            console.log('✅ Clerk already in window');
             clerk = window.Clerk;
             checkUser();
             resolve();
             return;
         }
 
+        console.log('📥 Creating Clerk script tag...');
         const script = document.createElement('script');
         script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
         script.async = true;
         document.head.appendChild(script);
+        console.log('📤 Clerk script tag added to DOM');
 
         script.onload = async () => {
-            // Poll for window.Clerk availability (fixes race condition)
+            console.log('📜 Clerk script.onload fired, polling for window.Clerk...');
             let attempts = 0;
             const interval = setInterval(async () => {
+                attempts++;
+                console.log(`🔄 Poll attempt ${attempts}/20, window.Clerk = ${!!window.Clerk}`);
+
                 if (window.Clerk) {
                     clearInterval(interval);
+                    console.log('✅ window.Clerk found! Initializing...');
                     try {
                         clerk = window.Clerk;
+                        console.log('🔑 Calling clerk.load() with key:', CONFIG.clerkPublishableKey.substring(0, 20) + '...');
                         await clerk.load({ publishableKey: CONFIG.clerkPublishableKey });
+                        console.log('✅ clerk.load() completed');
                         checkUser();
+                        console.log('👤 checkUser() completed, user:', !!user);
                         resolve();
                     } catch (err) {
-                        reject(new Error('Clerk Load Failed: ' + err.message));
+                        console.error('❌ Clerk initialization error:', err);
+                        reject(new Error('Clerk Init Failed: ' + err.message));
                     }
                 } else {
-                    attempts++;
-                    if (attempts > 20) { // Timeout after 2s
+                    if (attempts > 20) {
                         clearInterval(interval);
-                        reject(new Error('Clerk script loaded but window.Clerk undefined'));
+                        console.error('❌ Timeout: window.Clerk never appeared');
+                        reject(new Error('Clerk script loaded but window.Clerk undefined after 2s'));
                     }
                 }
             }, 100);
         };
-        script.onerror = () => reject(new Error('Clerk Script Failed to Load (Network)'));
+
+        script.onerror = (e) => {
+            console.error('❌ Clerk script.onerror fired:', e);
+            reject(new Error('Clerk Script Failed to Load (Network/CSP block?)'));
+        };
     });
 }
 
