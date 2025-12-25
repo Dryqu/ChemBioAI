@@ -1,12 +1,23 @@
 [
   {
+    "id": 41,
+    "title": "Build a Practical Make.com Automation: From Google Forms to AI Decisions",
+    "slug": "build-a-practical-make-com-automation-from-google-forms-to-ai-decisions",
+    "date": "December 25, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "Learn a practical, reusable automation pattern using Google Forms, Apps Script, and Make.com to route survey responses, send thank-you emails, and use AI to analyze and summarize the results for a clean, decision-ready summary.",
+    "readingTime": "4 min read",
+    "contentUrl": "/posts/build-a-practical-make-com-automation-from-google-forms-to-ai-decisions.html"
+  },
+  {
     "id": 39,
     "title": "Stop Memorizing Stories: Use AI (Gemini 3) to Find Your Blind Spots Fast",
     "slug": "stop-memorizing-stories-use-ai-to-find-your-blind-spots-fast",
     "date": "December 24, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "Our most common learning illusion is this: you read an article, remember a story, and think you’ve “got it.” Learn a simple 3-step AI-style (Gemini 3) learning flow to find your blind spots fast.",
+    "summary": "Our most common learning illusion is this: you read an article, remember a story, and think you\u2019ve \u201cgot it.\u201d Learn a simple 3-step AI-style (Gemini 3) learning flow to find your blind spots fast.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/stop-memorizing-stories-use-ai-to-find-your-blind-spots-fast.html"
   },
@@ -420,7 +431,7 @@
   },
   {
     "id": 39,
-    "title": "AI Digest — AI's Economic Shift: Layoffs, Bubble Talk, and New Agentic Tools",
+    "title": "AI Digest \u2014 AI's Economic Shift: Layoffs, Bubble Talk, and New Agentic Tools",
     "slug": "ai-digest-ai-s-economic-shift-layoffs-bubble-talk-and-new-agentic-tools",
     "date": "December 22, 2025",
     "category": "Global AI Trends",
@@ -436,7 +447,7 @@
     "date": "December 24, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering—understanding what information the model needs so it doesn’t have to guess. This article outlines the shift and the four types of context that actually improve results.",
+    "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering\u2014understanding what information the model needs so it doesn\u2019t have to guess. This article outlines the shift and the four types of context that actually improve results.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results.html"
   }
