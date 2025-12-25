@@ -174,35 +174,39 @@ function renderCommentInput() {
     if (!container) return;
 
     if (user) {
-        // Logged In View
+        // Logged In
         container.innerHTML = `
-            <div style="background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 1rem;">
-                <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
-                    <img src="${user.imageUrl}" style="width:32px; height:32px; border-radius:50%;">
-                    <span style="font-weight:600; font-size:0.9rem;">${user.fullName || user.username}</span>
-                    <button class="btn" onclick="clerk.signOut()" style="background:none; border:none; color:#64748b; font-size:0.8rem; cursor:pointer; text-decoration:underline;">Sign Out</button>
+            <div style="background:white;border:2px solid var(--border-color);border-radius:0.5rem;padding:1rem;">
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;">
+                    <img src="${user.imageUrl}" style="width:32px;height:32px;border-radius:50%;">
+                    <span style="font-weight:600;font-size:0.9rem;">${user.fullName || user.username}</span>
+                    <button id="signout-btn" class="btn" style="background:none;border:none;color:#64748b;font-size:0.8rem;cursor:pointer;text-decoration:underline;">Sign Out</button>
                 </div>
-                <textarea id="comment-textarea" placeholder="Share your thoughts..." 
-                    style="width: 100%; min-height: 80px; border: 1px solid var(--border-color); border-radius:0.25rem; padding:0.5rem; outline: none; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
-                <div style="display: flex; justify-content: flex-end; margin-top: 0.75rem;">
-                    <button id="post-comment-btn" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Post Comment</button>
+                <textarea id="comment-textarea" placeholder="Share your thoughts..." style="width:100%;min-height:80px;border:1px solid var(--border-color);border-radius:0.25rem;padding:0.5rem;font-family:inherit;font-size:1rem;resize:vertical;"></textarea>
+                <div style="display:flex;justify-content:flex-end;margin-top:0.75rem;">
+                    <button id="post-comment-btn" class="btn" style="width:auto;padding:0.5rem 1.5rem;">Post Comment</button>
                 </div>
-            </div>
-        `;
+            </div>`;
+
         document.getElementById('post-comment-btn').addEventListener('click', postComment);
+        document.getElementById('signout-btn').addEventListener('click', () => clerk.signOut());
 
     } else {
-        // Logged Out View
+        // Logged Out
         container.innerHTML = `
-            <div style="background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; cursor: pointer;" onclick="clerk.openSignIn()">
-                <textarea disabled placeholder="Sign in with Email to comment..." 
-                    style="width: 100%; min-height: 60px; border: none; outline: none; font-family: inherit; font-size: 1rem; resize: none; background: transparent; cursor: pointer;"></textarea>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
-                    <span style="color: #94a3b8; font-size: 0.875rem;">💡 Email, Google, or GitHub</span>
-                    <button class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Sign In</button>
+            <div id="login-trigger-box" style="background:white;border:2px solid var(--border-color);border-radius:0.5rem;padding:1rem;cursor:pointer;">
+                <textarea disabled placeholder="Sign in with Email to comment..." style="width:100%;min-height:60px;border:none;background:transparent;cursor:pointer;resize:none;pointer-events:none;"></textarea>
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-top:0.75rem;">
+                    <span style="color:#94a3b8;font-size:0.875rem;">💡 Email, Google, or GitHub</span>
+                    <button id="signin-btn" class="btn" style="width:auto;padding:0.5rem 1.5rem;pointer-events:none;">Sign In</button>
                 </div>
-            </div>
-        `;
+            </div>`;
+
+        // Attach listener to the whole box
+        document.getElementById('login-trigger-box').addEventListener('click', () => {
+            console.log('Login box clicked');
+            window.openLogin();
+        });
     }
 }
 
@@ -231,6 +235,22 @@ function renderCommentList(comments) {
         </div>
     `).join('');
 }
+
+// Global wrapper for login to handle errors
+window.openLogin = function () {
+    console.log('attempting openLogin...');
+    if (!clerk) {
+        alert('Authentication system is loading... please wait 1s and try again.');
+        console.warn('Clerk not ready');
+        return;
+    }
+    try {
+        clerk.openSignIn();
+    } catch (e) {
+        console.error('Clerk openSignIn error:', e);
+        alert('Error opening login popup: ' + e.message);
+    }
+};
 
 async function postComment() {
     const textarea = document.getElementById('comment-textarea');
@@ -290,23 +310,26 @@ function enableLikeButton() {
     const currentLikes = likesData[articleId] || { count: 0, users: [] };
     likeCount.textContent = currentLikes.count;
 
-    if (user && currentLikes.users.includes(user.id)) likeBtn.classList.add('liked');
+    // Remove old listeners by cloning (simple reset)
+    const newBtn = likeBtn.cloneNode(true);
+    likeBtn.parentNode.replaceChild(newBtn, likeBtn);
 
-    likeBtn.addEventListener('click', async () => {
-        if (!user) {
-            try { await clerk.openSignIn(); } catch (e) { console.error(e); }
-            return;
-        }
+    if (user && currentLikes.users.includes(user.id)) newBtn.classList.add('liked');
+    else newBtn.classList.remove('liked'); // Ensure it's removed if user signs out or hasn't liked
 
-        const isLiked = likeBtn.classList.contains('liked');
+    newBtn.addEventListener('click', async () => {
+        console.log('Like clicked');
+        if (!user) { window.openLogin(); return; }
+
+        const isLiked = newBtn.classList.contains('liked');
         if (isLiked) {
             currentLikes.count = Math.max(0, currentLikes.count - 1);
             currentLikes.users = currentLikes.users.filter(id => id !== user.id);
-            likeBtn.classList.remove('liked');
+            newBtn.classList.remove('liked');
         } else {
             currentLikes.count++;
             currentLikes.users.push(user.id);
-            likeBtn.classList.add('liked');
+            newBtn.classList.add('liked');
         }
         likesData[articleId] = currentLikes;
         localStorage.setItem('articleLikes', JSON.stringify(likesData));
