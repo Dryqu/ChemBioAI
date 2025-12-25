@@ -37,7 +37,7 @@ async function initAuth() {
 
     // Initialize Clerk
     try {
-        if (CONFIG.clerkPublishableKey === 'pk_test_YOUR_CLERK_KEY_HERE') {
+        if (CONFIG.clerkPublishableKey === 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA') {
             console.warn('Engage Module: Clerk Publishable Key is missing. Auth will not work until configured.');
         }
 
