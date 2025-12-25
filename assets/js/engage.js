@@ -3,8 +3,8 @@
 // ============================================
 
 const CONFIG = {
-    // CLERK - Use Frontend API for this account
-    clerkFrontendApi: 'https://blessed-beagle-93.clerk.accounts.dev',
+    // CLERK - Using data attribute initialization
+    clerkPublishableKey: 'pk_test_Ym4c3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA',
 
     // SUPABASE KEYS
     supabaseUrl: 'https://opeibcpemzavmiurxpmp.supabase.co',
@@ -105,41 +105,36 @@ function loadClerk() {
             return;
         }
 
-        console.log('📥 Creating Clerk script tag...');
+        console.log('📥 Creating Clerk script tag with data attribute...');
         const script = document.createElement('script');
-        // Use v4 which supports frontendApi
-        script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js';
+        script.src = 'https://cdn.clerk.com/clerk-js/4.0.0/clerk.min.js';
         script.async = true;
+        // Set publishable key via data attribute to avoid auto-init errors
+        script.setAttribute('data-clerk-publishable-key', CONFIG.clerkPublishableKey);
         document.head.appendChild(script);
-        console.log('📤 Clerk script tag added to DOM');
+        console.log('📤 Clerk script tag added to DOM with key attribute');
 
         script.onload = async () => {
-            console.log('📜 Clerk script.onload fired, polling for window.Clerk...');
+            console.log('📜 Clerk script.onload fired, waiting for window.Clerk...');
+
+            // Clerk should auto-initialize with the data attribute
             let attempts = 0;
             const interval = setInterval(async () => {
                 attempts++;
-                console.log(`🔄 Poll attempt ${attempts}/20, window.Clerk = ${!!window.Clerk}`);
+                console.log(`🔄 Poll attempt ${attempts}/30, window.Clerk = ${!!window.Clerk}`);
 
                 if (window.Clerk) {
                     clearInterval(interval);
-                    console.log('✅ window.Clerk found! Initializing...');
-                    try {
-                        clerk = window.Clerk;
-                        console.log('🔑 Calling clerk.load() with frontendApi:', CONFIG.clerkFrontendApi);
-                        await clerk.load({ frontendApi: CONFIG.clerkFrontendApi });
-                        console.log('✅ clerk.load() completed');
-                        checkUser();
-                        console.log('👤 checkUser() completed, user:', !!user);
-                        resolve();
-                    } catch (err) {
-                        console.error('❌ Clerk initialization error:', err);
-                        reject(new Error('Clerk Init Failed: ' + err.message));
-                    }
+                    console.log('✅ window.Clerk found after auto-init!');
+                    clerk = window.Clerk;
+                    checkUser();
+                    console.log('👤 checkUser() completed, user:', !!user);
+                    resolve();
                 } else {
-                    if (attempts > 20) {
+                    if (attempts > 30) {
                         clearInterval(interval);
                         console.error('❌ Timeout: window.Clerk never appeared');
-                        reject(new Error('Clerk script loaded but window.Clerk undefined after 2s'));
+                        reject(new Error('Clerk script loaded but window.Clerk undefined after 3s'));
                     }
                 }
             }, 100);
