@@ -5,7 +5,7 @@
 // CONFIG - REPLACE WITH YOUR KEYS
 const CONFIG = {
     // CLERK KEYS
-    clerkPublishableKey: 'pk_test_YOUR_CLERK_KEY_HERE', // Get from https://dashboard.clerk.com
+    clerkPublishableKey: 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA', // Get from https://dashboard.clerk.com
 
     // GISCUS KEYS (Get from https://giscus.app)
     giscusRepo: 'YourUsername/ChemBioAI',      // e.g. "username/repo"
