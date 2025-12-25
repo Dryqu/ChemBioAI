@@ -41,14 +41,12 @@ async function init() {
         fetchComments();
 
     } catch (e) {
-        console.error('Engage Module: Critical Init Error', e);
-        const container = document.getElementById('comments-container');
-        if (container) {
-            container.innerHTML =
-                `<div style="padding:1rem; border:1px solid red; color:red; border-radius:8px;">
-                    <strong>Error loading comments:</strong> ${e.message}<br>
-                    <small>Like & Share should still work locally.</small>
-                 </div>`;
+        console.error('Engage Module: Init Error', e);
+        // We only show critical errors if Supabase fails (comments won't work).
+        // If Clerk fails, we handle it gracefully in the buttons.
+        if (e.message.includes('Supabase')) {
+            const container = document.getElementById('comments-container');
+            if (container) container.innerHTML = `<div style="padding:1rem;color:red;border:1px solid red;">Error: ${e.message}</div>`;
         }
     }
 }
@@ -61,7 +59,7 @@ function renderScaffolding() {
     container.innerHTML = `
         <div id="comment-input-container">
             <div style="background: #f8fafc; border: 1px dashed var(--border-color); border-radius: 0.5rem; padding: 1.5rem; text-align: center; color: #64748b;">
-                Loading community features...
+                Loading comments...
             </div>
         </div>
         <div id="comment-list" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
@@ -81,7 +79,7 @@ async function loadSupabase() {
         const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
         supabase = createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
     } catch (err) {
-        throw new Error('Supabase ESM Load Failed: ' + err.message);
+        throw new Error('Supabase Load Failed: ' + err.message);
     }
 }
 
@@ -97,22 +95,37 @@ function loadClerk() {
         const script = document.createElement('script');
         script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
         script.async = true;
-        script.onload = async () => {
-            try {
-                clerk = window.Clerk;
-                await clerk.load({ publishableKey: CONFIG.clerkPublishableKey });
-                checkUser();
-                resolve();
-            } catch (err) {
-                reject(new Error('Clerk Load Failed: ' + err.message));
-            }
-        };
-        script.onerror = () => reject(new Error('Failed to load Clerk script.'));
         document.head.appendChild(script);
+
+        script.onload = async () => {
+            // Poll for window.Clerk availability (fixes race condition)
+            let attempts = 0;
+            const interval = setInterval(async () => {
+                if (window.Clerk) {
+                    clearInterval(interval);
+                    try {
+                        clerk = window.Clerk;
+                        await clerk.load({ publishableKey: CONFIG.clerkPublishableKey });
+                        checkUser();
+                        resolve();
+                    } catch (err) {
+                        reject(new Error('Clerk Load Failed: ' + err.message));
+                    }
+                } else {
+                    attempts++;
+                    if (attempts > 20) { // Timeout after 2s
+                        clearInterval(interval);
+                        reject(new Error('Clerk script loaded but window.Clerk undefined'));
+                    }
+                }
+            }, 100);
+        };
+        script.onerror = () => reject(new Error('Clerk Script Failed to Load (Network)'));
     });
 }
 
 function checkUser() {
+    if (!clerk) return;
     user = clerk.user;
     // Add listener for sign-out/sign-in
     clerk.addListener((payload) => {
