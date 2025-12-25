@@ -107,7 +107,8 @@ function loadClerk() {
 
         console.log('📥 Creating Clerk script tag...');
         const script = document.createElement('script');
-        script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
+        // Use v4 which supports frontendApi
+        script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@4/dist/clerk.browser.js';
         script.async = true;
         document.head.appendChild(script);
         console.log('📤 Clerk script tag added to DOM');
