@@ -1,7 +1,117 @@
 [
   {
+    "id": 39,
+    "title": "Stop Memorizing Stories: Use AI (Gemini 3) to Find Your Blind Spots Fast",
+    "slug": "stop-memorizing-stories-use-ai-to-find-your-blind-spots-fast",
+    "date": "December 24, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "Our most common learning illusion is this: you read an article, remember a story, and think you’ve “got it.” Learn a simple 3-step AI-style (Gemini 3) learning flow to find your blind spots fast.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/stop-memorizing-stories-use-ai-to-find-your-blind-spots-fast.html"
+  },
+  {
+    "id": 38,
+    "title": "Today's AI Digest: Policy Shifts and AI's Industrial Revolution",
+    "slug": "today-s-ai-digest-policy-shifts-and-ai-s-industrial-revolution",
+    "date": "December 23, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "This digest covers major policy shifts, including NIST's new AI Economic Security Centers and the ongoing tension over high-end AI chip exports to China. It also highlights the industrial revolution driven by AI in drug discovery with multiomics and OpenAI's move into e-commerce with a new shopping feature in ChatGPT.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/today-s-ai-digest-policy-shifts-and-ai-s-industrial-revolution.html"
+  },
+  {
+    "id": 37,
+    "title": "The Hardest Part of Building an Enterprise AI Knowledge Base is Not Technology",
+    "slug": "the-hardest-part-of-building-an-ai-knowledge-base-is-not-technology",
+    "date": "December 21, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "Building an AI knowledge base is less about the technology (LLMs, vector databases) and more about the management of knowledge itself. The real challenge is ensuring the knowledge stays useful, trusted, and alive through effective capture of tacit knowledge, clear ownership, and building user trust.",
+    "readingTime": "4 min read",
+    "contentUrl": "/posts/the-hardest-part-of-building-an-ai-knowledge-base-is-not-technology.html"
+  },
+  {
+    "id": 36,
+    "title": "The Three Skills That Actually Separate AI Engineers in Industry",
+    "slug": "the-three-skills-that-actually-separate-ai-engineers-in-industry",
+    "date": "December 18, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "AI application engineer roles are growing right now. But hiring teams aren't impressed by buzzwords anymore\u2014they're looking for people who can actually build, debug, and ship AI systems.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/the-three-skills-that-actually-separate-ai-engineers-in-industry.html"
+  },
+  {
+    "id": 34,
+    "title": "GitHub for Everyone: A Fast Way to Find Real Tools and Real Trends",
+    "slug": "github-for-everyone-a-fast-way-to-find-real-tools-and-real-trends",
+    "date": "December 17, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "GitHub is a public library of modern tech ideas, from AI projects to new experiments, that often appear before they become popular on social media. Learn a simple routine to find real tools and trends.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/github-for-everyone-a-fast-way-to-find-real-tools-and-real-trends.html"
+  },
+  {
+    "id": 33,
+    "title": "Today's AI Digest: Enterprise AI Strategy Shifts as Open Models Gain Ground",
+    "slug": "ai-digest-enterprise-ai-strategy-shifts-as-open-models-gain-ground",
+    "date": "December 17, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "This digest covers the shift in enterprise AI strategy towards multi-model and open-source solutions, new funding for AI-powered chemical R&D, and the surge in cloud security risks driven by AI adoption.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-enterprise-ai-strategy-shifts-as-open-models-gain-ground.html"
+  },
+  {
+    "id": 32,
+    "title": "The Secret Engine of ChatGPT: Why the \"Transformer\" AI Learns So Well",
+    "slug": "the-secret-engine-of-chatgpt-why-the-transformer-ai-learns-so-well",
+    "date": "December 16, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "If you have used ChatGPT, you know it generates surprisingly coherent and helpful text. But what is the core technology driving this modern AI boom? It\u2019s called the **Transformer**.",
+    "readingTime": "5 min read",
+    "contentUrl": "/posts/the-secret-engine-of-chatgpt-why-the-transformer-ai-learns-so-well.html"
+  },
+  {
+    "id": 31,
+    "title": "Why Your AI Model Needs Post-Training to Survive Production",
+    "slug": "why-your-ai-model-needs-post-training-to-survive-production",
+    "date": "December 16, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "AI teams often have a simple goal: ship fast, affordable, and compliant AI products that can survive when real usage scales up. Yet, many start by prototyping with closed APIs or general-purpose chatb...",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/why-your-ai-model-needs-post-training-to-survive-production.html"
+  },
+  {
+    "id": 30,
+    "title": "5-Day AI Agents Intensive Course with Google: Build Autonomous AI Systems",
+    "slug": "5-day-ai-agents-intensive-course-with-google-build-autonomous-ai-systems",
+    "date": "December 15, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "This course provides a hands-on guide to building and deploying production-ready AI agents by mastering the five core components: models, tools, orchestration, memory, and evaluation",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/5-day-ai-agents-intensive-course-with-google-build-autonomous-ai-systems.html"
+  },
+  {
+    "id": 28,
+    "title": "The $100 Billion Breakthrough: How AI is Finally Solving the Biggest Bottleneck in Drug Manufacturing",
+    "slug": "the-100-billion-breakthrough-how-ai-is-finally-solving-the-biggest-bottleneck-in-drug-manufacturing",
+    "date": "December 14, 2025",
+    "category": "Pharma",
+    "name": "Yi Qu",
+    "summary": "A quiet revolution is underway, driven by the surging demand for some of the most important new medicines today\u2014specifically, peptides.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/the-100-billion-breakthrough-how-ai-is-finally-solving-the-biggest-bottleneck-in-drug-manufacturing.html"
+  },
+  {
     "id": 16,
-    "title": "AI Digest — AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
+    "title": "AI Digest \u2014 AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
     "slug": "ai-digest-ai-ready-chemistry-secures-drug-supply-plus-chatgpts-shopping-edge",
     "date": "December 06, 2025",
     "category": "Global AI Trends",
@@ -16,7 +126,7 @@
     "slug": "what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation",
     "date": "December 3, 2025",
     "category": "Global AI Trends",
-    "excerpt": "Today I attended a webinar regarding Microsoft’s Internal HR Transformation, featuring leaders from Microsoft. Here’s What I Learned About the Future of Work.",
+    "excerpt": "Today I attended a webinar regarding Microsoft\u2019s Internal HR Transformation, featuring leaders from Microsoft. Here\u2019s What I Learned About the Future of Work.",
     "contentUrl": "/posts/what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation.html",
     "name": "Yi Qu",
     "readingTime": "3 min"
@@ -34,7 +144,7 @@
   },
   {
     "id": 13,
-    "title": "AI Digest — Gemini 3 and the Global AI Infrastructure Race",
+    "title": "AI Digest \u2014 Gemini 3 and the Global AI Infrastructure Race",
     "slug": "ai-digest-gemini-3-and-the-global-ai-infrastructure-race",
     "date": "November 30, 2025",
     "category": "Global AI Trends",
@@ -63,7 +173,7 @@
   },
   {
     "id": 10,
-    "title": "AI Digest — AI's Job Impact and Google's Hardware Push",
+    "title": "AI Digest \u2014 AI's Job Impact and Google's Hardware Push",
     "slug": "ai-digest-ai-s-job-impact-and-google-s-hardware-push",
     "date": "November 27, 2025",
     "category": "Global AI Trends",
@@ -127,7 +237,7 @@
   },
   {
     "id": 8,
-    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
+    "title": "Shuttle Pharma\u2019s Smartest Move Yet: Teaching Machines to Discover Drugs",
     "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
     "date": "November 27, 2025",
     "category": "Pharma",
@@ -136,16 +246,16 @@
   },
   {
     "id": 6,
-    "title": "Don’t Get Left Behind in the AI Era",
+    "title": "Don\u2019t Get Left Behind in the AI Era",
     "slug": "dont-get-left-behind-in-the-ai-era",
     "date": "November 27, 2025",
     "category": "Tools & Tips",
-    "excerpt": "If we don’t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
+    "excerpt": "If we don\u2019t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
     "contentUrl": "/posts/dont-get-left-behind-in-the-ai-era.html"
   },
   {
     "id": 17,
-    "title": "Today's AI Digest — Frontier Models, Drug Discovery, and Data Scarcity",
+    "title": "Today's AI Digest \u2014 Frontier Models, Drug Discovery, and Data Scarcity",
     "slug": "ai-digest-frontier-models-drug-discovery-and-data-scarcity",
     "date": "December 07, 2025",
     "category": "Global AI Trends",
@@ -156,23 +266,23 @@
   },
   {
     "id": 18,
-    "title": "AI Digest — AI's Regulatory Future and Automated Drug Discovery",
+    "title": "AI Digest \u2014 AI's Regulatory Future and Automated Drug Discovery",
     "slug": "ai-digest-ai-s-regulatory-future-and-automated-drug-discovery",
     "date": "December 08, 2025",
     "category": "Global AI Trends",
     "name": "Yi Qu",
-    "summary": "This digest covers major developments in AI, including a $45M funding round for ChemLex's automated drug discovery lab, President Trump's plan for a single national AI regulatory framework, the partnership between Warby Parker and Google on AI-powered smart glasses, and the expansion of Google's Gemini 3 Pro to the command-line interface.",
+    "summary": "This digest covers a $45M funding round for ChemLex's automated drug discovery lab, President Trump's plan for a single national AI regulatory framework, the partnership between Warby Parker and Google on AI-powered smart glasses, and the expansion of Google's Gemini 3 Pro to the command-line interface.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/ai-digest-ai-s-regulatory-future-and-automated-drug-discovery.html"
   },
   {
     "id": 19,
-    "title": "Why I Did It with the Mindset of “AI First” (and Why Verification Matters)",
+    "title": "Why I Did It with the Mindset of \u201cAI First\u201d (and Why Verification Matters)",
     "slug": "why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters",
     "date": "December 09, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of “AI first.”",
+    "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of \u201cAI first.\u201d",
     "readingTime": "1 min read",
     "contentUrl": "/posts/why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters.html"
   },
@@ -216,30 +326,118 @@
     "date": "December 10, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "A reliable workflow using OCR and Excel's 'Get Data from PDF' feature to accurately extract data from complex, scanned PDF tables, which often fail with general AI tools.",
-    "readingTime": "2 min read",
+    "summary": "A guide on using AI to extract data from scanned PDF tables and convert it into an Excel-ready format, focusing on the efficiency and accuracy of modern AI tools over traditional OCR methods.",
+    "readingTime": "3 min read",
     "contentUrl": "/posts/how-i-turn-scanned-pdf-tables-into-excel.html"
   },
   {
     "id": 24,
-    "title": "How Can One AI Model Act Like a Whole Team of Experts?",
-    "slug": "how-can-one-ai-model-act-like-a-whole-team-of-experts",
+    "title": "5 Google Agent Playbooks You Should Read",
+    "slug": "5-google-agent-playbooks-you-should-read",
     "date": "December 10, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "This article explains the Mixture of Experts (MoE) architecture, a method that allows a single large AI model to act like a team of specialized experts, leading to faster and cheaper computation while maintaining high quality.",
-    "readingTime": "2 min read",
-    "contentUrl": "/posts/how-can-one-ai-model-act-like-a-whole-team-of-experts.html"
+    "summary": "A short guide to five free whitepapers from Google and Kaggle (over 250 pages) on building real-world AI agents, covering agent basics, tools (MCP), memory, quality, and production. It provides a quick summary of each paper's key takeaways.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/5-google-agent-playbooks-you-should-read.html"
   },
   {
     "id": 25,
-    "title": "AI Rules in 60 Seconds: The EU AI Act",
-    "slug": "ai-rules-in-60-seconds-the-eu-ai-act",
-    "date": "December 10, 2025",
+    "title": "Today's AI Digest \u2014 AI's Architects Take Center Stage, Plus a Scientific Leap",
+    "slug": "today-s-ai-digest-ai-s-architects-take-center-stage-plus-a-scientific-leap",
+    "date": "December 11, 2025",
     "category": "Global AI Trends",
     "name": "Yi Qu",
-    "summary": "The European Union’s AI Act is designed to harness the power of artificial intelligence while protecting people’s health, safety, and fundamental rights. The core philosophy is to stimulate innovation, but only “within certain boundaries”. I am sharing my key takeaways and perspectives below.",
+    "summary": "Today's AI Digest covers Time magazine naming 'The Architects of AI' as its 2025 Person of the Year, OpenAI's release of GPT-5.2 for scientific problem-solving, a $52M funding round for 'Physical AI Scientists' developer Medra, Thales's new AI Security Fabric, and Zoovu's MCP Server for agentic commerce.",
     "readingTime": "2 min read",
-    "contentUrl": "/posts/ai-rules-in-60-seconds-the-eu-ai-act.html"
+    "contentUrl": "/posts/today-s-ai-digest-ai-s-architects-take-center-stage-plus-a-scientific-leap.html"
+  },
+  {
+    "id": 26,
+    "title": "AI Digest \u2014 AI Giants Clash, Policy Tightens, and Pharma Gets a Boost",
+    "slug": "ai-digest-ai-giants-clash-policy-tightens-and-pharma-gets-a-boost",
+    "date": "December 12, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "Today's AI Digest covers the intensifying competition between OpenAI and Google with new model releases, a major step in AI-driven drug discovery for Chronic Kidney Disease, a White House executive order to unify national AI policy, and OpenAI's new Apps SDK to integrate services directly into ChatGPT.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/ai-digest-ai-giants-clash-policy-tightens-and-pharma-gets-a-boost.html"
+  },
+  {
+    "id": 27,
+    "title": "AI Digest \u2014 Infrastructure Collides with Code, Plus GPT-5.2's Expert Upgrade",
+    "slug": "ai-digest-infrastructure-collides-with-code-plus-gpt-5-2-s-expert-upgrade",
+    "date": "December 13, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "This digest covers the release of OpenAI's GPT-5.2 with 'expert level' performance, the physical and financial limits of the AI infrastructure boom highlighted by Oracle's stock plunge, a new AI pact between Grace and Molecule.one to optimize peptide manufacturing, and the potential for AI to restart scientific progress and economic growth.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/ai-digest-infrastructure-collides-with-code-plus-gpt-5-2-s-expert-upgrade.html"
+  },
+  {
+    "id": 29,
+    "title": "AI Digest \u2014 Agents Take Over: The Shift from AI Tools to AI OS",
+    "slug": "ai-digest-agents-take-over-the-shift-from-ai-tools-to-ai-os",
+    "date": "December 14, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "Today's AI Digest covers the major shift from AI tools to 'agentic' systems that act as personal operating systems, the FDA's plan to use AI to speed up drug approval, the privacy concerns around AI wearable startups, and AI's power to find hidden stress signals in CT scans.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-agents-take-over-the-shift-from-ai-tools-to-ai-os.html"
+  },
+  {
+    "id": 35,
+    "title": "Dawn Song, Berkeley RDI, and the Rise of Agentic AI Education",
+    "slug": "dawn-song-berkeley-rdi-and-the-rise-of-agentic-ai-education",
+    "date": "December 17, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "A year ago, \u201cagentic AI\u201d was still insider language. In 2025, it became the fastest-moving layer of the AI stack\u2014because it turns models into systems that can actually get work done.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/dawn-song-berkeley-rdi-and-the-rise-of-agentic-ai-education.html"
+  },
+  {
+    "id": 33,
+    "title": "What Is a Loss Function?",
+    "slug": "what-is-a-loss-function",
+    "date": "December 17, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "When we train a machine learning model, we need a way to measure how well it is doing. A loss function is simply a number that tells us how wrong the model is.",
+    "readingTime": "2 min read",
+    "contentUrl": "/posts/what-is-a-loss-function.html"
+  },
+  {
+    "id": 38,
+    "title": "The Most Reliable Way to Build an AI-Powered Enterprise Information/Knowledge Manager",
+    "slug": "the-structured-index-how-to-turn-sharepoint-into-a-reliable-ai-knowledge-base",
+    "date": "December 22, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "A guide to building a reliable enterprise AI knowledge base by separating storage (SharePoint) from retrieval (Structured Index), ensuring accurate, traceable, and scalable answers with Copilot, Databricks, and Microsoft Fabric.",
+    "readingTime": "5 min read",
+    "contentUrl": "/posts/the-structured-index-how-to-turn-sharepoint-into-a-reliable-ai-knowledge-base.html"
+  },
+  {
+    "id": 39,
+    "title": "AI Digest — AI's Economic Shift: Layoffs, Bubble Talk, and New Agentic Tools",
+    "slug": "ai-digest-ai-s-economic-shift-layoffs-bubble-talk-and-new-agentic-tools",
+    "date": "December 22, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "Today's AI Digest covers the economic shift driven by AI, including job cuts at major tech companies, the debate over the AI investment 'bubble,' the release of Anthropic's open-source agentic framework 'Bloom,' and Al Jazeera's new AI-integrated news model.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-ai-s-economic-shift-layoffs-bubble-talk-and-new-agentic-tools.html"
+  },
+  {
+    "id": 40,
+    "title": "From Prompt Engineering to Context Engineering: How to Get Better AI Results",
+    "slug": "from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results",
+    "date": "December 24, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering—understanding what information the model needs so it doesn’t have to guess. This article outlines the shift and the four types of context that actually improve results.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results.html"
   }
 ]

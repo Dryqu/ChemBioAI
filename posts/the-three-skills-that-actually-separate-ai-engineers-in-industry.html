@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Three Skills That Actually Separate AI Engineers in Industry - ChemBio AI Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .article-body p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .article-body h2 {
+      font-size: 1.75rem; 
+      color: var(--primary-color); 
+      margin-top: 2.5rem; 
+      margin-bottom: 1rem;
+    }
+    .article-body ul {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+    .article-body li {
+      margin-bottom: 0.5rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">AI</div>
+        <div class="logo-text">
+          <h1>ChemBio AI</h1>
+          <span>Insights</span>
+        </div>
+      </a>
+      <nav>
+        <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
+      <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
+        <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Learning Resources</span>
+        <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
+          The Three Skills That Actually Separate AI Engineers in Industry
+        </h1>
+        <p style="color: #64748b;">December 18, 2025 • By Yi Qu</p>
+      </div>
+
+      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+        <p>AI application engineer roles are growing right now. But hiring teams aren't impressed by buzzwords anymore—they're looking for people who can actually build, debug, and ship AI systems.</p>
+        <p>From what I've seen across industry, the most valued skills fall into three buckets. And one rule applies to all of them: you must be able to do the work, not just explain the idea.</p>
+
+        <h2>1) Model fundamentals + fine-tuning</h2>
+        <p>Fine-tuning scares a lot of people.</p>
+        <p>You'll hear things like:</p>
+        <ul>
+          <li>"Fine-tuning breaks the model," or</li>
+          <li>"Everyone says RAG is enough now."</li>
+        </ul>
+        <p>But in real interviews, candidates who have never trained or fine-tuned a model are at a clear disadvantage. Companies don't want prompt-only engineers. They want people who can make engineering tradeoffs between data, cost, and performance.</p>
+        <p>At a minimum, you should be able to explain—and preferably demonstrate:</p>
+        <ul>
+          <li>How Transformers, attention, and context length affect results</li>
+          <li>The basic workflows of SFT, LoRA, and QLoRA</li>
+          <li>Dataset preparation: cleaning, instruction formatting, and evaluation</li>
+          <li>Debugging failed training runs (overfitting, catastrophic forgetting, bad data, learning rate issues, tokenization mistakes)</li>
+        </ul>
+        <p>A small but complete project where you fine-tune an open-source model on domain data, compare before/after results, and explain why performance changed—and what it cost you in compute and complexity.</p>
+
+        <h2>2) Agent systems + RAG: real engineering, not just demos</h2>
+        <p>Many people's idea of an "agent" is still very shallow:</p>
+        <ul>
+          <li>A few tools wired together</li>
+          <li>A low-code platform demo</li>
+          <li>Something that works… once</li>
+        </ul>
+        <p>Industry teams care far more about whether you can design controlled, multi-step systems. That usually means using proper orchestration frameworks and treating agents as software systems, not magic.</p>
+        <p>What this looks like in practice:</p>
+        <ul>
+          <li>Workflow or graph-based execution (planning, execution, reflection, retries, state)</li>
+          <li>Tool governance, permissions, and failure handling</li>
+          <li>Agents combined with RAG so they can retrieve, verify, cite, and update knowledge</li>
+        </ul>
+        <p>And RAG itself is much more than "use a vector database":</p>
+        <ul>
+          <li>Chunking strategies, embedding choice, recall vs. reranking</li>
+          <li>Citation and traceability</li>
+          <li>Storage decisions: local libraries for prototypes, production-grade vector stores for scale</li>
+          <li>Optional but powerful: basic knowledge graph modeling for structured relationships and explainability</li>
+        </ul>
+        <p>Most companies won't build full knowledge graphs from scratch—but engineers who understand when and why to use them stand out immediately.</p>
+
+        <h2>3) Inference, acceleration, and deployment: where projects live or die</h2>
+        <p>This is where many capable engineers get stuck.</p>
+        <p>They can train models, build RAG, and design agents—but once it's time to ship, everything slows down, costs explode, or the system can't handle real traffic.</p>
+        <p>This stage determines whether AI becomes a demo or a product.</p>
+        <p>You should understand:</p>
+        <ul>
+          <li>Inference and acceleration tools (e.g., vLLM and similar approaches)</li>
+          <li>How to expose models as services (FastAPI or gRPC)</li>
+          <li>Deployment basics: containers, orchestration, monitoring, rate limits</li>
+          <li>Engineering metrics: latency, throughput, concurrency, GPU memory usage, caching, and cost</li>
+        </ul>
+        <p>Once you can do this, you stop being "the person who builds demos" and start being "the person who ships AI systems."</p>
+        <p>AI application engineering has a huge future—but it's not a vocabulary contest. If you can build and explain one solid project in each of these three areas, you're in a very good position.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div><p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p></div>
+      <div><p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p></div>
+    </div>
+  </footer>
+</body>
+</html>
