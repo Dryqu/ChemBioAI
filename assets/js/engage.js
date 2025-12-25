@@ -8,10 +8,10 @@ const CONFIG = {
     clerkPublishableKey: 'pk_test_YOUR_CLERK_KEY_HERE', // Get from https://dashboard.clerk.com
 
     // GISCUS KEYS (Get from https://giscus.app)
-    giscusRepo: 'YourUsername/ChemBioAI',      // e.g. "username/repo"
-    giscusRepoId: 'R_YOUR_REPO_ID',            // e.g. "R_kgD..."
+    giscusRepo: 'Dryqu/ChemBioAI',      // e.g. "username/repo"
+    giscusRepoId: 'R_kgDOP4NyAw',            // e.g. "R_kgD..."
     giscusCategory: 'General',                 // Discussion category name
-    giscusCategoryId: 'DIC_YOUR_CATEGORY_ID',  // e.g. "DIC_kwD..."
+    giscusCategoryId: 'DIC_kwDOP4NyA84C0OGB',  // e.g. "DIC_kwD..."
 };
 
 // State
