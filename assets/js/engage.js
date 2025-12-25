@@ -1,29 +1,38 @@
 // ============================================
-// ENGAGE MODULE - Like, Share, Comments
+// ENGAGE MODULE - Like, Share, Comments (Custom)
 // ============================================
 
-// CONFIG - REPLACE WITH YOUR KEYS
 const CONFIG = {
     // CLERK KEYS
-    clerkPublishableKey: 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA', // Get from https://dashboard.clerk.com
+    clerkPublishableKey: 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA',
 
-    // GISCUS KEYS (Get from https://giscus.app)
-    giscusRepo: 'Dryqu/ChemBioAI',      // e.g. "username/repo"
-    giscusRepoId: 'R_kgDOP4NyAw',            // e.g. "R_kgD..."
-    giscusCategory: 'General',                 // Discussion category name
-    giscusCategoryId: 'DIC_kwDOP4NyA84C0OGB',  // e.g. "DIC_kwD..."
+    // SUPABASE KEYS
+    supabaseUrl: 'https://opeibcpemzavmiurxpmp.supabase.co',
+    supabaseAnonKey: 'sb_publishable_ccvfei7qIPw_UPPNg1TUAA_I8FczTqp'
 };
 
 // State
 let user = null;
 let clerk = null;
+let supabase = null;
 let likesData = {};
 
 // ============================================
-// 1. AUTHENTICATION (Clerk)
+// 1. INIT
 // ============================================
-async function initAuth() {
-    // Load Clerk script if not already present
+async function init() {
+    // 1. Load Supabase
+    if (!window.supabase) {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+        script.onload = () => {
+            supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+            loadComments(); // Load comments once Supabase is ready
+        };
+        document.head.appendChild(script);
+    }
+
+    // 2. Load Clerk
     if (!window.Clerk) {
         const script = document.createElement('script');
         script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
@@ -35,86 +44,31 @@ async function initAuth() {
         });
     }
 
-    // Initialize Clerk
     try {
-        if (CONFIG.clerkPublishableKey === 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA') {
-            console.warn('Engage Module: Clerk Publishable Key is missing. Auth will not work until configured.');
-        }
-
         clerk = window.Clerk;
         await clerk.load({
             publishableKey: CONFIG.clerkPublishableKey,
         });
 
         user = clerk.user;
+        updateUIState();
+        enableLikeButton();
+        initShare();
+
     } catch (e) {
-        console.error('Engage Module: Failed to initialize Clerk. Check your Publishable Key.', e);
+        console.error('Engage Module: Failed to initialize/load.', e);
     }
-
-    // Always load comments (Giscus handles auth internally)
-    loadComments();
-
-    // Enable like button
-    enableLikeButton();
 }
 
 // ============================================
-// 2. LIKE FUNCTIONALITY
+// 2. UI HELPERS
 // ============================================
-function enableLikeButton() {
-    const likeBtn = document.getElementById('like-btn');
-    const likeCount = document.getElementById('like-count');
+function updateUIState() {
+    const authPrompt = document.getElementById('auth-prompt'); // Legacy, might replace
+    const inputArea = document.getElementById('comment-input-area');
 
-    if (!likeBtn || !likeCount) return;
-
-    const articleId = getArticleId();
-
-    // Load likes from localStorage (in production, use API/Supabase)
-    const storedLikes = JSON.parse(localStorage.getItem('articleLikes') || '{}');
-    likesData = storedLikes;
-
-    const currentLikes = likesData[articleId] || { count: 0, users: [] };
-    likeCount.textContent = currentLikes.count;
-
-    // Check if user already liked
-    if (user && currentLikes.users.includes(user.id)) {
-        likeBtn.classList.add('liked');
-    }
-
-    likeBtn.addEventListener('click', async () => {
-        if (!clerk) {
-            alert('Please configure the Clerk Publishable Key in assets/js/engage.js');
-            return;
-        }
-
-        if (!user) {
-            // Prompt sign-in
-            try {
-                await clerk.openSignIn();
-            } catch (e) {
-                console.error("Clerk sign-in error:", e);
-            }
-            return;
-        }
-
-        const isLiked = likeBtn.classList.contains('liked');
-
-        if (isLiked) {
-            // Unlike
-            currentLikes.count = Math.max(0, currentLikes.count - 1);
-            currentLikes.users = currentLikes.users.filter(id => id !== user.id);
-            likeBtn.classList.remove('liked');
-        } else {
-            // Like
-            currentLikes.count++;
-            currentLikes.users.push(user.id);
-            likeBtn.classList.add('liked');
-        }
-
-        likesData[articleId] = currentLikes;
-        localStorage.setItem('articleLikes', JSON.stringify(likesData));
-        likeCount.textContent = currentLikes.count;
-    });
+    // We render the input area dynamically now
+    renderCommentInput();
 }
 
 function getArticleId() {
@@ -123,76 +77,195 @@ function getArticleId() {
 }
 
 // ============================================
-// 3. SHARE FUNCTIONALITY
+// 3. COMMENTS (Supabase)
 // ============================================
+async function loadComments() {
+    const container = document.getElementById('comments-container');
+    if (!container || !supabase) return;
+
+    // Fetch comments for this article
+    const { data, error } = await supabase
+        .from('comments')
+        .select('*')
+        .eq('article_id', getArticleId())
+        .order('created_at', { ascending: false });
+
+    if (error) {
+        console.error('Error loading comments:', error);
+        container.innerHTML = '<p>Error loading comments.</p>';
+        return;
+    }
+
+    // Render Container Structure
+    container.innerHTML = `
+        <div id="comment-input-container"></div>
+        <div id="comment-list" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;"></div>
+    `;
+
+    renderCommentInput();
+    renderCommentList(data || []);
+}
+
+function renderCommentInput() {
+    const container = document.getElementById('comment-input-container');
+    if (!container) return;
+
+    if (user) {
+        // Logged In View
+        container.innerHTML = `
+            <div style="background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 1rem;">
+                <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
+                    <img src="${user.imageUrl}" style="width:32px; height:32px; border-radius:50%;">
+                    <span style="font-weight:600; font-size:0.9rem;">${user.fullName || user.username}</span>
+                </div>
+                <textarea id="comment-textarea" placeholder="Share your thoughts..." 
+                    style="width: 100%; min-height: 80px; border: 1px solid var(--border-color); border-radius:0.25rem; padding:0.5rem; outline: none; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
+                <div style="display: flex; justify-content: flex-end; margin-top: 0.75rem;">
+                    <button id="post-comment-btn" class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Post Comment</button>
+                </div>
+            </div>
+        `;
+
+        document.getElementById('post-comment-btn').addEventListener('click', postComment);
+
+    } else {
+        // Logged Out View (Optimistic UI - click to sign in)
+        container.innerHTML = `
+            <div style="background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; cursor: pointer;" onclick="window.Clerk.openSignIn()">
+                <textarea disabled placeholder="Sign in to share your thoughts..." 
+                    style="width: 100%; min-height: 60px; border: none; outline: none; font-family: inherit; font-size: 1rem; resize: none; background: transparent; cursor: pointer;"></textarea>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
+                    <span style="color: #94a3b8; font-size: 0.875rem;">💡 Email, Google, or GitHub</span>
+                    <button class="btn" style="width: auto; padding: 0.5rem 1.5rem;">Sign In</button>
+                </div>
+            </div>
+        `;
+    }
+}
+
+function renderCommentList(comments) {
+    const list = document.getElementById('comment-list');
+    if (!list) return;
+
+    if (comments.length === 0) {
+        list.innerHTML = '<p style="color: #94a3b8; text-align: center;">No comments yet. Be the first!</p>';
+        return;
+    }
+
+    list.innerHTML = comments.map(c => `
+        <div style="margin-bottom: 2rem;">
+            <div style="display: flex; gap: 1rem; margin-bottom: 0.5rem;">
+                <img src="${c.user_avatar || 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'}" 
+                     style="width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; object-fit: cover;">
+                <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.25rem;">
+                        <strong style="color: var(--primary-color); font-size: 0.95rem;">${escapeHtml(c.user_name)}</strong>
+                        <span style="color: #94a3b8; font-size: 0.8rem;">${new Date(c.created_at).toLocaleDateString()}</span>
+                    </div>
+                    <p style="color: var(--text-color); line-height: 1.6; font-size: 0.95rem; white-space: pre-wrap;">${escapeHtml(c.content)}</p>
+                </div>
+            </div>
+        </div>
+    `).join('');
+}
+
+async function postComment() {
+    const textarea = document.getElementById('comment-textarea');
+    const content = textarea.value.trim();
+    if (!content) return;
+
+    const btn = document.getElementById('post-comment-btn');
+    btn.textContent = 'Posting...';
+    btn.disabled = true;
+
+    const { error } = await supabase
+        .from('comments')
+        .insert({
+            article_id: getArticleId(),
+            user_id: user.id,
+            user_name: user.fullName || user.username || 'Anonymous',
+            user_avatar: user.imageUrl,
+            content: content
+        });
+
+    if (error) {
+        alert('Failed to post comment: ' + error.message);
+        btn.textContent = 'Post Comment';
+        btn.disabled = false;
+    } else {
+        textarea.value = '';
+        btn.textContent = 'Post Comment';
+        btn.disabled = false;
+        loadComments(); // Refresh list
+    }
+}
+
+function escapeHtml(text) {
+    if (!text) return '';
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+
+// ============================================
+// 4. LIKE & SHARE (Existing)
+// ============================================
+function enableLikeButton() {
+    const likeBtn = document.getElementById('like-btn');
+    const likeCount = document.getElementById('like-count');
+    if (!likeBtn || !likeCount) return;
+
+    const articleId = getArticleId();
+    const storedLikes = JSON.parse(localStorage.getItem('articleLikes') || '{}');
+    likesData = storedLikes;
+    const currentLikes = likesData[articleId] || { count: 0, users: [] };
+    likeCount.textContent = currentLikes.count;
+
+    if (user && currentLikes.users.includes(user.id)) likeBtn.classList.add('liked');
+
+    likeBtn.addEventListener('click', async () => {
+        if (!user) {
+            clerk.openSignIn();
+            return;
+        }
+
+        const isLiked = likeBtn.classList.contains('liked');
+        if (isLiked) {
+            currentLikes.count = Math.max(0, currentLikes.count - 1);
+            currentLikes.users = currentLikes.users.filter(id => id !== user.id);
+            likeBtn.classList.remove('liked');
+        } else {
+            currentLikes.count++;
+            currentLikes.users.push(user.id);
+            likeBtn.classList.add('liked');
+        }
+        likesData[articleId] = currentLikes;
+        localStorage.setItem('articleLikes', JSON.stringify(likesData));
+        likeCount.textContent = currentLikes.count;
+    });
+}
+
 function initShare() {
     const shareLinkedIn = document.getElementById('share-linkedin');
     const shareX = document.getElementById('share-x');
     const shareCopy = document.getElementById('share-copy');
-
-    if (!shareLinkedIn || !shareX || !shareCopy) return;
+    if (!shareLinkedIn) return;
 
     const url = window.location.href;
     const title = document.querySelector('h1')?.textContent || 'ChemBio AI Insights';
 
-    shareLinkedIn.addEventListener('click', () => {
-        window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
-    });
-
-    shareX.addEventListener('click', () => {
-        window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'width=600,height=400');
-    });
-
+    shareLinkedIn.addEventListener('click', () => window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400'));
+    shareX.addEventListener('click', () => window.open(`https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(title)}`, '_blank', 'width=600,height=400'));
     shareCopy.addEventListener('click', async () => {
-        try {
-            await navigator.clipboard.writeText(url);
-            const originalHTML = shareCopy.innerHTML;
-            shareCopy.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-            setTimeout(() => {
-                shareCopy.innerHTML = originalHTML;
-            }, 2000);
-        } catch (err) {
-            console.error('Failed to copy:', err);
-        }
+        await navigator.clipboard.writeText(url);
+        const originalHTML = shareCopy.innerHTML;
+        shareCopy.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        setTimeout(() => shareCopy.innerHTML = originalHTML, 2000);
     });
 }
 
-// ============================================
-// 4. COMMENTS (Giscus) - Always Visible
-// ============================================
-function loadComments() {
-    const container = document.getElementById('comments-container');
-    if (!container) return;
-
-    if (CONFIG.giscusRepo === 'YourUsername/ChemBioAI') {
-        container.innerHTML = '<p style="text-align:center; padding: 2rem; color: #64748b; border: 1px dashed #cbd5e1; border-radius: 0.5rem;">Comments are disabled until Giscus is configured in main.js</p>';
-        return;
-    }
-
-    // Giscus handles its own authentication
-    const script = document.createElement('script');
-    script.src = 'https://giscus.app/client.js';
-    script.setAttribute('data-repo', CONFIG.giscusRepo);
-    script.setAttribute('data-repo-id', CONFIG.giscusRepoId);
-    script.setAttribute('data-category', CONFIG.giscusCategory);
-    script.setAttribute('data-category-id', CONFIG.giscusCategoryId);
-    script.setAttribute('data-mapping', 'pathname');
-    script.setAttribute('data-strict', '0');
-    script.setAttribute('data-reactions-enabled', '1');
-    script.setAttribute('data-emit-metadata', '0');
-    script.setAttribute('data-input-position', 'top');
-    script.setAttribute('data-theme', 'light');
-    script.setAttribute('data-lang', 'en');
-    script.setAttribute('crossorigin', 'anonymous');
-    script.async = true;
-
-    container.appendChild(script);
-}
-
-// ============================================
-// INIT
-// ============================================
-document.addEventListener('DOMContentLoaded', () => {
-    initAuth();
-    initShare();
-});
+document.addEventListener('DOMContentLoaded', init);
