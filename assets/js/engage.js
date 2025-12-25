@@ -125,11 +125,19 @@ function loadClerk() {
 
                 if (window.Clerk) {
                     clearInterval(interval);
-                    console.log('✅ window.Clerk found after auto-init!');
+                    console.log('✅ window.Clerk found! Initializing components...');
                     clerk = window.Clerk;
-                    checkUser();
-                    console.log('👤 checkUser() completed, user:', !!user);
-                    resolve();
+
+                    try {
+                        // Even with data attribute, we call load() to ensure UI components are ready
+                        await clerk.load();
+                        console.log('✅ clerk.load() finished - components ready');
+                        checkUser();
+                        resolve();
+                    } catch (err) {
+                        console.error('❌ Clerk load error:', err);
+                        reject(new Error('Clerk Component Load Failed: ' + err.message));
+                    }
                 } else {
                     if (attempts > 30) {
                         clearInterval(interval);
