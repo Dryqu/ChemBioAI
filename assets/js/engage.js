@@ -21,53 +21,112 @@ let likesData = {};
 // 1. INIT
 // ============================================
 async function init() {
-    // 1. Load Supabase
-    if (!window.supabase) {
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
-        script.onload = () => {
-            supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
-            loadComments(); // Load comments once Supabase is ready
-        };
-        document.head.appendChild(script);
-    }
+    console.log('Engage Module: Initializing...');
 
-    // 2. Load Clerk
-    if (!window.Clerk) {
-        const script = document.createElement('script');
-        script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
-        script.async = true;
-        document.head.appendChild(script);
+    // 1. Render Initial UI (Scaffolding) immediately so it's not empty
+    renderScaffolding();
 
-        await new Promise(resolve => {
-            script.onload = resolve;
-        });
-    }
-
+    // 2. Load Supabase & Clerk in parallel
     try {
-        clerk = window.Clerk;
-        await clerk.load({
-            publishableKey: CONFIG.clerkPublishableKey,
-        });
+        await Promise.all([loadSupabase(), loadClerk()]);
+        console.log('Engage Module: Scripts loaded.');
 
-        user = clerk.user;
+        // 3. Initialize Logic
         updateUIState();
         enableLikeButton();
         initShare();
+        fetchComments(); // Fetch data now that scripts are ready
 
     } catch (e) {
-        console.error('Engage Module: Failed to initialize/load.', e);
+        console.error('Engage Module: Critical Init Error', e);
+        document.getElementById('comments-container').innerHTML =
+            `<div style="padding:1rem; border:1px solid red; color:red; border-radius:8px;">
+                <strong>Error loading module:</strong> ${e.message}<br>
+                <small>Check console for details.</small>
+             </div>`;
     }
+}
+
+function renderScaffolding() {
+    const container = document.getElementById('comments-container');
+    if (!container) return;
+
+    // Render placeholders
+    container.innerHTML = `
+        <div id="comment-input-container">
+            <div style="background: #f8fafc; border: 1px dashed var(--border-color); border-radius: 0.5rem; padding: 1.5rem; text-align: center; color: #64748b;">
+                Loading community features...
+            </div>
+        </div>
+        <div id="comment-list" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+            <!-- Comments will appear here -->
+        </div>
+    `;
+}
+
+function loadSupabase() {
+    return new Promise((resolve, reject) => {
+        if (window.supabase) {
+            supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+            resolve();
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
+        script.onload = () => {
+            try {
+                supabase = window.supabase.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+                resolve();
+            } catch (err) {
+                reject(new Error('Supabase CreateClient Failed: ' + err.message));
+            }
+        };
+        script.onerror = () => reject(new Error('Failed to load Supabase script (Network/Blocker).'));
+        document.head.appendChild(script);
+    });
+}
+
+function loadClerk() {
+    return new Promise((resolve, reject) => {
+        if (window.Clerk) {
+            clerk = window.Clerk;
+            checkUser();
+            resolve();
+            return;
+        }
+
+        const script = document.createElement('script');
+        script.src = 'https://accounts.clerk.dev/npm/@clerk/clerk-js@latest/dist/clerk.browser.js';
+        script.async = true;
+        script.onload = async () => {
+            try {
+                clerk = window.Clerk;
+                await clerk.load({ publishableKey: CONFIG.clerkPublishableKey });
+                checkUser();
+                resolve();
+            } catch (err) {
+                reject(new Error('Clerk Load Failed: ' + err.message));
+            }
+        };
+        script.onerror = () => reject(new Error('Failed to load Clerk script.'));
+        document.head.appendChild(script);
+    });
+}
+
+function checkUser() {
+    user = clerk.user;
+    // Add listener for sign-out/sign-in
+    clerk.addListener((payload) => {
+        user = payload.user;
+        updateUIState();
+    });
 }
 
 // ============================================
 // 2. UI HELPERS
 // ============================================
 function updateUIState() {
-    const authPrompt = document.getElementById('auth-prompt'); // Legacy, might replace
-    const inputArea = document.getElementById('comment-input-area');
-
-    // We render the input area dynamically now
     renderCommentInput();
 }
 
@@ -79,11 +138,11 @@ function getArticleId() {
 // ============================================
 // 3. COMMENTS (Supabase)
 // ============================================
-async function loadComments() {
-    const container = document.getElementById('comments-container');
-    if (!container || !supabase) return;
+async function fetchComments() {
+    if (!supabase) return;
 
-    // Fetch comments for this article
+    const list = document.getElementById('comment-list');
+
     const { data, error } = await supabase
         .from('comments')
         .select('*')
@@ -91,18 +150,11 @@ async function loadComments() {
         .order('created_at', { ascending: false });
 
     if (error) {
-        console.error('Error loading comments:', error);
-        container.innerHTML = '<p>Error loading comments.</p>';
+        console.error('Data Fetch Error:', error);
+        list.innerHTML = `<p style="color:red">Failed to load comments. (Check Supabase RLS policies?)</p>`;
         return;
     }
 
-    // Render Container Structure
-    container.innerHTML = `
-        <div id="comment-input-container"></div>
-        <div id="comment-list" style="margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;"></div>
-    `;
-
-    renderCommentInput();
     renderCommentList(data || []);
 }
 
@@ -117,6 +169,7 @@ function renderCommentInput() {
                 <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
                     <img src="${user.imageUrl}" style="width:32px; height:32px; border-radius:50%;">
                     <span style="font-weight:600; font-size:0.9rem;">${user.fullName || user.username}</span>
+                    <button class="btn" onclick="clerk.signOut()" style="background:none; border:none; color:#64748b; font-size:0.8rem; cursor:pointer; text-decoration:underline;">Sign Out</button>
                 </div>
                 <textarea id="comment-textarea" placeholder="Share your thoughts..." 
                     style="width: 100%; min-height: 80px; border: 1px solid var(--border-color); border-radius:0.25rem; padding:0.5rem; outline: none; font-family: inherit; font-size: 1rem; resize: vertical;"></textarea>
@@ -125,14 +178,13 @@ function renderCommentInput() {
                 </div>
             </div>
         `;
-
         document.getElementById('post-comment-btn').addEventListener('click', postComment);
 
     } else {
-        // Logged Out View (Optimistic UI - click to sign in)
+        // Logged Out View
         container.innerHTML = `
-            <div style="background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; cursor: pointer;" onclick="window.Clerk.openSignIn()">
-                <textarea disabled placeholder="Sign in to share your thoughts..." 
+            <div style="background: white; border: 2px solid var(--border-color); border-radius: 0.5rem; padding: 1rem; cursor: pointer;" onclick="clerk.openSignIn()">
+                <textarea disabled placeholder="Sign in with Email to comment..." 
                     style="width: 100%; min-height: 60px; border: none; outline: none; font-family: inherit; font-size: 1rem; resize: none; background: transparent; cursor: pointer;"></textarea>
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 0.75rem;">
                     <span style="color: #94a3b8; font-size: 0.875rem;">💡 Email, Google, or GitHub</span>
@@ -178,25 +230,27 @@ async function postComment() {
     btn.textContent = 'Posting...';
     btn.disabled = true;
 
-    const { error } = await supabase
-        .from('comments')
-        .insert({
-            article_id: getArticleId(),
-            user_id: user.id,
-            user_name: user.fullName || user.username || 'Anonymous',
-            user_avatar: user.imageUrl,
-            content: content
-        });
+    try {
+        const { error } = await supabase
+            .from('comments')
+            .insert({
+                article_id: getArticleId(),
+                user_id: user.id,
+                user_name: user.fullName || user.username || 'Anonymous',
+                user_avatar: user.imageUrl,
+                content: content
+            });
 
-    if (error) {
-        alert('Failed to post comment: ' + error.message);
-        btn.textContent = 'Post Comment';
-        btn.disabled = false;
-    } else {
+        if (error) throw error;
+
         textarea.value = '';
+        fetchComments(); // Refresh list
+
+    } catch (e) {
+        alert('Failed to post comment: ' + e.message);
+    } finally {
         btn.textContent = 'Post Comment';
         btn.disabled = false;
-        loadComments(); // Refresh list
     }
 }
 
@@ -229,7 +283,7 @@ function enableLikeButton() {
 
     likeBtn.addEventListener('click', async () => {
         if (!user) {
-            clerk.openSignIn();
+            try { await clerk.openSignIn(); } catch (e) { console.error(e); }
             return;
         }
 
