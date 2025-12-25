@@ -46,8 +46,8 @@ async function init() {
         if (container) {
             container.innerHTML =
                 `<div style="padding:1rem; border:1px solid red; color:red; border-radius:8px;">
-                    <strong>Error loading module:</strong> ${e.message}<br>
-                    <small>Button features might still work. Check console.</small>
+                    <strong>Error loading comments:</strong> ${e.message}<br>
+                    <small>Like & Share should still work locally.</small>
                  </div>`;
         }
     }
@@ -70,37 +70,19 @@ function renderScaffolding() {
     `;
 }
 
-function loadSupabase() {
-    return new Promise((resolve, reject) => {
-        // Check if already loaded
-        const existingProvider = window.supabase || window.Supabase;
-        if (existingProvider && existingProvider.createClient) {
-            supabase = existingProvider.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
-            resolve();
-            return;
-        }
+// Use Dynamic Import to avoid global variable issues
+async function loadSupabase() {
+    if (window.supabase) {
+        supabase = window.supabase; // If already init
+        return;
+    }
 
-        const script = document.createElement('script');
-        script.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js';
-        script.onload = () => {
-            // Try both common global names
-            const provider = window.supabase || window.Supabase;
-
-            if (!provider) {
-                reject(new Error('Supabase loaded but global object not found.'));
-                return;
-            }
-
-            try {
-                supabase = provider.createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
-                resolve();
-            } catch (err) {
-                reject(new Error('Supabase CreateClient Failed: ' + err.message));
-            }
-        };
-        script.onerror = () => reject(new Error('Failed to load Supabase script (Network/Blocker).'));
-        document.head.appendChild(script);
-    });
+    try {
+        const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+        supabase = createClient(CONFIG.supabaseUrl, CONFIG.supabaseAnonKey);
+    } catch (err) {
+        throw new Error('Supabase ESM Load Failed: ' + err.message);
+    }
 }
 
 function loadClerk() {
