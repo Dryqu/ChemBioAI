@@ -4,7 +4,7 @@
 
 const CONFIG = {
     // CLERK - Using data attribute initialization
-    clerkPublishableKey: 'pk_test_Ym4c3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2',
+    clerkPublishableKey: 'pk_test_Ymxlc3NlZC1iZWFnbGUtOTMuY2xlcmsuYWNjb3VudHMuZGV2JA',
 
     // SUPABASE KEYS
     supabaseUrl: 'https://opeibcpemzavmiurxpmp.supabase.co',
