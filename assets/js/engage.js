@@ -107,7 +107,7 @@ function loadClerk() {
 
         console.log('📥 Creating Clerk script tag with data attribute...');
         const script = document.createElement('script');
-        script.src = 'https://cdn.clerk.com/clerk-js/4.0.0/clerk.min.js';
+        script.src = 'https://unpkg.com/@clerk/clerk-js@4/dist/clerk.browser.js';
         script.async = true;
         // Set publishable key via data attribute to avoid auto-init errors
         script.setAttribute('data-clerk-publishable-key', CONFIG.clerkPublishableKey);
