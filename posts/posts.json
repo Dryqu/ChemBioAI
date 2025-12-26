@@ -1,5 +1,16 @@
 [
   {
+    "id": 43,
+    "title": "AI Digest — Nvidia's Hardware Dominance and ChatGPT's App Store",
+    "slug": "ai-digest-nvidias-hardware-dominance-and-chatgpts-app-store",
+    "date": "December 26, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "This digest covers Nvidia's $20 billion deal to license Groq's AI chip technology, OpenAI's launch of the ChatGPT App Directory, and AI's transformative impact on chemistry, labor markets, and the speed war between major AI labs.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-nvidias-hardware-dominance-and-chatgpts-app-store.html"
+  },
+  {
     "id": 42,
     "title": "You Don’t Need to Code to Build an AI Agent — One-Day Experience with Copilot Studio",
     "slug": "you-dont-need-to-code-to-build-an-ai-agent-one-day-experience-with-copilot-studio",
