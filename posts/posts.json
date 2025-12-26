@@ -1,5 +1,16 @@
 [
   {
+    "id": 42,
+    "title": "You Don’t Need to Code to Build an AI Agent — One-Day Experience with Copilot Studio",
+    "slug": "you-dont-need-to-code-to-build-an-ai-agent-one-day-experience-with-copilot-studio",
+    "date": "December 25, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "Learn how to build AI agents without code using Microsoft Copilot Studio, a low-code/no-code tool. This post provides a practical summary of the 'Agent in a Day' session, covering key concepts like Solutions, Topics, Cards, and Agent Flows.",
+    "readingTime": "4 min read",
+    "contentUrl": "/posts/you-dont-need-to-code-to-build-an-ai-agent-one-day-experience-with-copilot-studio.html"
+  },
+  {
     "id": 41,
     "title": "Build a Practical Make.com Automation: From Google Forms to AI Decisions",
     "slug": "build-a-practical-make-com-automation-from-google-forms-to-ai-decisions",
