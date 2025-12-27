@@ -1,0 +1,9 @@
+Run request.
+
+I am now uploading the actual raw data PDFs for this experiment (searchable or scanned).
+
+Please process the uploaded PDFs using the rules you learned from the sample raw report, Output_Template.xlsx, and Field_Mapping_Guide.docx.
+
+Fill the input cells only. Do not overwrite any formula cells.
+Include Flag, Confidence, and Source_Location for each output row.
+Return the completed Output_Template.xlsx.

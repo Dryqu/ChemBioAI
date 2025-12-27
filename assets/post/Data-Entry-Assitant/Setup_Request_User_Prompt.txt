@@ -1,0 +1,14 @@
+Setup request.
+
+I am uploading three files now:
+1) A sample raw report (PDF is perfect — searchable or scanned, as long as it represents the report style).
+2) Output_Template.xlsx (contains formulas; do not overwrite formulas).
+3) Field_Mapping_Guide.docx (mapping rules + which cells are safe to fill).
+
+Please read all three files and confirm:
+- Which fields you will extract from the PDF.
+- Which exact cells/columns you will fill in the Excel template.
+- Which cells/columns you will never modify because they contain formulas.
+- Whether you will use embedded text extraction or OCR (and under what conditions).
+
+After you confirm, prompt me to upload the actual raw data PDFs for processing.
