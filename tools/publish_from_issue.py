@@ -253,12 +253,13 @@ def build_post_html(template: str, category: str, title: str, date: str, body_ht
     out = template
 
     # Category badge (first <span ...> ... </span> in article header)
-    out = re.sub(
-        r'(<span[^>]*>\s*)(.*?)(\s*</span>)',
-        rf"\1{category}\3",
-        out,
-        count=1,
-        flags=re.I | re.S,
+# Replace article header title ONLY
+out = re.sub(
+    r'(<div class="article-header"[\s\S]*?<h1[^>]*>\s*)(.*?)(\s*</h1>)',
+    rf"\1{title}\3",
+    out,
+    count=1,
+    flags=re.I | re.S,
     )
 
     # Main title (first <h1 ...> ... </h1>)
