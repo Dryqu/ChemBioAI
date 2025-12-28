@@ -253,14 +253,34 @@ def build_post_html(template: str, category: str, title: str, date: str, body_ht
     out = template
 
     # Replace the main article title (first <h1> in article body)
-    # Skip the site header by being more specific
-    out = re.sub(
-        r'(<h1[^>]*>\s*)(.*?)(\s*</h1>)',
-        rf"\1{title}\3",
-        out,
-        count=1,
-        flags=re.I | re.S,
-    )
+    # Skip the site header by being more specific:
+    # We look for <h1> ONLY after the </header> tag.
+    
+    # 1. Split HTML into header part and body part
+    header_end_match = re.search(r'</header>', out, flags=re.I)
+    if header_end_match:
+        split_idx = header_end_match.end()
+        html_pre = out[:split_idx]
+        html_post = out[split_idx:]
+        
+        # 2. Replace <h1> in the body part only
+        html_post = re.sub(
+            r'(<h1[^>]*>\s*)(.*?)(\s*</h1>)',
+            rf"\1{title}\3",
+            html_post,
+            count=1,
+            flags=re.I | re.S,
+        )
+        out = html_pre + html_post
+    else:
+        # Fallback if no </header> found (shouldn't happen with our templates)
+        out = re.sub(
+            r'(<h1[^>]*>\s*)(.*?)(\s*</h1>)',
+            rf"\1{title}\3",
+            out,
+            count=1,
+            flags=re.I | re.S,
+        )
 
     # Date + author line (first <p ...> ... </p> after title in header area)
     # We replace the FIRST <p> inside the article header block (good enough for your template style).
