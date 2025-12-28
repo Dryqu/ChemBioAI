@@ -271,12 +271,29 @@ def build_post_html(template: str, category: str, title: str, date: str, body_ht
             count=1,
             flags=re.I | re.S,
         )
+        
+        # 3. Replace Category (first <span> in the body part)
+        html_post = re.sub(
+            r'(<span[^>]*>\s*)(.*?)(\s*</span>)',
+            rf"\1{category}\3",
+            html_post,
+            count=1,
+            flags=re.I | re.S,
+        )
         out = html_pre + html_post
     else:
         # Fallback if no </header> found (shouldn't happen with our templates)
         out = re.sub(
             r'(<h1[^>]*>\s*)(.*?)(\s*</h1>)',
             rf"\1{title}\3",
+            out,
+            count=1,
+            flags=re.I | re.S,
+        )
+        # Fallback category replacement
+        out = re.sub(
+            r'(<span[^>]*>\s*)(.*?)(\s*</span>)',
+            rf"\1{category}\3",
             out,
             count=1,
             flags=re.I | re.S,
