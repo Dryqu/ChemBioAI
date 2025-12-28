@@ -5,9 +5,8 @@ import re
 import subprocess
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Optional, Tuple
+from typing import Optional, Tuple
 import urllib.request
-
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = REPO_ROOT / "posts"
@@ -21,260 +20,205 @@ def sh(cmd: str) -> str:
     return subprocess.check_output(cmd, shell=True, text=True).strip()
 
 
-def load_posts() -> list:
-    if not POSTS_JSON.exists():
-        raise FileNotFoundError(f"Missing {POSTS_JSON}")
-    return json.loads(POSTS_JSON.read_text(encoding="utf-8"))
-
-
-def save_posts(posts: list) -> None:
-    POSTS_JSON.write_text(json.dumps(posts, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-
-
 def today_str() -> str:
     return datetime.now().strftime("%B %d, %Y")
 
 
+def load_posts() -> list:
+    return json.loads(POSTS_JSON.read_text(encoding="utf-8"))
+
+
+def save_posts(posts: list) -> None:
+    POSTS_JSON.write_text(
+        json.dumps(posts, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
+
+
 def slugify(title: str) -> str:
     s = title.lower().strip()
-    s = re.sub(r"[’']", "", s)                 # remove apostrophes
-    s = re.sub(r"[^a-z0-9]+", "-", s)          # non-alnum -> hyphen
+    s = re.sub(r"[’']", "", s)
+    s = re.sub(r"[^a-z0-9]+", "-", s)
     s = re.sub(r"-{2,}", "-", s).strip("-")
     return s or "post"
 
 
-def unique_slug(base_slug: str, posts: list) -> str:
-    existing = {p.get("slug", "") for p in posts}
-    # Also check file collisions
-    candidate = base_slug
+def unique_slug(base: str, posts: list) -> str:
+    existing = {p["slug"] for p in posts}
+    slug = base
     i = 2
-    while candidate in existing or (POSTS_DIR / f"{candidate}.html").exists():
-        candidate = f"{base_slug}-{i}"
+    while slug in existing or (POSTS_DIR / f"{slug}.html").exists():
+        slug = f"{base}-{i}"
         i += 1
-    return candidate
+    return slug
 
 
-def estimate_reading_time(body_html: str) -> str:
-    # 200 wpm rough estimate
-    text = re.sub(r"<[^>]+>", " ", body_html)
-    words = re.findall(r"\b\w+\b", text)
-    minutes = max(1, round(len(words) / 200))
-    return f"{minutes} min read"
+def estimate_reading_time(html: str) -> str:
+    text = re.sub(r"<[^>]+>", " ", html)
+    words = re.findall(r"\w+", text)
+    return f"{max(1, round(len(words) / 200))} min read"
 
 
-def style_links_blue(body_html: str) -> str:
-    # Add style attr to <a> that doesn't already have a style
-    def repl(m: re.Match) -> str:
-        tag = m.group(0)
-        if re.search(r'\sstyle\s*=', tag, flags=re.I):
-            return tag
-        # insert style before closing >
-        return tag[:-1] + f' style="color: {LINK_COLOR};"' + ">"
-    return re.sub(r"<a\s+[^>]*?>", repl, body_html, flags=re.I)
+def style_links_blue(html: str) -> str:
+    return re.sub(
+        r'<a\s+([^>]*?)>',
+        lambda m: (
+            f'<a {m.group(1)}>'
+            if "style=" in m.group(1)
+            else f'<a {m.group(1)} style="color: {LINK_COLOR};">'
+        ),
+        html,
+        flags=re.I,
+    )
 
 
 def strip_chatgpt_artifacts(text: str) -> str:
-    # Remove contentReference/oaicite artifacts if pasted into issue
-    lines = text.splitlines()
-    cleaned = []
-    for line in lines:
-        if "contentReference" in line or "oaicite" in line:
-            continue
-        cleaned.append(line)
-    return "\n".join(cleaned).strip()
+    return "\n".join(
+        line for line in text.splitlines()
+        if "contentReference" not in line and "oaicite" not in line
+    ).strip()
 
 
+# 🔥 FIXED ISSUE FORM PARSER (THIS IS THE KEY)
 def parse_issue_body(issue_body: str) -> Tuple[str, str, str, str]:
-    """
-    Extract:
-      - Post title
-      - Category
-      - Summary
-      - Body HTML
+    body = strip_chatgpt_artifacts(issue_body).replace("\r\n", "\n")
 
-    Works with GitHub issue forms output like:
-      Post title:
-      ...
-      Category:
-      ...
-      Summary:
-      ...
-      Body HTML:
-      ...
-    """
-    body = strip_chatgpt_artifacts(issue_body)
+    labels = ["Post title", "Category", "Summary", "Body HTML"]
 
-    def get_block(label: str) -> Optional[str]:
-        # match label then capture until next label or end
-        pattern = rf"{label}\s*:\s*\n(.*?)(?=\n[A-Za-z][A-Za-z \-/]+:\s*\n|\Z)"
-        m = re.search(pattern, body, flags=re.S)
+    def extract(label: str) -> Optional[str]:
+        next_labels = "|".join(re.escape(l) for l in labels)
+        pattern = rf"""
+        (?:
+            ^\s*###\s*{re.escape(label)}\s*$ |
+            ^\s*{re.escape(label)}\s*:\s*$ |
+            ^\s*{re.escape(label)}\s*$
+        )
+        \n
+        (.*?)
+        (?=
+            \n\s*(?:###\s*)?(?:{next_labels})\s*(?::|\n) |
+            \Z
+        )
+        """
+        m = re.search(pattern, body, flags=re.I | re.S | re.M | re.X)
         return m.group(1).strip() if m else None
 
-    title = get_block("Post title") or get_block("Title")  # fallback
-    category = get_block("Category")
-    summary = get_block("Summary") or get_block("SUMMARY")
-    body_html = get_block("Body HTML") or get_block("BODY HTML")
+    title = extract("Post title")
+    category = extract("Category")
+    summary = extract("Summary")
+    body_html = extract("Body HTML")
 
-    if not title or not category or not summary or not body_html:
+    if not all([title, category, summary, body_html]):
         raise ValueError(
             "Missing required fields. Ensure the issue contains Post title, Category, Summary, and Body HTML."
         )
 
-    return title.strip(), category.strip(), summary.strip(), body_html.strip()
+    return title, category, summary, body_html
 
 
-def load_template_html() -> str:
+def load_template() -> str:
     templates = sorted(POSTS_DIR.glob("*.html"))
     if not templates:
-        raise FileNotFoundError("No template found in posts/*.html. Add at least one existing post HTML file.")
+        raise RuntimeError("No template found in posts/*.html")
     return templates[0].read_text(encoding="utf-8")
 
 
-def replace_between(html: str, start_pat: str, end_pat: str, replacement: str) -> str:
-    m1 = re.search(start_pat, html, flags=re.I | re.S)
-    m2 = re.search(end_pat, html, flags=re.I | re.S)
-    if not m1 or not m2 or m2.start() <= m1.end():
-        raise ValueError("Template structure not found for replacement.")
-    return html[: m1.end()] + replacement + html[m2.start() :]
-
-
-def build_post_html(template: str, category: str, title: str, date: str, body_html: str) -> str:
-    out = template
-
-    # Category badge (first span in header area)
-    out = re.sub(
-        r'(<span[^>]*>\s*)(.*?)(\s*</span>)',
-        rf"\1{category}\3",
-        out,
+def build_post(template: str, category: str, title: str, body_html: str) -> str:
+    html = template
+    html = re.sub(r"<span[^>]*>.*?</span>", f"<span>{category}</span>", html, count=1, flags=re.S)
+    html = re.sub(r"<h1[^>]*>.*?</h1>", f"<h1>{title}</h1>", html, count=1, flags=re.S)
+    html = re.sub(
+        r"<p[^>]*>.*?By .*?</p>",
+        f"<p>{today_str()} • By {AUTHOR_NAME}</p>",
+        html,
         count=1,
-        flags=re.I | re.S,
+        flags=re.S,
     )
 
-    # Title (first <h1 ...>...</h1>)
-    out = re.sub(
-        r'(<h1[^>]*>\s*)(.*?)(\s*</h1>)',
-        rf"\1{title}\3",
-        out,
-        count=1,
-        flags=re.I | re.S,
-    )
-
-    # Date + author line (first <p ...>DATE • By ...</p> after title)
-    out = re.sub(
-        r'(<p[^>]*>\s*)(.*?)(\s*</p>)',
-        rf"\1{date} • By {AUTHOR_NAME}\3",
-        out,
-        count=1,
-        flags=re.I | re.S,
-    )
-
-    # Body HTML inside <div class="article-body"...> ... </div>
     body_html = style_links_blue(body_html)
-    start_pat = r'(<div\s+class="article-body"[^>]*>)'
-    end_pat = r'(</div>\s*<!--\s*ENGAGE MODULE\s*-->)'
-    out = replace_between(out, start_pat, end_pat, "\n" + body_html + "\n\n")
+    html = re.sub(
+        r'(<div class="article-body"[^>]*>).*?(</div>\s*<!--\s*ENGAGE MODULE\s*-->)',
+        rf"\1\n{body_html}\n\2",
+        html,
+        flags=re.S,
+    )
 
-    # Also update <title> tag in <head>
-    out = re.sub(
-        r"(<title>\s*)(.*?)(\s*</title>)",
-        rf"\1{title} - ChemBio AI Insights\3",
-        out,
+    html = re.sub(
+        r"<title>.*?</title>",
+        f"<title>{title} - ChemBio AI Insights</title>",
+        html,
         count=1,
-        flags=re.I | re.S,
+        flags=re.S,
     )
 
-    return out
+    return html
 
 
-def comment_and_close_issue(repo: str, issue_number: str, token: str, comment: str) -> None:
-    api = f"https://api.github.com/repos/{repo}/issues/{issue_number}/comments"
-    req = urllib.request.Request(
-        api,
-        data=json.dumps({"body": comment}).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json",
-            "Content-Type": "application/json",
-            "User-Agent": "chembioai-publisher",
-        },
-        method="POST",
+def comment_and_close(repo: str, issue: str, token: str, text: str):
+    headers = {
+        "Authorization": f"Bearer {token}",
+        "Accept": "application/vnd.github+json",
+        "Content-Type": "application/json",
+    }
+
+    urllib.request.urlopen(
+        urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/issues/{issue}/comments",
+            data=json.dumps({"body": text}).encode(),
+            headers=headers,
+            method="POST",
+        )
     )
-    urllib.request.urlopen(req).read()
 
-    # Close issue
-    api2 = f"https://api.github.com/repos/{repo}/issues/{issue_number}"
-    req2 = urllib.request.Request(
-        api2,
-        data=json.dumps({"state": "closed"}).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Accept": "application/vnd.github+json",
-            "Content-Type": "application/json",
-            "User-Agent": "chembioai-publisher",
-        },
-        method="PATCH",
+    urllib.request.urlopen(
+        urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/issues/{issue}",
+            data=json.dumps({"state": "closed"}).encode(),
+            headers=headers,
+            method="PATCH",
+        )
     )
-    urllib.request.urlopen(req2).read()
 
 
-def main() -> None:
-    issue_body = os.environ.get("ISSUE_BODY", "")
-    issue_number = os.environ.get("ISSUE_NUMBER", "")
-    repo = os.environ.get("REPO", "")
-    token = os.environ.get("GITHUB_TOKEN", "")
-
-    if not issue_body or not issue_number or not repo or not token:
-        raise RuntimeError("Missing required env vars (ISSUE_BODY, ISSUE_NUMBER, REPO, GITHUB_TOKEN).")
+def main():
+    issue_body = os.environ["ISSUE_BODY"]
+    issue_number = os.environ["ISSUE_NUMBER"]
+    repo = os.environ["REPO"]
+    token = os.environ["GITHUB_TOKEN"]
 
     title, category, summary, body_html = parse_issue_body(issue_body)
 
     posts = load_posts()
-    base_slug = slugify(title)
-    slug = unique_slug(base_slug, posts)
+    slug = unique_slug(slugify(title), posts)
 
-    new_id = (max((p.get("id", 0) for p in posts), default=0) + 1)
-
-    date = today_str()
-    reading_time = estimate_reading_time(body_html)
-
-    template = load_template_html()
-    html = build_post_html(template, category, title, date, body_html)
-
-    # Write new post file
+    html = build_post(load_template(), category, title, body_html)
     post_path = POSTS_DIR / f"{slug}.html"
     post_path.write_text(html, encoding="utf-8")
 
-    new_entry = {
-        "id": new_id,
+    entry = {
+        "id": max((p["id"] for p in posts), default=0) + 1,
         "title": title,
         "slug": slug,
-        "date": date,
+        "date": today_str(),
         "category": category,
         "name": AUTHOR_NAME,
         "summary": summary,
-        "readingTime": reading_time,
+        "readingTime": estimate_reading_time(body_html),
         "contentUrl": f"/posts/{slug}.html",
     }
 
-    # Prepend newest
-    posts.insert(0, new_entry)
+    posts.insert(0, entry)
     save_posts(posts)
 
-    # Commit only the two files
-    sh(f'git add "{post_path.as_posix()}" "{POSTS_JSON.as_posix()}"')
+    sh(f'git add "{post_path}" "{POSTS_JSON}"')
     sh(f'git commit -m "Add new post: {title}"')
 
-    comment = (
-        "✅ Published!\n\n"
-        f"- **Slug:** `{slug}`\n"
-        f"- **HTML:** `posts/{slug}.html`\n"
-        f"- **posts.json id:** `{new_id}`\n\n"
-        "JSON entry added:\n"
-        "```json\n"
-        f"{json.dumps(new_entry, indent=2, ensure_ascii=False)}\n"
-        "```"
+    comment_and_close(
+        repo,
+        issue_number,
+        token,
+        f"✅ Published!\n\nSlug: `{slug}`\n\n```json\n{json.dumps(entry, indent=2)}\n```",
     )
-    comment_and_close_issue(repo=repo, issue_number=issue_number, token=token, comment=comment)
 
 
 if __name__ == "__main__":
