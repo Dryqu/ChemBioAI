@@ -2,12 +2,12 @@ name: Publish a post
 description: Publish a new ChemBioAI post
 title: "[Publish] "
 labels: ["publish"]
-
 body:
   - type: input
     id: title
     attributes:
       label: Post title
+      placeholder: Paste the post title
     validations:
       required: true
 
@@ -29,6 +29,8 @@ body:
     id: summary
     attributes:
       label: Summary
+      description: 1–2 sentences
+      placeholder: Paste the summary
     validations:
       required: true
 
@@ -36,6 +38,7 @@ body:
     id: body_html
     attributes:
       label: Body HTML
-      description: Paste ONLY the article body HTML (no <html>/<head>/<body>, no <style>/<script>).
+      description: Blog body only (no <html>/<head>/<body>/<style>/<script>)
+      placeholder: Paste BODY HTML here
     validations:
       required: true
