@@ -252,16 +252,8 @@ def replace_between(html: str, start_pat: str, end_pat: str, replacement: str) -
 def build_post_html(template: str, category: str, title: str, date: str, body_html: str) -> str:
     out = template
 
-    # Replace article header title
-    out = re.sub(
-        r'(<div class="article-header"[\s\S]*?<h1[^>]*>\s*)(.*?)(\s*</h1>)',
-        rf"\1{title}\3",
-        out,
-        count=1,
-        flags=re.I | re.S,
-    )
-
-    # Main title (first <h1 ...> ... </h1>)
+    # Replace the main article title (first <h1> in article body)
+    # Skip the site header by being more specific
     out = re.sub(
         r'(<h1[^>]*>\s*)(.*?)(\s*</h1>)',
         rf"\1{title}\3",
