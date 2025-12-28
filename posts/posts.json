@@ -1,5 +1,16 @@
 [
   {
+    "id": 46,
+    "title": "From Draft to Live Post in 1 Click: My GitHub Issues Publishing Workflow",
+    "slug": "from-draft-to-live-post-in-1-click-my-github-issues-publishing-workflow",
+    "date": "December 28, 2025",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "This article describes a minimalist publishing workflow that turns a structured GitHub Issue into a live website post using GitHub Actions and a Python script.",
+    "readingTime": "4 min read",
+    "contentUrl": "/posts/from-draft-to-live-post-in-1-click-my-github-issues-publishing-workflow.html"
+  },
+  {
     "id": 45,
     "title": "AI Digest — Global AI Race Heats Up",
     "slug": "ai-digest-global-ai-race-heats-up",
