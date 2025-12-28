@@ -2,7 +2,9 @@ name: Publish Post (from Issue)
 
 on:
   issues:
-    types: [opened, edited]
+    types:
+      - opened
+      - edited
 
 permissions:
   contents: write
@@ -10,10 +12,13 @@ permissions:
 
 jobs:
   publish:
-    if: >-
+    # IMPORTANT:
+    # This must stay on ONE logical line using > (folded style)
+    if: >
       github.event.issue.state == 'open' &&
       contains(join(github.event.issue.labels.*.name, ','), 'publish') &&
       github.actor != 'github-actions[bot]'
+
     runs-on: ubuntu-latest
 
     steps:
@@ -37,7 +42,9 @@ jobs:
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           REPO: ${{ github.repository }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python tools/publish_from_issue.py
+        run: |
+          python tools/publish_from_issue.py
 
       - name: Push changes
-        run: git push
+        run: |
+          git push
