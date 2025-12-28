@@ -5,10 +5,9 @@ import re
 import subprocess
 from datetime import datetime
 from pathlib import Path
-from typing import Dict, Tuple, Optional
+from typing import Dict, Optional
 
 import urllib.request
-
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 POSTS_DIR = REPO_ROOT / "posts"
@@ -95,19 +94,17 @@ def parse_issue_body(issue_body: str) -> Dict[str, str]:
     Body HTML:
     <p>...</p>
     """
-    # Normalize
     body = issue_body.replace("\r\n", "\n").strip()
 
     # Remove any stray ChatGPT citation artifact lines if present
     body = re.sub(r"^::contentReference\[oaicite:\d+\]\{index=\d+\}\s*$", "", body, flags=re.M)
 
     def extract(label: str) -> Optional[str]:
-        # Capture text after "Label:" until next "\n\n<NextLabel>:" or end
         pattern = rf"(?is)^\s*{re.escape(label)}\s*:\s*\n(.*?)(?=\n\s*\w[\w\s]*\s*:\s*\n|$)"
         m = re.search(pattern, body, flags=re.M)
         return m.group(1).strip() if m else None
 
-    title = extract("Post title") or extract("Title")  # fallback
+    title = extract("Post title") or extract("Title")
     category = extract("Category")
     summary = extract("Summary") or extract("SUMMARY")
     body_html = extract("Body HTML") or extract("BODY HTML")
@@ -118,12 +115,7 @@ def parse_issue_body(issue_body: str) -> Dict[str, str]:
             "Expected Post title, Category, Summary, and Body HTML."
         )
 
-    return {
-        "title": title,
-        "category": category,
-        "summary": summary,
-        "body_html": body_html,
-    }
+    return {"title": title, "category": category, "summary": summary, "body_html": body_html}
 
 
 def load_posts_json() -> list[dict]:
@@ -142,7 +134,6 @@ def save_posts_json(items: list[dict]) -> None:
 def update_template_html(template_html: str, title: str, category: str, date_str: str, body_html: str) -> str:
     html = template_html
 
-    # Update <title>...</title>
     html = re.sub(
         r"(?is)<title>.*?</title>",
         f"<title>{title} - ChemBio AI Insights</title>",
@@ -150,7 +141,6 @@ def update_template_html(template_html: str, title: str, category: str, date_str
         count=1,
     )
 
-    # Update category label in header (first uppercase span)
     html = re.sub(
         r'(?is)(<span[^>]*text-transform:\s*uppercase[^>]*>)(.*?)(</span>)',
         rf"\1{category}\3",
@@ -158,7 +148,6 @@ def update_template_html(template_html: str, title: str, category: str, date_str
         count=1,
     )
 
-    # Update h1 in article header (first <h1 ...>...</h1>)
     html = re.sub(
         r"(?is)(<h1\b[^>]*>)(.*?)(</h1>)",
         rf"\1{title}\3",
@@ -166,7 +155,6 @@ def update_template_html(template_html: str, title: str, category: str, date_str
         count=1,
     )
 
-    # Update date line containing “• By Yi Qu”
     html = re.sub(
         r"(?is)(<p[^>]*>\s*)([A-Za-z]+\s+\d{1,2},\s+\d{4})(\s*•\s*By\s*Yi\s+Qu\s*</p>)",
         rf"\1{date_str}\3",
@@ -174,7 +162,6 @@ def update_template_html(template_html: str, title: str, category: str, date_str
         count=1,
     )
 
-    # Replace article body content inside <div class="article-body" ...> ... </div>
     body_html = add_blue_style_to_links(body_html)
     m = re.search(r'(?is)(<div\b[^>]*class="article-body"[^>]*>)(.*?)(</div>)', html)
     if not m:
@@ -225,7 +212,6 @@ def main() -> None:
 
     date_str = today_date_string()
 
-    # Load posts.json
     items = load_posts_json()
     max_id = 0
     for it in items:
@@ -236,16 +222,13 @@ def main() -> None:
     base_slug = slugify(title)
     slug = unique_slug(base_slug)
 
-    # Create HTML from template
     template_path = pick_template_html()
     template_html = template_path.read_text(encoding="utf-8")
     new_html = update_template_html(template_html, title=title, category=category, date_str=date_str, body_html=body_html)
 
-    # Write new post file
     out_path = POSTS_DIR / f"{slug}.html"
     out_path.write_text(new_html, encoding="utf-8")
 
-    # Update posts.json entry
     reading_time = estimate_reading_time(summary + "\n" + body_html)
     new_entry = {
         "id": new_id,
@@ -259,18 +242,15 @@ def main() -> None:
         "contentUrl": f"/posts/{slug}.html",
     }
 
-    # Add newest at top
     items.insert(0, new_entry)
     save_posts_json(items)
 
-    # Commit only two files
     git("config", "user.name", "github-actions[bot]")
     git("config", "user.email", "github-actions[bot]@users.noreply.github.com")
 
     git("add", str(out_path.as_posix()), str(POSTS_JSON.as_posix()))
     git("commit", "-m", f"Add new post: {title}")
 
-    # Comment + close
     comment = (
         "✅ Published!\n\n"
         f"- **Slug:** `{slug}`\n"
@@ -286,4 +266,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
