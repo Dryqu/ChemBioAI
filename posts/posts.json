@@ -1,5 +1,16 @@
 [
   {
+    "id": 46,
+    "title": "Eliminate Manual Data Entry with an AI Agent That Auto-Fills Your Templates",
+    "slug": "eliminate-manual-data-entry-with-an-ai-agent-that-auto-fills-your-templates",
+    "date": "December 28, 2025",
+    "category": "Science Labs",
+    "name": "Yi Qu",
+    "summary": "Build an AI agent that reads raw data PDFs, extracts the values you care about, and auto-fills your Excel template without overwriting formulas—using embedded text first and OCR only when needed.",
+    "readingTime": "5 min read",
+    "contentUrl": "/posts/eliminate-manual-data-entry-with-an-ai-agent-that-auto-fills-your-templates.html"
+  },
+  {
     "id": 45,
     "title": "Eliminate Manual Data Entry with an AI Agent That Auto-Fills Your Templates",
     "slug": "eliminate-manual-data-entry-with-an-ai-agent-that-auto-fills-your-templates-2",
