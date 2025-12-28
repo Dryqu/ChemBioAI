@@ -272,9 +272,9 @@ def build_post_html(template: str, category: str, title: str, date: str, body_ht
             flags=re.I | re.S,
         )
         
-        # 3. Replace Category (first <span> in the body part)
+        # 3. Replace Category (look for span with uppercase style)
         html_post = re.sub(
-            r'(<span[^>]*>\s*)(.*?)(\s*</span>)',
+            r'(<span[^>]*text-transform:\s*uppercase[^>]*>\s*)(.*?)(\s*</span>)',
             rf"\1{category}\3",
             html_post,
             count=1,
@@ -292,7 +292,7 @@ def build_post_html(template: str, category: str, title: str, date: str, body_ht
         )
         # Fallback category replacement
         out = re.sub(
-            r'(<span[^>]*>\s*)(.*?)(\s*</span>)',
+            r'(<span[^>]*text-transform:\s*uppercase[^>]*>\s*)(.*?)(\s*</span>)',
             rf"\1{category}\3",
             out,
             count=1,
