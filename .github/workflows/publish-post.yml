@@ -13,10 +13,7 @@ issues: write
 
 jobs:
 publish:
-if: >
-github.event.issue.state == 'open' &&
-contains(join(github.event.issue.labels.*.name, ','), 'publish') &&
-github.actor != 'github-actions[bot]'
+if: github.event.issue.state == 'open' && contains(join(github.event.issue.labels.*.name, ','), 'publish') && github.actor != 'github-actions[bot]'
 runs-on: ubuntu-latest
 
 
