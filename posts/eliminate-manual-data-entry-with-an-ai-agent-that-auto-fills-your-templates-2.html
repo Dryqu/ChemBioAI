@@ -1,0 +1,128 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminate Manual Data Entry with an AI Agent That Auto-Fills Your Templates - ChemBio AI Insights</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <style>
+    .article-body p {
+      margin-bottom: 1.25rem;
+      line-height: 1.7;
+    }
+    .cta-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+    .cta-button {
+      display: inline-block;
+      background-color: #2563eb; /* brand blue */
+      color: #fff;
+      padding: 0.8rem 1.6rem;
+      font-weight: 600;
+      border-radius: 10px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: all 0.25s ease;
+    }
+    .cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .cta-button.youtube {
+      background-color: #dc2626;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <div class="logo-icon">AI</div>
+        <div class="logo-text">
+          <h1>Eliminate Manual Data Entry with an AI Agent That Auto-Fills Your Templates</h1>
+          <span>Insights</span>
+        </div>
+      </a>
+      <nav>
+        <a href="../index.html" class="btn" style="background: transparent; color: var(--primary-color); border: 1px solid var(--border-color);">Back to Home</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="container" style="max-width: 800px; margin-top: 3rem; margin-bottom: 5rem;">
+      <div class="article-header" style="text-align: center; margin-bottom: 3rem;">
+        <span style="color: var(--accent-color); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Learning Resources</span>
+        <h1 style="font-size: 2.5rem; margin: 1rem 0; color: var(--primary-color);">
+          Eliminate Manual Data Entry with an AI Agent That Auto-Fills Your Templates
+        </h1>
+        <p style="color: #64748b;">December 28, 2025 • By Yi Qu</p>
+      </div>
+
+      <div class="article-body" style="font-size: 1.125rem; color: var(--text-color);">
+<h2>Stop Manual Data Entry: Build an AI Agent That Fills Your Template</h2> <p>When I was working in the lab, I saw the same scene again and again. Someone would open a raw data PDF file (scanned or searchable), lean closer to the screen, zoom in, zoom out, and copy numbers into Excel one cell at a time. Then they would pause, squint at the units, fix a tiny typo, and start over. After a few minutes, it was clear this wasn’t a one-time annoyance. It was a daily routine.</p> <p>This is not “science.” This is data entry.</p> <p>So here’s the idea: build an AI agent that acts like your data entry buddy. You upload a PDF → it reads it → it pulls out the values you care about → and it fills your Excel template while leaving formulas untouched.</p> <h2>What you are building</h2> <p>Your agent follows one simple workflow. It takes in a PDF, extracts embedded text if the file is searchable, and uses OCR only when the PDF (or the relevant section) is image-based or the extracted text is missing or garbled. Then it identifies the key lines, maps each value using your Field Mapping Guide, and exports everything into your Output Template with flags for anything uncertain.</p> <h2>Why the setup matters</h2> <p>Raw data file layouts might change. A label moves, a header is renamed, or a software update adds a new section. If the agent has to guess, it will eventually guess wrong.</p> <p>That is why the most reliable approach is a two-stage workflow. First, you teach the agent your format using setup files (discussed in the following sections). Then, you upload the real raw data PDFs, and the agent fills the template using the same rules.</p> <h2>Real example (formulas must stay)</h2> <p>In this example, your output file is an Excel template that already contains formulas such as Average and Standard Deviation. The agent must fill only the input cells and must not overwrite any formula cells. Once the numbers are filled, Excel calculates the summary automatically.</p> <p>If you want the exact files used in this example, download Appendix A (Field Mapping Guide) and Appendix B (Output Template) at the end.</p> <h2>Step-by-step: build and use the agent</h2> <h3>Step 1 — Prepare the Field Mapping Guide</h3> <p>Create a short Word document that explains what each label means and how values should map into your template. This guide is what prevents the agent from guessing when a report contains extra numbers.</p> <p>If you want a ready-to-use example, download Appendix A.</p> <h3>Step 2 — Prepare the Excel Output Template</h3> <p>Create an Excel template with the exact columns you want. Put formulas wherever you want Excel to calculate results automatically. Make it clear which cells are inputs and which cells are formulas, because the agent must only write to inputs.</p> <p>If you want a ready-to-use example, download Appendix B.</p> <h3>Step 3 — Add the System Prompt in agent Instructions</h3> <p>Put the System Prompt in the agent’s permanent Instructions area. This is the job description that should not change: extract text first, OCR only if needed, map fields using the guide, and never overwrite formula cells.</p> <p>If you want a copy/paste-ready System Prompt, download Appendix C.</p> <h3>Step 4 — Use the prompts (even if there’s only one user prompt box)</h3> <p>Most tools give you one permanent place for the System Prompt, and only one chat box for user messages. That’s fine.</p> <p>You treat the Setup request and the Run request as two reusable scripts that you paste into the same chat box at different times. The first time you use the agent for a new report style, you paste the Setup request and upload the three setup files together: (1) a sample raw report PDF, (2) Output_Template.xlsx, and (3) Field_Mapping_Guide.docx. After the agent confirms what it learned, you paste the Run request and upload the real raw PDFs. On future days, you usually skip Setup and use only the Run request.</p> <p>To make this easy, you can download the exact Setup and Run prompts in Appendix D and Appendix E.</p> <p>If an AI can’t give you a downloadable Excel output file, the workaround is simple: request CSV outputs or column-aligned tables and paste them into a formula-protected template. This keeps calculations intact while avoiding file-transfer limitations.</p> <h3>Step 5 — QA loop (how you make it reliable)</h3> <p>Your first run will not be perfect, and that’s normal.</p> <p>When you spot a mistake, don’t fight the model. Improve the guide. Add one clearer mapping rule and one worked example to the Field Mapping Guide so the agent stops guessing. Over a handful of real PDFs, the workflow becomes consistent for that report style.</p> <p>If you want something to practice with before using your own reports, I’m also providing sample raw data PDFs (Appendix F) and a small QA test set (Appendix G) so you can run the full workflow end-to-end.</p> <h2>Ending note: this works across different AI tools</h2> <p>This pattern is platform-agnostic. Whether you build your agent in ChatGPT, Copilot, or another AI system, the reliable combo is the same: clear Instructions, a mapping guide, an output template, and a simple QA loop.</p> <h2>Appendices</h2> <p>Everything below is already prepared as downloadable files. The appendices are listed in a clean A→G order, and the post references them in the same order.</p> <ul> <li><a href="https://docs.google.com/document/d/1p-DiOPGgW63DPkEglU7P9okv_YNBSQ8R/edit?usp=drive_link&ouid=117156502044483055461&rtpof=true&sd=true" style="color: #2563eb;">Appendix A — Field_Mapping_Guide.docx</a></li> <li><a href="https://docs.google.com/spreadsheets/d/1s5UV_dD5xAQ75j3qUgQSMbLXKQBCrxx9/edit?usp=drive_link&ouid=117156502044483055461&rtpof=true&sd=true" style="color: #2563eb;">Appendix B — Output_Template.xlsx</a></li> <li><a href="https://drive.google.com/file/d/13eNIgfDEcAKdYwCm9ZmlTdEjH0ufuadB/view?usp=drive_link" style="color: #2563eb;">Appendix C — System_Prompt.md</a></li> <li><a href="https://drive.google.com/file/d/19YleE0qJz1Nfjj0fOF8LWQTm9Hw4dtyX/view?usp=drive_link" style="color: #2563eb;">Appendix D — Setup_Request_User_Prompt.txt</a></li> <li><a href="https://drive.google.com/file/d/1XRn6V-d2CsTvFRdww0JuMDMMiUR3WAG7/view?usp=drive_link" style="color: #2563eb;">Appendix E — Run_Request_User_Prompt.txt</a></li> <li><a href="https://drive.google.com/drive/folders/1rFPG_Llfy4_iKIm9uUX-hph7bf7jJpZl?usp=drive_link" style="color: #2563eb;">Appendix F — Sample_Raw_Data_Files</a></li> <li><a href="https://drive.google.com/drive/folders/1UrfsH7_-6Hx83x9aLPpbr2xAeCujC-4t?usp=drive_link" style="color: #2563eb;">Appendix G — QA_Test_Sample_Files</a></li> </ul>
+
+</div>
+    
+            <!-- ENGAGE MODULE -->
+            <div class="engage-module" id="engage-module">
+                <div class="engage-divider"></div>
+                
+                <!-- Like & Share Row -->
+                <div class="engage-actions">
+                    <button id="like-btn" class="engage-btn like-btn" aria-label="Like this article">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span id="like-count">0</span>
+                    </button>
+                    
+                    <div class="share-buttons">
+                        <button id="share-linkedin" class="engage-btn share-btn" aria-label="Share on LinkedIn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </button>
+                        <button id="share-x" class="engage-btn share-btn" aria-label="Share on X">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </button>
+                        <button id="share-copy" class="engage-btn share-btn" aria-label="Copy link">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Comments Section -->
+                <div class="engage-comments">
+                    <h3 class="comments-title">Discussion</h3>
+                    <div id="comments-container">
+                        <!-- Comments will inject here -->
+                    </div>
+                </div>
+            </div>
+
+        </article>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div><p>&copy; 2025 ChemBio AI Insights. All rights reserved.</p></div>
+      <div><p>Contact: <a href="mailto:chembioaiinsights@gmail.com" style="color: white;">chembioaiinsights@gmail.com</a></p></div>
+    </div>
+  </footer>
+
+    <script src="../assets/js/engage.js?v=8"></script>
+</body>
+</html>
