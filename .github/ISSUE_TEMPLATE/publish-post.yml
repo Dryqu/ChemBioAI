@@ -1,0 +1,42 @@
+name: Publish a post
+description: Publish a new ChemBioAI post
+title: "[Publish] "
+labels: ["publish"]
+body:
+- type: input
+id: title
+attributes:
+label: Post title
+validations:
+required: true
+
+
+- type: dropdown
+id: category
+attributes:
+label: Category
+options:
+- Pharma
+- AgTech
+- Science Labs
+- Tools & Tips
+- Global AI Trends
+- Learning Resources
+validations:
+required: true
+
+
+- type: textarea
+id: summary
+attributes:
+label: Summary
+validations:
+required: true
+
+
+- type: textarea
+id: body_html
+attributes:
+label: Body HTML
+validations:
+required: true
