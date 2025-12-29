@@ -1,5 +1,16 @@
 [
   {
+    "id": 47,
+    "title": "AI Digest — Product Power and Funding Frenzy",
+    "slug": "ai-digest-product-power-and-funding-frenzy",
+    "date": "December 29, 2025",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "A quick AI Digest covering late-2025 AI momentum: Google’s faster Gemini 3 Flash + verification tools, 3M’s “Ask 3M” materials assistant, CES-bound AI hardware, record funding led by OpenAI, and DeepMind’s automated research lab.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-product-power-and-funding-frenzy.html"
+  },
+  {
     "id": 46,
     "title": "From Draft to Live Post in 1 Click: My GitHub Issues Publishing Workflow",
     "slug": "from-draft-to-live-post-in-1-click-my-github-issues-publishing-workflow",
