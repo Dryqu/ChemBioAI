@@ -1,5 +1,16 @@
 [
   {
+    "id": 48,
+    "title": "Building Your Custom AI: A Brief Introduction to Nebius",
+    "slug": "building-your-custom-ai-a-brief-introduction-to-nebius",
+    "date": "December 30, 2025",
+    "category": "Tools & Tips",
+    "name": "Yi Qu",
+    "summary": "Nebius is a developer-focused cloud platform for running containers/VMs on powerful GPUs and building real AI systems like RAG pipelines by connecting storage, networking, and vector databases. It also supports fine-tuning open-source models—often with LoRA—so they perform better on your private, domain-specific data.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/building-your-custom-ai-a-brief-introduction-to-nebius.html"
+  },
+  {
     "id": 47,
     "title": "AI Digest — Product Power and Funding Frenzy",
     "slug": "ai-digest-product-power-and-funding-frenzy",
