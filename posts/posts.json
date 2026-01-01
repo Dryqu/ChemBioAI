@@ -1,23 +1,34 @@
 [
   {
+    "id": 52,
+    "title": "AI Digest \u2014 AI's Billion-Dollar Bets: Capital, Compute, and Scientific Validation",
+    "slug": "ai-digest-ai-s-billion-dollar-bets-capital-compute-and-scientific-validation",
+    "date": "January 01, 2026",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "SoftBank is reportedly negotiating a massive $40 billion investment in OpenAI, signaling continued confidence in frontier AI models as foundational infrastructure.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-ai-s-billion-dollar-bets-capital-compute-and-scientific-validation.html"
+  },
+  {
     "id": 50,
-    "title": "AI Digest — Meta’s Multi-Billion Agent Play and the Rise of Pharma Superintelligence",
+    "title": "AI Digest \u2014 Meta\u2019s Multi-Billion Agent Play and the Rise of Pharma Superintelligence",
     "slug": "ai-digest-meta-s-multi-billion-agent-play-and-the-rise-of-pharma-superintelligence",
     "date": "December 31, 2025",
     "category": "Global AI Trends",
     "name": "Yi Qu",
-    "summary": "This digest highlights major AI moves across agents, drug discovery, and developer tooling—ranging from Meta’s reported multi-billion push into autonomous agents to Insilico’s IPO framing “pharmaceutical superintelligence.”",
+    "summary": "This digest highlights major AI moves across agents, drug discovery, and developer tooling\u2014ranging from Meta\u2019s reported multi-billion push into autonomous agents to Insilico\u2019s IPO framing \u201cpharmaceutical superintelligence.\u201d",
     "readingTime": "2 min read",
     "contentUrl": "/posts/ai-digest-meta-s-multi-billion-agent-play-and-the-rise-of-pharma-superintelligence.html"
   },
   {
     "id": 49,
-    "title": "AI 2026: From Shopping Robots to Personal “Safe Words”",
+    "title": "AI 2026: From Shopping Robots to Personal \u201cSafe Words\u201d",
     "slug": "ai-2026-from-shopping-robots-to-personal-safe-words",
     "date": "December 30, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "AI is shifting from hype to real-world systems in 2026—more edge computing, more practical “agents,” and new needs like identity safe words.",
+    "summary": "AI is shifting from hype to real-world systems in 2026\u2014more edge computing, more practical \u201cagents,\u201d and new needs like identity safe words.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/ai-2026-from-shopping-robots-to-personal-safe-words.html"
   },
@@ -28,18 +39,18 @@
     "date": "December 30, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "Nebius is a developer-focused cloud platform for running containers/VMs on powerful GPUs and building real AI systems like RAG pipelines by connecting storage, networking, and vector databases. It also supports fine-tuning open-source models—often with LoRA—so they perform better on your private, domain-specific data.",
+    "summary": "Nebius is a developer-focused cloud platform for running containers/VMs on powerful GPUs and building real AI systems like RAG pipelines by connecting storage, networking, and vector databases. It also supports fine-tuning open-source models\u2014often with LoRA\u2014so they perform better on your private, domain-specific data.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/building-your-custom-ai-a-brief-introduction-to-nebius.html"
   },
   {
     "id": 47,
-    "title": "AI Digest — Product Power and Funding Frenzy",
+    "title": "AI Digest \u2014 Product Power and Funding Frenzy",
     "slug": "ai-digest-product-power-and-funding-frenzy",
     "date": "December 29, 2025",
     "category": "Global AI Trends",
     "name": "Yi Qu",
-    "summary": "A quick AI Digest covering late-2025 AI momentum: Google’s faster Gemini 3 Flash + verification tools, 3M’s “Ask 3M” materials assistant, CES-bound AI hardware, record funding led by OpenAI, and DeepMind’s automated research lab.",
+    "summary": "A quick AI Digest covering late-2025 AI momentum: Google\u2019s faster Gemini 3 Flash + verification tools, 3M\u2019s \u201cAsk 3M\u201d materials assistant, CES-bound AI hardware, record funding led by OpenAI, and DeepMind\u2019s automated research lab.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/ai-digest-product-power-and-funding-frenzy.html"
   },
@@ -56,12 +67,12 @@
   },
   {
     "id": 45,
-    "title": "AI Digest — Global AI Race Heats Up",
+    "title": "AI Digest \u2014 Global AI Race Heats Up",
     "slug": "ai-digest-global-ai-race-heats-up",
     "date": "December 28, 2025",
     "category": "Global AI Trends",
     "name": "Yi Qu",
-    "summary": "This AI Digest highlights how the global race in AI is accelerating—spanning new models, major investments, and fast-moving policy and competition dynamics. It also delivers a quick “morning brief” of the most actionable updates so you can stay current without the noise.",
+    "summary": "This AI Digest highlights how the global race in AI is accelerating\u2014spanning new models, major investments, and fast-moving policy and competition dynamics. It also delivers a quick \u201cmorning brief\u201d of the most actionable updates so you can stay current without the noise.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/ai-digest-global-ai-race-heats-up.html"
   },
@@ -72,13 +83,13 @@
     "date": "December 28, 2025",
     "category": "Science Labs",
     "name": "Yi Qu",
-    "summary": "Build an AI agent that reads raw data PDFs, extracts the values you care about, and auto-fills your Excel template without overwriting formulas—using embedded text first and OCR only when needed.",
+    "summary": "Build an AI agent that reads raw data PDFs, extracts the values you care about, and auto-fills your Excel template without overwriting formulas\u2014using embedded text first and OCR only when needed.",
     "readingTime": "5 min read",
     "contentUrl": "/posts/eliminate-manual-data-entry-with-an-ai-agent-that-auto-fills-your-templates.html"
   },
   {
     "id": 43,
-    "title": "AI Digest — Nvidia's Hardware Dominance and ChatGPT's App Store",
+    "title": "AI Digest \u2014 Nvidia's Hardware Dominance and ChatGPT's App Store",
     "slug": "ai-digest-nvidias-hardware-dominance-and-chatgpts-app-store",
     "date": "December 26, 2025",
     "category": "Global AI Trends",
@@ -89,7 +100,7 @@
   },
   {
     "id": 42,
-    "title": "You Don’t Need to Code to Build an AI Agent — One-Day Experience with Copilot Studio",
+    "title": "You Don\u2019t Need to Code to Build an AI Agent \u2014 One-Day Experience with Copilot Studio",
     "slug": "you-dont-need-to-code-to-build-an-ai-agent-one-day-experience-with-copilot-studio",
     "date": "December 25, 2025",
     "category": "Tools & Tips",
@@ -116,7 +127,7 @@
     "date": "December 24, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "Our most common learning illusion is this: you read an article, remember a story, and think you’ve “got it.” Learn a simple 3-step AI-style (Gemini 3) learning flow to find your blind spots fast.",
+    "summary": "Our most common learning illusion is this: you read an article, remember a story, and think you\u2019ve \u201cgot it.\u201d Learn a simple 3-step AI-style (Gemini 3) learning flow to find your blind spots fast.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/stop-memorizing-stories-use-ai-to-find-your-blind-spots-fast.html"
   },
@@ -149,7 +160,7 @@
     "date": "December 18, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "AI application engineer roles are growing right now. But hiring teams aren't impressed by buzzwords anymore—they're looking for people who can actually build, debug, and ship AI systems.",
+    "summary": "AI application engineer roles are growing right now. But hiring teams aren't impressed by buzzwords anymore\u2014they're looking for people who can actually build, debug, and ship AI systems.",
     "readingTime": "2 min read",
     "contentUrl": "/posts/the-three-skills-that-actually-separate-ai-engineers-in-industry.html"
   },
@@ -182,7 +193,7 @@
     "date": "December 16, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "If you have used ChatGPT, you know it generates surprisingly coherent and helpful text. But what is the core technology driving this modern AI boom? It’s called the **Transformer**.",
+    "summary": "If you have used ChatGPT, you know it generates surprisingly coherent and helpful text. But what is the core technology driving this modern AI boom? It\u2019s called the **Transformer**.",
     "readingTime": "5 min read",
     "contentUrl": "/posts/the-secret-engine-of-chatgpt-why-the-transformer-ai-learns-so-well.html"
   },
@@ -215,13 +226,13 @@
     "date": "December 14, 2025",
     "category": "Pharma",
     "name": "Yi Qu",
-    "summary": "A quiet revolution is underway, driven by the surging demand for some of the most important new medicines today—specifically, peptides.",
+    "summary": "A quiet revolution is underway, driven by the surging demand for some of the most important new medicines today\u2014specifically, peptides.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/the-100-billion-breakthrough-how-ai-is-finally-solving-the-biggest-bottleneck-in-drug-manufacturing.html"
   },
   {
     "id": 16,
-    "title": "AI Digest — AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
+    "title": "AI Digest \u2014 AI-Ready Chemistry Secures Drug Supply, Plus ChatGPT's Shopping Edge",
     "slug": "ai-digest-ai-ready-chemistry-secures-drug-supply-plus-chatgpts-shopping-edge",
     "date": "December 06, 2025",
     "category": "Global AI Trends",
@@ -236,7 +247,7 @@
     "slug": "what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation",
     "date": "December 3, 2025",
     "category": "Global AI Trends",
-    "excerpt": "Today I attended a webinar regarding Microsoft’s Internal HR Transformation, featuring leaders from Microsoft. Here’s What I Learned About the Future of Work.",
+    "excerpt": "Today I attended a webinar regarding Microsoft\u2019s Internal HR Transformation, featuring leaders from Microsoft. Here\u2019s What I Learned About the Future of Work.",
     "contentUrl": "/posts/what-i-learned-about-the-future-of-work-from-microsofts-internal-hr-transformation.html",
     "name": "Yi Qu",
     "readingTime": "3 min"
@@ -254,7 +265,7 @@
   },
   {
     "id": 13,
-    "title": "AI Digest — Gemini 3 and the Global AI Infrastructure Race",
+    "title": "AI Digest \u2014 Gemini 3 and the Global AI Infrastructure Race",
     "slug": "ai-digest-gemini-3-and-the-global-ai-infrastructure-race",
     "date": "November 30, 2025",
     "category": "Global AI Trends",
@@ -283,7 +294,7 @@
   },
   {
     "id": 10,
-    "title": "AI Digest — AI's Job Impact and Google's Hardware Push",
+    "title": "AI Digest \u2014 AI's Job Impact and Google's Hardware Push",
     "slug": "ai-digest-ai-s-job-impact-and-google-s-hardware-push",
     "date": "November 27, 2025",
     "category": "Global AI Trends",
@@ -347,7 +358,7 @@
   },
   {
     "id": 8,
-    "title": "Shuttle Pharma’s Smartest Move Yet: Teaching Machines to Discover Drugs",
+    "title": "Shuttle Pharma\u2019s Smartest Move Yet: Teaching Machines to Discover Drugs",
     "slug": "shuttle-pharmas-smartest-move-yet-teaching-machines-to-discover-drugs",
     "date": "November 27, 2025",
     "category": "Pharma",
@@ -356,16 +367,16 @@
   },
   {
     "id": 6,
-    "title": "Don’t Get Left Behind in the AI Era",
+    "title": "Don\u2019t Get Left Behind in the AI Era",
     "slug": "dont-get-left-behind-in-the-ai-era",
     "date": "November 27, 2025",
     "category": "Learning Resources",
-    "excerpt": "If we don’t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
+    "excerpt": "If we don\u2019t want to fall behind in the AI era, there is one simple habit we can build: get used to using open-source tools.",
     "contentUrl": "/posts/dont-get-left-behind-in-the-ai-era.html"
   },
   {
     "id": 17,
-    "title": "Today's AI Digest — Frontier Models, Drug Discovery, and Data Scarcity",
+    "title": "Today's AI Digest \u2014 Frontier Models, Drug Discovery, and Data Scarcity",
     "slug": "ai-digest-frontier-models-drug-discovery-and-data-scarcity",
     "date": "December 07, 2025",
     "category": "Global AI Trends",
@@ -376,7 +387,7 @@
   },
   {
     "id": 18,
-    "title": "AI Digest — AI's Regulatory Future and Automated Drug Discovery",
+    "title": "AI Digest \u2014 AI's Regulatory Future and Automated Drug Discovery",
     "slug": "ai-digest-ai-s-regulatory-future-and-automated-drug-discovery",
     "date": "December 08, 2025",
     "category": "Global AI Trends",
@@ -387,12 +398,12 @@
   },
   {
     "id": 19,
-    "title": "Why I Did It with the Mindset of “AI First” (and Why Verification Matters)",
+    "title": "Why I Did It with the Mindset of \u201cAI First\u201d (and Why Verification Matters)",
     "slug": "why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters",
     "date": "December 09, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of “AI first.”",
+    "summary": "I got a request to complete a spreadsheet, but the information was scattered across many long reports. Instead of spending hours reading and copying, I approached it with the mindset of \u201cAI first.\u201d",
     "readingTime": "1 min read",
     "contentUrl": "/posts/why-i-did-it-with-the-mindset-of-ai-first-and-why-verification-matters.html"
   },
@@ -453,7 +464,7 @@
   },
   {
     "id": 25,
-    "title": "Today's AI Digest — AI's Architects Take Center Stage, Plus a Scientific Leap",
+    "title": "Today's AI Digest \u2014 AI's Architects Take Center Stage, Plus a Scientific Leap",
     "slug": "today-s-ai-digest-ai-s-architects-take-center-stage-plus-a-scientific-leap",
     "date": "December 11, 2025",
     "category": "Global AI Trends",
@@ -464,7 +475,7 @@
   },
   {
     "id": 26,
-    "title": "AI Digest — AI Giants Clash, Policy Tightens, and Pharma Gets a Boost",
+    "title": "AI Digest \u2014 AI Giants Clash, Policy Tightens, and Pharma Gets a Boost",
     "slug": "ai-digest-ai-giants-clash-policy-tightens-and-pharma-gets-a-boost",
     "date": "December 12, 2025",
     "category": "Global AI Trends",
@@ -475,7 +486,7 @@
   },
   {
     "id": 27,
-    "title": "AI Digest — Infrastructure Collides with Code, Plus GPT-5.2's Expert Upgrade",
+    "title": "AI Digest \u2014 Infrastructure Collides with Code, Plus GPT-5.2's Expert Upgrade",
     "slug": "ai-digest-infrastructure-collides-with-code-plus-gpt-5-2-s-expert-upgrade",
     "date": "December 13, 2025",
     "category": "Global AI Trends",
@@ -486,7 +497,7 @@
   },
   {
     "id": 29,
-    "title": "AI Digest — Agents Take Over: The Shift from AI Tools to AI OS",
+    "title": "AI Digest \u2014 Agents Take Over: The Shift from AI Tools to AI OS",
     "slug": "ai-digest-agents-take-over-the-shift-from-ai-tools-to-ai-os",
     "date": "December 14, 2025",
     "category": "Global AI Trends",
@@ -502,7 +513,7 @@
     "date": "December 17, 2025",
     "category": "Learning Resources",
     "name": "Yi Qu",
-    "summary": "A year ago, “agentic AI” was still insider language. In 2025, it became the fastest-moving layer of the AI stack—because it turns models into systems that can actually get work done.",
+    "summary": "A year ago, \u201cagentic AI\u201d was still insider language. In 2025, it became the fastest-moving layer of the AI stack\u2014because it turns models into systems that can actually get work done.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/dawn-song-berkeley-rdi-and-the-rise-of-agentic-ai-education.html"
   },
@@ -530,7 +541,7 @@
   },
   {
     "id": 39,
-    "title": "AI Digest — AI's Economic Shift: Layoffs, Bubble Talk, and New Agentic Tools",
+    "title": "AI Digest \u2014 AI's Economic Shift: Layoffs, Bubble Talk, and New Agentic Tools",
     "slug": "ai-digest-ai-s-economic-shift-layoffs-bubble-talk-and-new-agentic-tools",
     "date": "December 22, 2025",
     "category": "Global AI Trends",
@@ -546,7 +557,7 @@
     "date": "December 24, 2025",
     "category": "Tools & Tips",
     "name": "Yi Qu",
-    "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering—understanding what information the model needs so it doesn’t have to guess. This article outlines the shift and the four types of context that actually improve results.",
+    "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering\u2014understanding what information the model needs so it doesn\u2019t have to guess. This article outlines the shift and the four types of context that actually improve results.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results.html"
   },
