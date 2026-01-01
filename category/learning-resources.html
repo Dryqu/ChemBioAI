@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learning Resources - ChemBio AI Insights</title>
+    <meta name="description"
+        content="Curated learning paths, courses, and educational materials for AI in chemistry and biology.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,12 +34,314 @@
     <main>
         <section class="hero" style="padding: 3rem 0; margin-bottom: 2rem;">
             <div class="container">
-                <h2>Learning Resources</h2>
-                <p>Tutorials, courses, and educational materials for AI in chemistry.</p>
+                <h2>📘 Learning Resources</h2>
+                <p>Curated learning paths, courses, and educational materials</p>
             </div>
         </section>
 
+        <!-- Learning Paths Directory -->
         <section class="container">
+            <h2 class="section-title">Learning Paths</h2>
+            <p
+                style="text-align: center; color: var(--text-color); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                A curated collection of external courses and documentation organized by skill level and topic.
+            </p>
+
+            <div class="tools-directory">
+                <!-- A) Start Here -->
+                <div class="tool-category expanded">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🚀</span>
+                        <span class="category-name">Start Here: Beginner-Friendly</span>
+                        <span class="category-toggle">−</span>
+                    </button>
+                    <div class="tool-category-content"
+                        style="max-height: 1000px; border-top: 1px solid var(--border-color);">
+                        <p class="category-desc">Fast payoff introduction to Generative AI and Machine Learning</p>
+                        <div class="tool-list">
+                            <a href="https://www.skills.google/paths/118" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Skills — Introduction to Generative AI (Path)</span>
+                                <span class="tool-desc">Structured beginner path on genAI fundamentals and responsible
+                                    AI.</span>
+                            </a>
+                            <a href="https://www.skills.google/course_templates/536" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Skills — Intro to Generative AI (Micro-course)</span>
+                                <span class="tool-desc">Short intro course on what genAI is and how it’s used.</span>
+                            </a>
+                            <a href="https://developers.google.com/machine-learning/crash-course" target="_blank"
+                                rel="noopener" class="tool-item">
+                                <span class="tool-name">Google Machine Learning Crash Course</span>
+                                <span class="tool-desc">Interactive ML fundamentals with exercises and
+                                    explanations.</span>
+                            </a>
+                            <a href="https://www.kaggle.com/learn/intro-to-machine-learning" target="_blank"
+                                rel="noopener" class="tool-item">
+                                <span class="tool-name">Kaggle Learn — Intro to Machine Learning</span>
+                                <span class="tool-desc">Bite-sized lessons + exercises to build your first ML
+                                    models.</span>
+                            </a>
+                            <a href="https://www.youtube.com/@stanfordonline" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Stanford Online (YouTube)</span>
+                                <span class="tool-desc">Free university-level AI/ML lectures and playlists.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- B) Prompting -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">✍️</span>
+                        <span class="category-name">Prompt Engineering</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Write better prompts and build reliable applications</p>
+                        <div class="tool-list">
+                            <a href="https://grow.google/prompting-essentials/" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Prompting Essentials (Grow with Google)</span>
+                                <span class="tool-desc">Practical prompting workflow you can reuse at work.</span>
+                            </a>
+                            <a href="https://www.skills.google/paths/2337/course_templates/1229" target="_blank"
+                                rel="noopener" class="tool-item">
+                                <span class="tool-name">Google Skills — Prompting Essentials (Course)</span>
+                                <span class="tool-desc">Skills.google version of Prompting Essentials.</span>
+                            </a>
+                            <a href="https://www.skills.google/course_templates/976" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Skills — Prompt Design in Vertex AI (Lab)</span>
+                                <span class="tool-desc">Hands-on prompt design practice in Vertex AI.</span>
+                            </a>
+                            <a href="https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">DeepLearning.AI — ChatGPT Prompt Engineering</span>
+                                <span class="tool-desc">Prompt patterns for building reliable apps.</span>
+                            </a>
+                            <a href="https://github.com/anthropics/prompt-eng-interactive-tutorial" target="_blank"
+                                rel="noopener" class="tool-item">
+                                <span class="tool-name">Anthropic — Prompt Engineering Interactive Tutorial</span>
+                                <span class="tool-desc">Guided, hands-on prompt exercises on GitHub.</span>
+                            </a>
+                            <a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Claude Docs — Prompt Engineering Overview</span>
+                                <span class="tool-desc">Prompting strategies and best practices.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- C) Developer Quickstarts -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">💻</span>
+                        <span class="category-name">Developer Quickstarts</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Start building with APIs (OpenAI, Gemini, Vertex AI)</p>
+                        <div class="tool-list">
+                            <a href="https://platform.openai.com/docs/quickstart" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">OpenAI API — Developer Quickstart</span>
+                                <span class="tool-desc">Fastest path to your first OpenAI API call.</span>
+                            </a>
+                            <a href="https://platform.openai.com/docs/tutorials" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">OpenAI API — Tutorials</span>
+                                <span class="tool-desc">Step-by-step tutorials for common build patterns.</span>
+                            </a>
+                            <a href="https://cookbook.openai.com/" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">OpenAI Cookbook</span>
+                                <span class="tool-desc">Practical examples by use case (site + GitHub).</span>
+                            </a>
+                            <a href="https://ai.google.dev/gemini-api/docs/quickstart" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Gemini API — Quickstart</span>
+                                <span class="tool-desc">Make your first Gemini API request.</span>
+                            </a>
+                            <a href="https://docs.cloud.google.com/vertex-ai/generative-ai/docs/start/quickstart"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Gemini in Vertex AI — Quickstart</span>
+                                <span class="tool-desc">Use Gemini models inside Google Cloud Vertex AI.</span>
+                            </a>
+                            <a href="https://www.skills.google/paths/183" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Skills — Advanced: GenAI for Developers</span>
+                                <span class="tool-desc">A more technical path for developers/ML engineers.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- D) Agents / RAG / Workflows -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🧠</span>
+                        <span class="category-name">Agents, RAG & Workflows</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">From "chat" to "get work done" — frameworks and tools</p>
+                        <div class="tool-list">
+                            <a href="https://huggingface.co/learn/agents-course/en/unit0/introduction" target="_blank"
+                                rel="noopener" class="tool-item">
+                                <span class="tool-name">Hugging Face — AI Agents Course</span>
+                                <span class="tool-desc">Structured, free course on agent concepts and tool use.</span>
+                            </a>
+                            <a href="https://docs.langchain.com/oss/python/learn" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">LangChain Docs — Learn</span>
+                                <span class="tool-desc">Core concepts and patterns for building agentic apps.</span>
+                            </a>
+                            <a href="https://developers.llamaindex.ai/python/framework/getting_started/starter_example/"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">LlamaIndex — Starter Tutorial (RAG)</span>
+                                <span class="tool-desc">A fast, practical path to your first RAG app.</span>
+                            </a>
+                            <a href="https://docs.dify.ai/en/use-dify/getting-started/quick-start" target="_blank"
+                                rel="noopener" class="tool-item">
+                                <span class="tool-name">Dify — 30-Minute Quick Start</span>
+                                <span class="tool-desc">Build and publish your first Dify app quickly.</span>
+                            </a>
+                            <a href="https://docs.dify.ai/en/use-dify/knowledge/readme" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Dify — Knowledge (RAG)</span>
+                                <span class="tool-desc">How to ground answers with documents using Dify.</span>
+                            </a>
+                            <a href="https://docs.n8n.io/advanced-ai/intro-tutorial/" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">n8n — AI Workflow Tutorial</span>
+                                <span class="tool-desc">Step-by-step guide to build AI-powered automation.</span>
+                            </a>
+
+                            <!-- Advanced Section -->
+                            <details style="margin-top: 1rem; width: 100%;">
+                                <summary onclick="updateParentHeight(this)"
+                                    style="cursor: pointer; color: var(--primary-color); font-weight: 500; padding: 0.5rem; border-radius: 0.5rem; list-style: none; transition: background-color 0.2s ease;">
+                                    <span style="font-size: 0.9rem; margin-right: 0.5rem;">▶</span> Explore more
+                                    (advanced docs + automation)
+                                </summary>
+                                <div class="tool-list"
+                                    style="padding-top: 0.5rem; padding-left: 1rem; border-left: 2px solid var(--border-color); margin-left: 0.5rem;">
+                                    <a href="https://docs.langchain.com/oss/python/langchain/quickstart" target="_blank"
+                                        rel="noopener" class="tool-item">
+                                        <span class="tool-name">LangChain Docs — Quickstart</span>
+                                        <span class="tool-desc">The fastest path to a working tool-using agent.</span>
+                                    </a>
+                                    <a href="https://docs.dify.ai/" target="_blank" rel="noopener" class="tool-item">
+                                        <span class="tool-name">Dify Docs (Home)</span>
+                                        <span class="tool-desc">Hub to navigate concepts, workflows, knowledge,
+                                            deployment.</span>
+                                    </a>
+                                    <a href="https://docs.dify.ai/en/use-dify/getting-started/key-concepts"
+                                        target="_blank" rel="noopener" class="tool-item">
+                                        <span class="tool-name">Dify — Key Concepts</span>
+                                        <span class="tool-desc">Apps, workflows vs chatflows, publishing.</span>
+                                    </a>
+                                    <a href="https://docs.dify.ai/en/self-host/quick-start/docker-compose"
+                                        target="_blank" rel="noopener" class="tool-item">
+                                        <span class="tool-name">Dify — Deploy with Docker Compose</span>
+                                        <span class="tool-desc">Practical self-hosting quick start.</span>
+                                    </a>
+                                    <a href="https://help.zapier.com/hc/en-us/articles/18590756459277-AI-quick-start-guide-in-Zapier"
+                                        target="_blank" rel="noopener" class="tool-item">
+                                        <span class="tool-name">Zapier — AI Quick Start Guide</span>
+                                        <span class="tool-desc">Use AI features inside Zapier to accelerate
+                                            building.</span>
+                                    </a>
+                                </div>
+                            </details>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- E) Creator Learning -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🎨</span>
+                        <span class="category-name">Creator Learning: Design & Video</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Tutorials for AI video/image workflows and design</p>
+                        <div class="tool-list">
+                            <a href="https://academy.runwayml.com/" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Runway Academy</span>
+                                <span class="tool-desc">Tutorials for AI video/image workflows.</span>
+                            </a>
+                            <a href="https://docs.midjourney.com/hc/en-us/articles/33329261836941-Getting-Started-Guide"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Midjourney — Getting Started Guide</span>
+                                <span class="tool-desc">Official guide to generating your first images.</span>
+                            </a>
+                            <a href="https://www.adobe.com/learn/firefly" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Adobe — Learn Firefly</span>
+                                <span class="tool-desc">Tutorials and walkthroughs for Adobe Firefly tools.</span>
+                            </a>
+                            <a href="https://www.canva.com/magic/" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Canva — Magic Studio</span>
+                                <span class="tool-desc">Learn Canva’s AI features for content and design.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- F) Cloud -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">☁️</span>
+                        <span class="category-name">Cloud & Enterprise Certifications</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Enterprise learning paths and official certifications</p>
+                        <div class="tool-list">
+                            <a href="https://learn.microsoft.com/en-us/training/paths/agents-online-workshop/"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Microsoft Learn — Agent in a Day</span>
+                                <span class="tool-desc">Workshop to build/customize agents in Copilot.</span>
+                            </a>
+                            <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/"
+                                target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Microsoft Learn — Azure AI Fundamentals (AI-900)</span>
+                                <span class="tool-desc">Official AI fundamentals certification learning hub.</span>
+                            </a>
+                            <a href="https://aws.amazon.com/training/learn-about/ai/" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">AWS Training — Learn About AI</span>
+                                <span class="tool-desc">AWS learning hub for AI topics.</span>
+                            </a>
+                            <a href="https://skillbuilder.aws/generative-ai" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">AWS Skill Builder — Generative AI</span>
+                                <span class="tool-desc">Central hub for AWS genAI learning content.</span>
+                            </a>
+                            <a href="https://www.skills.google/catalog" target="_blank" rel="noopener"
+                                class="tool-item">
+                                <span class="tool-name">Google Skills — Catalog</span>
+                                <span class="tool-desc">Browse/search all Google Skills courses and paths.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="container" style="margin: 4rem auto;">
+            <hr style="border: none; border-top: 1px solid var(--border-color);">
+        </div>
+
+        <!-- Related Articles -->
+        <section class="container">
+            <h2 class="section-title">Related Articles</h2>
             <div id="category-posts" class="articles-grid">
                 <p>Loading articles...</p>
             </div>
@@ -57,6 +361,42 @@
     </footer>
 
     <script src="../assets/js/main.js"></script>
+    <script>
+        function toggleCategory(button) {
+            const category = button.parentElement;
+            const content = category.querySelector('.tool-category-content');
+            const toggle = button.querySelector('.category-toggle');
+
+            if (category.classList.contains('expanded')) {
+                category.classList.remove('expanded');
+                content.style.maxHeight = null;
+                toggle.textContent = '+';
+            } else {
+                category.classList.add('expanded');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                toggle.textContent = '−';
+            }
+        }
+
+        function updateParentHeight(detailsSummary) {
+            // Wait for toggle to complete then update parent height
+            setTimeout(() => {
+                const details = detailsSummary.parentElement;
+                const categoryContent = details.closest('.tool-category-content');
+
+                if (categoryContent) {
+                    // If expanded, calculate new height
+                    // Adding a generous buffer or using scrollHeight
+                    if (details.open) {
+                        categoryContent.style.maxHeight = categoryContent.scrollHeight + 200 + 'px';
+                    } else {
+                        // If closing, we can just reset to scrollHeight
+                        categoryContent.style.maxHeight = categoryContent.scrollHeight + 'px';
+                    }
+                }
+            }, 10);
+        }
+    </script>
 </body>
 
 </html>

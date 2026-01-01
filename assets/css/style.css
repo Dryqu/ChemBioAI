@@ -732,8 +732,41 @@ footer {
   margin-bottom: 0.25rem;
 }
 
+
+
 .tool-desc {
   font-size: 0.85rem;
   color: var(--text-color);
   line-height: 1.4;
+}
+
+/* Nested Advanced Section */
+.tools-directory details {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.tools-directory summary {
+  cursor: pointer;
+  color: var(--primary-color);
+  font-weight: 500;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  list-style: none;
+  transition: background-color 0.2s ease;
+}
+
+.tools-directory summary:hover {
+  background-color: var(--bg-color);
+}
+
+.tools-directory summary::-webkit-details-marker {
+  display: none;
+}
+
+.tools-directory details .tool-list {
+  padding-top: 0.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid var(--border-color);
+  margin-left: 0.5rem;
 }
