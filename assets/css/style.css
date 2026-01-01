@@ -613,3 +613,127 @@ footer {
     justify-content: center;
   }
 }
+
+/* ============================================
+   AI TOOLS DIRECTORY STYLES
+   ============================================ */
+
+.tools-directory {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+@media (max-width: 900px) {
+  .tools-directory {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tool-category {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.tool-category:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tool-category-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.tool-category-header:hover {
+  background-color: var(--bg-color);
+}
+
+.category-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.category-name {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.category-toggle {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: var(--accent-color);
+  transition: transform 0.3s ease;
+}
+
+.tool-category.expanded .category-toggle {
+  transform: rotate(45deg);
+}
+
+.tool-category-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out;
+  background: var(--bg-color);
+}
+
+.tool-category.expanded .tool-category-content {
+  border-top: 1px solid var(--border-color);
+}
+
+.category-desc {
+  padding: 1rem 1.5rem 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-color);
+}
+
+.tool-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem 1.25rem;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0.875rem 1rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.tool-item:hover {
+  border-color: var(--accent-color);
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.tool-name {
+  font-weight: 600;
+  color: var(--accent-color);
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.tool-desc {
+  font-size: 0.85rem;
+  color: var(--text-color);
+  line-height: 1.4;
+}

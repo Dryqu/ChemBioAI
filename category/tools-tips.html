@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tools & Tips - ChemBio AI Insights</title>
+    <meta name="description" content="Curated AI tools and practical guides for productivity, research, writing, automation, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -32,12 +33,368 @@
     <main>
         <section class="hero" style="padding: 3rem 0; margin-bottom: 2rem;">
             <div class="container">
-                <h2>Tools & Tips</h2>
-                <p>Practical AI guides, prompt engineering, and software reviews.</p>
+                <h2>🛠️ Tools & Tips</h2>
+                <p>Curated AI tools and practical guides to boost your productivity</p>
             </div>
         </section>
 
+        <!-- AI Tools Directory -->
         <section class="container">
+            <h2 class="section-title">AI Tools Directory</h2>
+            <p style="text-align: center; color: var(--text-color); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                A curated collection of AI tools organized by use case. Click any category to explore.
+            </p>
+            
+            <div class="tools-directory">
+                <!-- 1. General AI Assistants -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🤖</span>
+                        <span class="category-name">General AI Assistants</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Daily work copilots for writing, reasoning, and brainstorming</p>
+                        <div class="tool-list">
+                            <a href="https://chat.openai.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">ChatGPT</span>
+                                <span class="tool-desc">Writing, reasoning, brainstorming, workflow help</span>
+                            </a>
+                            <a href="https://claude.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Claude</span>
+                                <span class="tool-desc">Long documents, careful editing, analysis</span>
+                            </a>
+                            <a href="https://gemini.google.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Gemini</span>
+                                <span class="tool-desc">Google ecosystem (Docs/Drive), general assistant</span>
+                            </a>
+                            <a href="https://copilot.microsoft.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Microsoft Copilot</span>
+                                <span class="tool-desc">Microsoft 365 workflows + business productivity</span>
+                            </a>
+                            <a href="https://www.perplexity.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Perplexity</span>
+                                <span class="tool-desc">Fast answers with sources (research mode)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. AI Search & Research -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🔍</span>
+                        <span class="category-name">AI Search & Research</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Research answers with sources and citations</p>
+                        <div class="tool-list">
+                            <a href="https://www.perplexity.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Perplexity</span>
+                                <span class="tool-desc">Research answers + citations</span>
+                            </a>
+                            <a href="https://consensus.app" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Consensus</span>
+                                <span class="tool-desc">Evidence-based answers from papers</span>
+                            </a>
+                            <a href="https://elicit.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Elicit</span>
+                                <span class="tool-desc">Literature review + extracting findings</span>
+                            </a>
+                            <a href="https://www.semanticscholar.org" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Semantic Scholar</span>
+                                <span class="tool-desc">Finding papers fast</span>
+                            </a>
+                            <a href="https://exa.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Exa</span>
+                                <span class="tool-desc">Search API for LLM/RAG workflows</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Writing, Editing, and Content Quality -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">✍️</span>
+                        <span class="category-name">Writing & Editing</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Professional tone, correctness, and content quality</p>
+                        <div class="tool-list">
+                            <a href="https://www.grammarly.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Grammarly</span>
+                                <span class="tool-desc">Professional tone, correctness, clarity</span>
+                            </a>
+                            <a href="https://www.wordtune.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Wordtune</span>
+                                <span class="tool-desc">Rewriting with tone control</span>
+                            </a>
+                            <a href="https://www.jasper.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Jasper</span>
+                                <span class="tool-desc">Marketing + brand-aligned content</span>
+                            </a>
+                            <a href="https://www.notion.so/product/ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Notion AI</span>
+                                <span class="tool-desc">Notes → summaries → drafts inside Notion</span>
+                            </a>
+                            <a href="https://quillbot.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">QuillBot</span>
+                                <span class="tool-desc">Paraphrase + grammar + summarization</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Meetings -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🎙️</span>
+                        <span class="category-name">Meetings & Transcription</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Transcription, notes, and action items from calls</p>
+                        <div class="tool-list">
+                            <a href="https://otter.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Otter</span>
+                                <span class="tool-desc">Meeting transcription + summaries</span>
+                            </a>
+                            <a href="https://fireflies.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Fireflies.ai</span>
+                                <span class="tool-desc">Meeting notes + searchable call library</span>
+                            </a>
+                            <a href="https://fathom.video" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Fathom</span>
+                                <span class="tool-desc">Zoom/Meet notes + highlights</span>
+                            </a>
+                            <a href="https://www.avoma.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Avoma</span>
+                                <span class="tool-desc">Sales/CS call coaching + summaries</span>
+                            </a>
+                            <a href="https://krisp.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Krisp</span>
+                                <span class="tool-desc">Noise cancellation for calls</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Documents & PDFs -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">📄</span>
+                        <span class="category-name">Documents & PDFs</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Summarize, extract, and chat with files</p>
+                        <div class="tool-list">
+                            <a href="https://www.adobe.com/acrobat/ai-assistant.html" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Adobe Acrobat AI</span>
+                                <span class="tool-desc">Chat with PDFs, summarize, extract</span>
+                            </a>
+                            <a href="https://www.chatpdf.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">ChatPDF</span>
+                                <span class="tool-desc">Quick "ask my PDF" workflow</span>
+                            </a>
+                            <a href="https://www.humata.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Humata</span>
+                                <span class="tool-desc">Q&A over documents, faster reading</span>
+                            </a>
+                            <a href="https://notebooklm.google" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Google NotebookLM</span>
+                                <span class="tool-desc">Turn sources into summaries, outlines, audio briefs</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Presentations & Slides -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">📊</span>
+                        <span class="category-name">Presentations & Slides</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Generate and design professional presentations</p>
+                        <div class="tool-list">
+                            <a href="https://gamma.app" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Gamma</span>
+                                <span class="tool-desc">Generate decks/docs/pages quickly</span>
+                            </a>
+                            <a href="https://www.beautiful.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Beautiful.ai</span>
+                                <span class="tool-desc">Auto-layout professional slides</span>
+                            </a>
+                            <a href="https://tome.app" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Tome</span>
+                                <span class="tool-desc">Narrative decks and storytelling</span>
+                            </a>
+                            <a href="https://www.canva.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Canva</span>
+                                <span class="tool-desc">Slides + design + AI helpers</span>
+                            </a>
+                            <a href="https://www.microsoft.com/microsoft-365/powerpoint" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">PowerPoint (Copilot)</span>
+                                <span class="tool-desc">Enterprise slide workflows</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Automation & Agents -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">⚡</span>
+                        <span class="category-name">Automation & Agents</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Connect tools and run workflows automatically</p>
+                        <div class="tool-list">
+                            <a href="https://zapier.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Zapier</span>
+                                <span class="tool-desc">Automate across thousands of apps</span>
+                            </a>
+                            <a href="https://www.make.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Make</span>
+                                <span class="tool-desc">More customizable visual automations</span>
+                            </a>
+                            <a href="https://ifttt.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">IFTTT</span>
+                                <span class="tool-desc">Simple automations (personal/pro)</span>
+                            </a>
+                            <a href="https://n8n.io" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">n8n</span>
+                                <span class="tool-desc">Self-hosted workflow automation</span>
+                            </a>
+                            <a href="https://dify.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Dify</span>
+                                <span class="tool-desc">Build LLM apps/workflows (RAG, agents)</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Coding & Developer Productivity -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">💻</span>
+                        <span class="category-name">Coding & Dev Tools</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">AI-powered coding assistance for technical teams</p>
+                        <div class="tool-list">
+                            <a href="https://github.com/features/copilot" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">GitHub Copilot</span>
+                                <span class="tool-desc">Code completion + chat in IDE</span>
+                            </a>
+                            <a href="https://cursor.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Cursor</span>
+                                <span class="tool-desc">AI-first code editor</span>
+                            </a>
+                            <a href="https://replit.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Replit</span>
+                                <span class="tool-desc">Build apps in browser with AI help</span>
+                            </a>
+                            <a href="https://v0.dev" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Vercel v0</span>
+                                <span class="tool-desc">Prompt-to-UI components</span>
+                            </a>
+                            <a href="https://bolt.new" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">StackBlitz Bolt</span>
+                                <span class="tool-desc">Prompt-to-fullstack prototypes</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Visuals for Work -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🎨</span>
+                        <span class="category-name">Visuals & Image Tools</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Images, diagrams, and quick visual edits</p>
+                        <div class="tool-list">
+                            <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Adobe Firefly</span>
+                                <span class="tool-desc">Brand-safe image generation + design</span>
+                            </a>
+                            <a href="https://www.midjourney.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Midjourney</span>
+                                <span class="tool-desc">High-quality image generation</span>
+                            </a>
+                            <a href="https://leonardo.ai" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Leonardo</span>
+                                <span class="tool-desc">Marketing visuals, creative assets</span>
+                            </a>
+                            <a href="https://clipdrop.co" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Clipdrop</span>
+                                <span class="tool-desc">Remove background, cleanup, relight</span>
+                            </a>
+                            <a href="https://www.photoroom.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Photoroom</span>
+                                <span class="tool-desc">Product photos and thumbnails</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Video for Business -->
+                <div class="tool-category">
+                    <button class="tool-category-header" onclick="toggleCategory(this)">
+                        <span class="category-icon">🎬</span>
+                        <span class="category-name">Video & Media</span>
+                        <span class="category-toggle">+</span>
+                    </button>
+                    <div class="tool-category-content">
+                        <p class="category-desc">Training, marketing, and explainer videos</p>
+                        <div class="tool-list">
+                            <a href="https://runwayml.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Runway</span>
+                                <span class="tool-desc">Video gen + editing toolkit</span>
+                            </a>
+                            <a href="https://www.descript.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Descript</span>
+                                <span class="tool-desc">Edit video/audio by editing text</span>
+                            </a>
+                            <a href="https://www.synthesia.io" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Synthesia</span>
+                                <span class="tool-desc">Avatar training/enablement videos</span>
+                            </a>
+                            <a href="https://www.heygen.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">HeyGen</span>
+                                <span class="tool-desc">Talking avatars + localization</span>
+                            </a>
+                            <a href="https://www.loom.com" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Loom</span>
+                                <span class="tool-desc">Async screen recording for teams</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Divider -->
+        <div class="container" style="margin: 4rem auto;">
+            <hr style="border: none; border-top: 1px solid var(--border-color);">
+        </div>
+
+        <!-- Related Articles -->
+        <section class="container">
+            <h2 class="section-title">Related Articles</h2>
+            <p style="text-align: center; color: var(--text-color); margin-bottom: 2rem;">
+                Practical guides, workflows, and tips from our team
+            </p>
             <div id="category-posts" class="articles-grid">
                 <p>Loading articles...</p>
             </div>
@@ -57,6 +414,23 @@
     </footer>
 
     <script src="../assets/js/main.js"></script>
+    <script>
+        function toggleCategory(button) {
+            const category = button.parentElement;
+            const content = category.querySelector('.tool-category-content');
+            const toggle = button.querySelector('.category-toggle');
+            
+            if (category.classList.contains('expanded')) {
+                category.classList.remove('expanded');
+                content.style.maxHeight = null;
+                toggle.textContent = '+';
+            } else {
+                category.classList.add('expanded');
+                content.style.maxHeight = content.scrollHeight + 'px';
+                toggle.textContent = '−';
+            }
+        }
+    </script>
 </body>
 
 </html>
