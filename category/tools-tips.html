@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tools & Tips - ChemBio AI Insights</title>
-    <meta name="description" content="Curated AI tools and practical guides for productivity, research, writing, automation, and more.">
+    <meta name="description"
+        content="Curated AI tools and practical guides for productivity, research, writing, automation, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -41,10 +42,11 @@
         <!-- AI Tools Directory -->
         <section class="container">
             <h2 class="section-title">AI Tools Directory</h2>
-            <p style="text-align: center; color: var(--text-color); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+            <p
+                style="text-align: center; color: var(--text-color); margin-bottom: 2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
                 A curated collection of AI tools organized by use case. Click any category to explore.
             </p>
-            
+
             <div class="tools-directory">
                 <!-- 1. General AI Assistants -->
                 <div class="tool-category">
@@ -192,7 +194,8 @@
                     <div class="tool-category-content">
                         <p class="category-desc">Summarize, extract, and chat with files</p>
                         <div class="tool-list">
-                            <a href="https://www.adobe.com/acrobat/ai-assistant.html" target="_blank" rel="noopener" class="tool-item">
+                            <a href="https://www.adobe.com/acrobat/ai-assistant.html" target="_blank" rel="noopener"
+                                class="tool-item">
                                 <span class="tool-name">Adobe Acrobat AI</span>
                                 <span class="tool-desc">Chat with PDFs, summarize, extract</span>
                             </a>
@@ -238,7 +241,8 @@
                                 <span class="tool-name">Canva</span>
                                 <span class="tool-desc">Slides + design + AI helpers</span>
                             </a>
-                            <a href="https://www.microsoft.com/microsoft-365/powerpoint" target="_blank" rel="noopener" class="tool-item">
+                            <a href="https://www.microsoft.com/microsoft-365/powerpoint" target="_blank" rel="noopener"
+                                class="tool-item">
                                 <span class="tool-name">PowerPoint (Copilot)</span>
                                 <span class="tool-desc">Enterprise slide workflows</span>
                             </a>
@@ -276,6 +280,10 @@
                                 <span class="tool-name">Dify</span>
                                 <span class="tool-desc">Build LLM apps/workflows (RAG, agents)</span>
                             </a>
+                            <a href="https://opal.google/" target="_blank" rel="noopener" class="tool-item">
+                                <span class="tool-name">Google Opal</span>
+                                <span class="tool-desc">Visual editor for building AI agents</span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -290,7 +298,8 @@
                     <div class="tool-category-content">
                         <p class="category-desc">AI-powered coding assistance for technical teams</p>
                         <div class="tool-list">
-                            <a href="https://github.com/features/copilot" target="_blank" rel="noopener" class="tool-item">
+                            <a href="https://github.com/features/copilot" target="_blank" rel="noopener"
+                                class="tool-item">
                                 <span class="tool-name">GitHub Copilot</span>
                                 <span class="tool-desc">Code completion + chat in IDE</span>
                             </a>
@@ -324,7 +333,8 @@
                     <div class="tool-category-content">
                         <p class="category-desc">Images, diagrams, and quick visual edits</p>
                         <div class="tool-list">
-                            <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener" class="tool-item">
+                            <a href="https://www.adobe.com/products/firefly.html" target="_blank" rel="noopener"
+                                class="tool-item">
                                 <span class="tool-name">Adobe Firefly</span>
                                 <span class="tool-desc">Brand-safe image generation + design</span>
                             </a>
@@ -419,7 +429,7 @@
             const category = button.parentElement;
             const content = category.querySelector('.tool-category-content');
             const toggle = button.querySelector('.category-toggle');
-            
+
             if (category.classList.contains('expanded')) {
                 category.classList.remove('expanded');
                 content.style.maxHeight = null;
