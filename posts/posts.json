@@ -549,5 +549,16 @@
     "summary": "The new advantage in getting better AI results isn't longer prompts, but context engineering—understanding what information the model needs so it doesn’t have to guess. This article outlines the shift and the four types of context that actually improve results.",
     "readingTime": "3 min read",
     "contentUrl": "/posts/from-prompt-engineering-to-context-engineering-how-to-get-better-ai-results.html"
+  },
+  {
+    "id": 51,
+    "title": "The Future of Work: How AI Can Support People Development and Talent Retention",
+    "slug": "the-future-of-work-how-ai-can-support-people-development-and-talent-retention",
+    "date": "January 01, 2026",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "This article explores how AI is reimagining the employee experience by shifting from rigid org charts to dynamic work charts, identifying hidden skills, and empowering employees as 'agent bosses' to reduce friction and foster a culture of continuous learning.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/the-future-of-work-how-ai-can-support-people-development-and-talent-retention.html"
   }
 ]
