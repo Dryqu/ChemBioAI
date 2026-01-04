@@ -1,5 +1,16 @@
 [
   {
+    "id": 54,
+    "title": "From Raw Data to Audit-Ready Spreadsheets: An AI-Assisted, Deterministic Python Workflow",
+    "slug": "from-raw-data-to-audit-ready-spreadsheets-an-ai-assisted-deterministic-python-workflow",
+    "date": "January 4, 2026",
+    "category": "Learning Resources",
+    "name": "Yi Qu",
+    "summary": "This post shows a complete, runnable Python workflow that deterministically transcribes structured values from a raw text file into Excel and compares them against a technician spreadsheet to produce audit-ready mismatch reports.",
+    "readingTime": "5 min read",
+    "contentUrl": "/posts/from-raw-data-to-audit-ready-spreadsheets-an-ai-assisted-deterministic-python-workflow.html"
+  },
+  {
     "id": 53,
     "title": "Can We Trust AI to Grow Our Food? From Labs to Leaves",
     "slug": "can-we-trust-ai-to-grow-our-food-from-labs-to-leaves",
