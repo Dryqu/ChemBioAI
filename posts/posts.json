@@ -1,5 +1,16 @@
 [
   {
+    "id": 55,
+    "title": "Today's AI Digest: Pharma Giants and Tech Titans Redefine AI Infrastructure",
+    "slug": "ai-digest-pharma-giants-and-tech-titans-redefine-ai-infrastructure",
+    "date": "January 19, 2026",
+    "category": "Global AI Trends",
+    "name": "Yi Qu",
+    "summary": "NVIDIA and Eli Lilly launch a $1B joint AI lab for drug discovery, OpenAI begins testing ads in ChatGPT, and Evernote releases v11 with deep AI integration. This digest explores how pharma and tech giants are redefining AI infrastructure and monetization.",
+    "readingTime": "3 min read",
+    "contentUrl": "/posts/ai-digest-pharma-giants-and-tech-titans-redefine-ai-infrastructure.html"
+  },
+  {
     "id": 54,
     "title": "From Raw Data to Audit-Ready Spreadsheets: An AI-Assisted, Deterministic Python Workflow",
     "slug": "from-raw-data-to-audit-ready-spreadsheets-an-ai-assisted-deterministic-python-workflow",
